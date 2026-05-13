@@ -5,15 +5,25 @@ import { ShimmerBanner } from "./Shimmer";
 
 const HeroBanner = () => {
   const [idx, setIdx] = useState(0);
-  const [heroSlides, setHeroSlides] = useState([]);
+  const [heroSlides, setHeroSlides] = useState(() => {
+    // Load from localStorage on mount
+    try {
+      const cached = localStorage.getItem("bannerUrls");
+      return cached ? JSON.parse(cached) : [];
+    } catch {
+      return [];
+    }
+  });
 
-  // Fetch banner images
+  // Fetch banner images and update cache
   useEffect(() => {
     fetch(apiUrl("/api/settings"))
       .then((res) => res.json())
       .then((data) => {
         if (data.success && data.data?.bannerUrls?.length > 0) {
           setHeroSlides(data.data.bannerUrls);
+          // Cache to localStorage
+          localStorage.setItem("bannerUrls", JSON.stringify(data.data.bannerUrls));
         }
       })
       .catch((err) => console.error("Error fetching slides:", err));
