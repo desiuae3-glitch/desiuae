@@ -90,14 +90,14 @@ const ProductDetail = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Image skeleton */}
             <Shimmer className="h-96 md:h-[500px] rounded-lg" />
-            
+
             {/* Details skeleton */}
             <div className="space-y-6">
               <div className="space-y-3">
                 <Shimmer className="h-4 w-3/4" />
                 <Shimmer className="h-6 w-1/2" />
               </div>
-              
+
               <div className="space-y-2">
                 <Shimmer className="h-4 w-full" />
                 <Shimmer className="h-4 w-full" />
