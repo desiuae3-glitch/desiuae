@@ -30,6 +30,7 @@ import {
 } from "../components/ui/accordion";
 import { useToast } from "../hooks/use-toast";
 import { apiUrl } from "../lib/api";
+import { Shimmer } from "../components/Shimmer";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -82,7 +83,51 @@ const ProductDetail = () => {
     [product],
   );
 
-  if (loading) return <div className="py-24 text-center">Loading...</div>;
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Image skeleton */}
+            <Shimmer className="h-96 md:h-[500px] rounded-lg" />
+            
+            {/* Details skeleton */}
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <Shimmer className="h-4 w-3/4" />
+                <Shimmer className="h-6 w-1/2" />
+              </div>
+              
+              <div className="space-y-2">
+                <Shimmer className="h-4 w-full" />
+                <Shimmer className="h-4 w-full" />
+                <Shimmer className="h-4 w-2/3" />
+              </div>
+
+              <div className="space-y-3">
+                <Shimmer className="h-10 w-full" />
+                <Shimmer className="h-10 w-full" />
+              </div>
+
+              <div className="space-y-3 pt-4">
+                <Shimmer className="h-4 w-1/4" />
+                <Shimmer className="h-20 w-full" />
+              </div>
+            </div>
+          </div>
+
+          {/* Tabs skeleton */}
+          <div className="mt-12 space-y-4">
+            <div className="flex gap-4">
+              <Shimmer className="h-10 w-24" />
+              <Shimmer className="h-10 w-24" />
+            </div>
+            <Shimmer className="h-64 w-full" />
+          </div>
+        </div>
+      </div>
+    );
+  }
   if (!product) return <Navigate to="/smart-locks" replace />;
 
   const onAdd = () => {

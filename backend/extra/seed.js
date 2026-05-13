@@ -1,14 +1,46 @@
 import Product from "../models/Product.js";
 import User from "../models/User.js";
+import Settings from "../models/Settings.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
 
+const heroSlides = [
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/whatsapp-image-2025-10-24-at-094606-en-5.jpg?1777801355",
+  },
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/revbanner-1-en-6.jpg?1777801355",
+  },
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/whatsapp-image-2025-10-24-at-094605-en-4.jpg?1777801355",
+  },
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/gif-2-en-en-1.gif?1778507440",
+  },
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/google-home-banner-en-en-7.png?1778507440",
+  },
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/gif-1-en-3.gif?1778507440",
+  },
+  {
+    image:
+      "https://endesi.tsoftstatic.com/Data/BlockUploadData/slider/img1/883/rxbanner-en-8.png?1778507440",
+  },
+];
+
 const adminUser = {
   name: "Admin User",
-  email: "admin@desi.com",
-  password: "password123",
+  email: "admin@desilocks.com",
+  password: "Desi@456123",
   role: "admin",
   phone: "+971501234567",
 };
@@ -295,6 +327,20 @@ const seedDatabase = async () => {
     });
 
     console.log("✅ MongoDB connected");
+    // Clear existing products and users
+    await Product.deleteMany({});
+    await User.deleteMany({});
+    await Settings.deleteMany({});
+    console.log("🗑️  Cleared existing products and users");
+
+    // Initialize settings with WhatsApp number and banner URLs
+    await Settings.create({
+      whatsappNumber: "+971526187729",
+      bannerUrls: heroSlides.map((slide) => slide.image),
+    });
+    console.log("✅ Initialized Settings (WhatsApp: +971526187729)");
+    console.log("✅ Added Banner URLs to Settings");
+    console.log("✅ Initialized Settings (WhatsApp: +971526187729)");
 
     // Clear existing products and users
     await Product.deleteMany({});
@@ -303,7 +349,7 @@ const seedDatabase = async () => {
 
     // Insert admin user
     await User.create(adminUser);
-    console.log("✅ Created Admin User (admin@desi.com / password123)");
+    console.log("✅ Created Admin User (admin@desilocks.com / Desi@456123)");
 
     // Insert new products
     const insertedProducts = await Product.insertMany(products);

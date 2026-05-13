@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { apiUrl } from "../lib/api";
+import { ShimmerBanner } from "./Shimmer";
 
 const HeroBanner = () => {
   const [idx, setIdx] = useState(0);
@@ -29,26 +30,10 @@ const HeroBanner = () => {
     return () => clearInterval(interval);
   }, [heroSlides]);
 
-  // Loading state
+  // Loading state with shimmer
   if (heroSlides.length === 0) {
     return (
-      <div
-        className="
-          w-full
-          bg-neutral-100
-          flex items-center justify-center
-
-          h-[160px]
-          sm:h-[280px]
-          md:h-[460px]
-          lg:h-[520px]
-
-          min-h-[180px]
-          max-h-[70vh]
-        "
-      >
-        Loading...
-      </div>
+      <ShimmerBanner height="h-[160px] sm:h-[280px] md:h-[460px] lg:h-[520px]" />
     );
   }
 
