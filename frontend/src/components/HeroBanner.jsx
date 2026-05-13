@@ -23,7 +23,10 @@ const HeroBanner = () => {
         if (data.success && data.data?.bannerUrls?.length > 0) {
           setHeroSlides(data.data.bannerUrls);
           // Cache to localStorage
-          localStorage.setItem("bannerUrls", JSON.stringify(data.data.bannerUrls));
+          localStorage.setItem(
+            "bannerUrls",
+            JSON.stringify(data.data.bannerUrls),
+          );
         }
       })
       .catch((err) => console.error("Error fetching slides:", err));
