@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { Analytics } from "@vercel/analytics/react";
 import { LangProvider } from "./contexts/LangContext";
 import { CartProvider } from "./contexts/CartContext";
 import Header from "./components/Header";
@@ -35,6 +36,7 @@ function App() {
               <Route path="/*" element={<PublicApp />} />
             </Routes>
             <Toaster />
+            <Analytics />
           </BrowserRouter>
         </CartProvider>
       </LangProvider>
