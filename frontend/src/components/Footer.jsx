@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Share2, Heart, Zap } from "lucide-react";
+import { Mail, Phone, MapPin, Globe as Globe2, Award, Clock } from "lucide-react";
 import { useLang } from "../contexts/LangContext";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -111,10 +111,27 @@ const Footer = () => {
           </Link>
           <p className="mt-6 text-[15px] leading-relaxed text-neutral-500 max-w-sm">
             {t({
-              en: "Smart locks engineered in Turkey, trusted in 40+ countries — now officially in the UAE. AI-powered access for modern homes.",
-              ar: "أقفال ذكية مصممة في تركيا، موثوقة في أكثر من 40 دولة — والآن في الإمارات رسمياً.",
+              en: "Turn your door smart in 3 minutes. Works with your existing handle and lock. No drilling needed. Made in Turkey, trusted in 40+ countries.",
+              ar: "حوّل بابك لذكي في 3 دقائق. يعمل مع مقبضك وقفلك الحالي. بدون حفر. صناعة تركية، موثوقة في +40 دولة.",
             })}
           </p>
+
+          {/* Social proof stats */}
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+              <Clock className="w-4 h-4 text-[#E60012]" />
+              <span className="text-xs font-bold text-white/90">{t({ en: "3-Min Install", ar: "تركيب 3 دقائق" })}</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+              <Globe2 className="w-4 h-4 text-[#E60012]" />
+              <span className="text-xs font-bold text-white/90">{t({ en: "40+ Countries", ar: "+40 دولة" })}</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+              <Award className="w-4 h-4 text-[#E60012]" />
+              <span className="text-xs font-bold text-white/90">{t({ en: "Made in Turkey", ar: "صناعة تركية" })}</span>
+            </div>
+          </div>
+
           <div className="mt-8 space-y-4 text-sm font-medium">
             <div className="flex items-start gap-3 text-neutral-400 hover:text-white transition-colors group cursor-default">
               <MapPin className="w-4 h-4 mt-0.5 text-[#E60012] group-hover:scale-110 transition-transform" />
@@ -124,6 +141,9 @@ const Footer = () => {
                   ar: "دبي، الإمارات",
                 })}
               </span>
+              <span className="mx-2 text-neutral-700">|</span>
+              <span className="text-xl">🇹🇷</span>
+              <span className="text-neutral-500">{t({ en: "Made in Turkey", ar: "صناعة تركية" })}</span>
             </div>
             <a
               href="tel:+971526187729"

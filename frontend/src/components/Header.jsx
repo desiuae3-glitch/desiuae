@@ -26,6 +26,7 @@ const Header = () => {
   const nav = [
     { to: "/smart-locks", label: { en: "Smart Locks", ar: "الأقفال الذكية" } },
     { to: "/accessories", label: { en: "Accessories", ar: "الملحقات" } },
+    { to: "/", hash: "install", label: { en: "How It Works", ar: "كيف يعمل" } },
   ];
 
   const onSubmitSearch = (e) => {
@@ -39,6 +40,23 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-200/50 transition-all duration-300">
+      {/* Announcement bar */}
+      <div className="bg-[#E60012] text-white text-[10px] sm:text-xs py-1.5">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2">
+          <span className="font-bold">
+            {t({ en: "New: Install in 3 Minutes — No Drilling, No Locksmith", ar: "جديد: تركيب في 3 دقائق — بدون حفر أو فنان" })}
+          </span>
+          <a
+            href="https://www.youtube.com/shorts/YQHzRB7QaMQ"
+            target="_blank"
+            rel="noreferrer"
+            className="underline font-bold hover:text-white/80 transition-colors whitespace-nowrap"
+          >
+            {t({ en: "See How →", ar: "شاهد كيف →" })}
+          </a>
+        </div>
+      </div>
+
       {/* Top utility bar */}
       <div className="bg-neutral-900 text-white/90 text-[10px] sm:text-xs py-1">
         <div className="max-w-7xl mx-auto px-4 h-8 sm:h-9 flex items-center justify-between gap-2 sm:gap-5">
@@ -99,30 +117,40 @@ const Header = () => {
       {/* Main header */}
       <div className="border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
-          <Link to="/" className="flex items-center gap-1 flex-shrink-0">
-            <span
-              className="text-[#E60012] font-black text-2xl sm:text-3xl tracking-tight"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              DESi
-            </span>
-            <span className="text-neutral-400 text-[8px] sm:text-[10px] font-semibold tracking-widest uppercase ms-1 hidden sm:inline">
-              UAE
+          <Link to="/" className="flex flex-col items-start gap-0 flex-shrink-0">
+            <div className="flex items-center gap-1">
+              <span
+                className="text-[#E60012] font-black text-2xl sm:text-3xl tracking-tight"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                DESi
+              </span>
+              <span className="text-neutral-400 text-[8px] sm:text-[10px] font-semibold tracking-widest uppercase ms-1 hidden sm:inline">
+                UAE
+              </span>
+            </div>
+            <span className="text-[8px] sm:text-[9px] text-neutral-500 font-bold tracking-wider uppercase -mt-0.5 hidden sm:inline">
+              {t({ en: "Smart Locks | Made in Turkey", ar: "أقفال ذكية | صناعة تركية" })}
             </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
-            {nav.map((n) => (
-              <NavLink
-                key={n.to}
-                to={n.to}
-                className={({ isActive }) =>
-                  `text-xs lg:text-sm font-bold uppercase tracking-wide transition-colors ${isActive ? "text-[#E60012]" : "text-neutral-800 hover:text-[#E60012]"}`
-                }
-              >
-                {t(n.label)}
-              </NavLink>
-            ))}
+            {nav.map((n) => {
+              const linkProps = n.hash
+                ? { to: `${n.to}#${n.hash}` }
+                : { to: n.to };
+              return (
+                <NavLink
+                  key={n.to + (n.hash || "")}
+                  {...linkProps}
+                  className={({ isActive }) =>
+                    `text-xs lg:text-sm font-bold uppercase tracking-wide transition-colors ${isActive ? "text-[#E60012]" : "text-neutral-800 hover:text-[#E60012]"}`
+                  }
+                >
+                  {t(n.label)}
+                </NavLink>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-0.5 sm:gap-1">

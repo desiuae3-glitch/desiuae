@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  ScanFace,
-  KeyRound,
-  Battery,
-  Zap,
-  Smartphone,
-  Users,
-  ShieldCheck,
-  Sparkles,
-  Check,
-} from "lucide-react";
+import { ArrowRight, ScanFace, KeyRound, Battery, Zap, Smartphone, Users, ShieldCheck, Sparkles, Check, Clock, DoorOpen, Play, Star, Wrench, Globe as Globe2, Award } from "lucide-react";
 import HeroBanner from "../components/HeroBanner";
 import ProductCard from "../components/ProductCard";
 import SEOHead from "../components/SEOHead";
@@ -42,33 +31,37 @@ const TESTIMONIALS = [
   {
     name: "Ahmed Al Mansouri",
     city: { en: "Dubai Marina", ar: "دبي مارينا" },
+    rating: 5,
     text: {
-      en: "Installed in under 5 minutes. Face recognition is shockingly fast even at night.",
-      ar: "تم التركيب في أقل من 5 دقائق. التعرّف على الوجه سريع جداً حتى ليلاً.",
+      en: "Installed in under 3 minutes! Works perfectly with my existing door handle. Face recognition is shockingly fast even at night.",
+      ar: "تم التركيب في أقل من 3 دقائق! يعمل بشكل مثالي مع مقبض بابي الحالي. التعرّف على الوجه سريع جداً حتى ليلاً.",
     },
   },
   {
     name: "Fatima Khan",
     city: { en: "Abu Dhabi", ar: "أبوظبي" },
+    rating: 5,
     text: {
-      en: "My kids forget keys daily. Now they just walk up. Best home upgrade we've made.",
-      ar: "كان أطفالي ينسون المفاتيح يومياً. الآن يدخلون بسهولة. أفضل ترقية للمنزل.",
+      en: "We kept our original lock cylinder — just added the smart module. My kids forget keys daily. Now they just walk up. Best upgrade!",
+      ar: "احتفظنا بقفلنا الأصلي — فقط أضفنا الوحدة الذكية. أطفالي ينسون المفاتيح يومياً. الآن يدخلون بسهولة. أفضل ترقية!",
     },
   },
   {
     name: "James O'Brien",
     city: { en: "Sharjah", ar: "الشارقة" },
+    rating: 5,
     text: {
-      en: "Airbnb host here — e-key sharing changed my workflow completely. No more lockboxes.",
-      ar: "كمضيف Airbnb — مشاركة المفاتيح الإلكترونية غيّرت عملي تماماً.",
+      en: "Airbnb host here — 3-minute install, kept my traditional handle. E-key sharing changed my workflow completely. No more lockboxes.",
+      ar: "كمضيف Airbnb — تركيب 3 دقائق، احتفظت بمقبضي التقليدي. مشاركة المفاتيح الإلكترونية غيّرت عملي تماماً.",
     },
   },
   {
     name: "Maryam Saleh",
     city: { en: "Al Ain", ar: "العين" },
+    rating: 5,
     text: {
-      en: "No drilling needed. The 3M adhesive option saved my brand new fire door.",
-      ar: "لا حاجة للحفر. اللاصق 3M أنقذ باب الحريق الجديد.",
+      en: "No drilling needed. Slides right over my existing deadbolt. The 3M adhesive option saved my brand new fire door.",
+      ar: "لا حاجة للحفر. ينزلق مباشرة على قفلي الحالي. الخيار اللاصق 3M أنقذ باب الحريق الجديد.",
     },
   },
 ];
@@ -106,22 +99,28 @@ const Home = () => {
   return (
     <>
       <SEOHead
-        title="DESi Smart Locks UAE | Advanced Biometric Security Solutions"
-        description="Advanced smart locks and security solutions in UAE. Face recognition, AES-256 encryption, 6-month battery life. Buy DESi smart locks online."
-        keywords="smart locks UAE, face recognition locks, security locks Dubai, biometric locks, smart door locks"
+        title="DESi Smart Locks UAE | Turn Your Door Smart in 3 Minutes"
+        description="Transform any door in 3 minutes. DESi smart locks work with your existing handle and lock. No drilling, no locksmith. Made in Turkey. Face recognition, fingerprint, PIN access."
+        keywords="smart locks UAE, 3 minute install, traditional door lock compatible, face recognition locks, Turkey smart locks, no drilling"
         type="website"
         structuredDataContent={structuredData.organization}
       />
       <main>
         <HeroBanner />
 
+        {/* Value props strip - Reordered with Traditional Lock Compatible */}
         <section className="bg-white text-neutral-900 relative overflow-hidden">
           <div className="relative w-full mx-auto px-4 py-6 md:py-8 lg:py-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 md:gap-4 lg:gap-6">
             {[
               {
-                icon: Zap,
-                t: { en: "3 min DIY installation*", ar: "تركيب في 3 دقائق" },
-                s: { en: "No drilling required", ar: "بدون حفر" },
+                icon: Clock,
+                t: { en: "3 Min Install", ar: "تركيب 3 دقائق" },
+                s: { en: "No drilling, no locksmith", ar: "بدون حفر أو فنان" },
+              },
+              {
+                icon: DoorOpen,
+                t: { en: "Works With Your Lock", ar: "يعمل مع قفلك" },
+                s: { en: "Traditional handles compatible", ar: "متوافق مع المقابض التقليدية" },
               },
               {
                 icon: null,
@@ -136,14 +135,9 @@ const Home = () => {
                 s: { en: "Bank-grade encryption", ar: "تشفير بنكي" },
               },
               {
-                icon: Battery,
-                t: { en: "6-Month Battery", ar: "بطارية 6 أشهر" },
-                s: { en: "Type-C rechargeable", ar: "شحن Type-C" },
-              },
-              {
                 icon: ScanFace,
                 t: { en: "Face Recognition", ar: "تعرّف الوجه" },
-                s: { en: "Advanced biometric", ar: "بيومتري متقدم" },
+                s: { en: "Hands-free entry", ar: "دخول بدون لمس" },
               },
               {
                 icon: LucideIcons.Fingerprint,
@@ -151,9 +145,9 @@ const Home = () => {
                 s: { en: "Secure access", ar: "وصول آمن" },
               },
               {
-                icon: KeyRound,
-                t: { en: "PIN Code", ar: "رمز PIN" },
-                s: { en: "Multi-method entry", ar: "طرق دخول متعددة" },
+                icon: Battery,
+                t: { en: "6-Month Battery", ar: "بطارية 6 أشهر" },
+                s: { en: "Type-C rechargeable", ar: "شحن Type-C" },
               },
               {
                 icon: LucideIcons.ShieldCheck,
@@ -165,7 +159,7 @@ const Home = () => {
                 key={i}
                 className="flex flex-col items-center gap-2 md:gap-3 group"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0 border-2 border-[#E60012] transition-transform group-hover:scale-110 group-hover:-rotate-3 duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-red-50 to-white flex items-center justify-center flex-shrink-0 border-2 border-[#E60012]/30 transition-all group-hover:scale-110 group-hover:border-[#E60012] group-hover:shadow-lg duration-300">
                   {v.isEmoji ? (
                     <span className="text-lg md:text-xl">{v.emoji}</span>
                   ) : (
@@ -185,7 +179,223 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Value props strip */}
+        {/* 3-Step Installation Section */}
+        <section id="install" className="bg-gradient-to-b from-neutral-50 to-white py-12 md:py-20 lg:py-28">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E60012]/10 border border-[#E60012]/20 mb-6">
+                <Clock className="w-4 h-4 text-[#E60012]" />
+                <span className="text-sm font-bold text-[#E60012] uppercase tracking-wider">
+                  {t({ en: "3-Minute Installation", ar: "تركيب 3 دقائق" })}
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
+                {t({ en: "Install in 3 Steps.", ar: "ركّب في 3 خطوات." })}
+                <br />
+                <span className="text-[#E60012]">{t({ en: "No Drilling Required", ar: "لا حفر مطلوب" })}</span>
+              </h2>
+              <p className="mt-6 text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                {t({
+                  en: "Your existing door handle and lock stay in place. Simply slide over the DESi module and connect to the app.",
+                  ar: "مقبض بابك وقفلك الحالي يبقى مكانه. ببساطة انزلق وحدة DESi واتصل بالتطبيق.",
+                })}
+              </p>
+            </div>
+
+            {/* 3 Steps */}
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-12">
+              {[
+                {
+                  num: "1",
+                  title: { en: "Remove Thumbturn", ar: "أزل المقبض الداخلي" },
+                  desc: { en: "Unscrew your existing interior thumbturn (30 seconds)", ar: "فكّ المقبض الداخلي الحالي (30 ثانية)" },
+                  time: "30s",
+                },
+                {
+                  num: "2",
+                  title: { en: "Clip On Module", ar: "ركّب الوحدة" },
+                  desc: { en: "Slide the DESi smart module over your lock (1.5 minutes)", ar: "انزلق وحدة DESi الذكية فوق قفلك (1.5 دقيقة)" },
+                  time: "1.5m",
+                },
+                {
+                  num: "3",
+                  title: { en: "Set Up in App", ar: "الإعداد بالتطبيق" },
+                  desc: { en: "Download app, add users, and unlock with face, fingerprint, or PIN (1 minute)", ar: "حمّل التطبيق، أضف المستخدمين، وافتح بالوجه أو البصمة أو PIN (1 دقيقة)" },
+                  time: "1m",
+                },
+              ].map((step, i) => (
+                <div key={i} className="relative">
+                  <div className="bg-white rounded-3xl p-6 md:p-8 border-2 border-neutral-100 hover:border-[#E60012]/30 hover:shadow-xl transition-all duration-300 group">
+                    {/* Step number */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#E60012] text-white flex items-center justify-center font-black text-2xl md:text-3xl">
+                        {step.num}
+                      </div>
+                      <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 text-xs font-bold">
+                        <Clock className="w-3.5 h-3.5" />
+                        {step.time}
+                      </div>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black mb-3">
+                      {t(step.title)}
+                    </h3>
+                    <p className="text-neutral-600 leading-relaxed">
+                      {t(step.desc)}
+                    </p>
+                    {/* Arrow to next */}
+                    {i < 2 && (
+                      <div className="hidden md:block absolute top-1/2 -right-6 lg:-right-8 transform -translate-y-1/2 z-10">
+                        <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-[#E60012]" />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Video CTA */}
+            <div className="text-center">
+              <a
+                href="https://www.youtube.com/shorts/YQHzRB7QaMQ"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="h-14 px-8 bg-neutral-900 hover:bg-neutral-800 text-white font-bold uppercase tracking-wider text-base rounded-full shadow-xl transition-all hover:-translate-y-0.5">
+                  <Play className="w-5 h-5 me-2" />
+                  {t({ en: "Watch 3-Min Install Video", ar: "شاهد فيديو التركيب" })}
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Compatibility Section */}
+        <section className="bg-neutral-950 text-white py-12 md:py-20 lg:py-28 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur border border-white/20 mb-6">
+                  <DoorOpen className="w-4 h-4 text-[#E60012]" />
+                  <span className="text-sm font-bold uppercase tracking-wider">
+                    {t({ en: "Works With Your Existing Door", ar: "يعمل مع بابك الحالي" })}
+                  </span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-6">
+                  {t({ en: "No Need to Replace", ar: "لا حاجة لتبديل" })}
+                  <br />
+                  <span className="text-[#E60012]">{t({ en: "Your Door Hardware", ar: "عتاد بابك" })}</span>
+                </h2>
+                <p className="text-neutral-400 text-lg mb-8 max-w-xl">
+                  {t({
+                    en: "DESi smart modules slide over your existing mechanical lock. Keep your exterior handle, lock cylinder, and deadbolt — just add intelligence.",
+                    ar: "وحدات DESi تنزلق فوق قفلك الميكانيكي الحالي. احتفظ بالمقبض الخارجي، اسطوانة القفل، والترس — فقط أضف الذكاء.",
+                  })}
+                </p>
+
+                {/* Compatible items */}
+                <div className="space-y-4 mb-8">
+                  {[
+                    { en: "Single-cylinder deadbolts", ar: "أقفال الموتولة أحادية الاسطوانة" },
+                    { en: "Euro profile cylinders", ar: "اسطوانات ملف يورو" },
+                    { en: "Lever handles (indoor)", ar: "مقابض الرافعة (داخلية)" },
+                    { en: "Knob handles", ar: "مقابض القرص" },
+                    { en: "Fire-rated doors (3M adhesive option)", ar: "أبواب مقاومة الحريق (خيار لاصق 3M)" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#E60012]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-[#E60012]" />
+                      </div>
+                      <span className="text-neutral-300 font-medium">{t(item)}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/contact">
+                    <Button className="h-12 px-6 bg-[#E60012] hover:bg-[#c4000f] text-white font-bold uppercase tracking-wider rounded-full">
+                      {t({ en: "Check My Door Type", ar: "فحص نوع بابي" })}
+                    </Button>
+                  </Link>
+                  <Link to="/faq">
+                    <Button variant="outline" className="h-12 px-6 bg-transparent hover:bg-white/10 text-white border-white/30 font-bold uppercase tracking-wider rounded-full">
+                      {t({ en: "See All FAQs", ar: "جميع الأسئلة الشائعة" })}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Visual */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-3xl p-8 md:p-12">
+                  {/* Traditional lock visual */}
+                  <div className="flex items-center justify-center gap-8 lg:gap-12">
+                    <div className="text-center">
+                      <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-neutral-700 flex items-center justify-center mb-4 mx-auto">
+                        <Lock className="w-12 h-12 md:w-16 md:h-16 text-neutral-400" />
+                      </div>
+                      <p className="text-sm font-bold text-neutral-400">
+                        {t({ en: "Your Existing Lock", ar: "قفلك الحالي" })}
+                      </p>
+                    </div>
+                    <div className="text-4xl md:text-5xl text-[#E60012] font-black">+</div>
+                    <div className="text-center">
+                      <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-[#E60012] flex items-center justify-center mb-4 mx-auto">
+                        <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-white" />
+                      </div>
+                      <p className="text-sm font-bold text-white">
+                        {t({ en: "DESi Module", ar: "وحدة DESi" })}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-neutral-700 text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E60012]/20">
+                      <Check className="w-4 h-4 text-[#E60012]" />
+                      <span className="text-sm font-bold">
+                        {t({ en: "Physical Key Backup Kept", ar: "نسخة المفتاح الأصلي محفوظة" })}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Made in Turkey Section */}
+        <section className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white py-12 md:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white/10 backdrop-blur flex items-center justify-center flex-shrink-0 border border-white/20">
+                  <span className="text-5xl md:text-6xl">🇹🇷</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-black mb-2">
+                    {t({ en: "Made in Turkey", ar: "صناعة تركية" })}
+                  </h3>
+                  <p className="text-neutral-400 text-sm md:text-base">
+                    {t({ en: "Premium quality, trusted in 40+ countries", ar: "جودة عالية، موثوق في +40 دولة" })}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6">
+                {[
+                  { icon: Award, text: { en: "ISO Certified", ar: "معتمد ISO" } },
+                  { icon: Wrench, text: { en: "Zinc Alloy Body", ar: "جسم سبائك الزنك" } },
+                  { icon: Globe2, text: { en: "40+ Countries", ar: "+40 دولة" } },
+                  { icon: ShieldCheck, text: { en: "2-Year Warranty", ar: "ضمان سنتين" } },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10">
+                    <item.icon className="w-5 h-5 text-[#E60012]" />
+                    <span className="text-sm font-bold">{t(item.text)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Big feature — face recognition */}
         <section className="bg-neutral-950 text-white overflow-hidden relative">
@@ -207,8 +417,8 @@ const Home = () => {
               </h2>
               <p className="mt-8 text-neutral-400 leading-relaxed text-sm sm:text-base md:text-lg max-w-lg">
                 {t({
-                  en: "Scan Face and Push the door AI face recognition Reader that unlocks your door before you even touch it — fast, secure, and protected with AES-256 GCM.",
-                  ar: "امسح وجهك وادفع الباب — قارئ التعرّف على الوجه بالذكاء الاصطناعي يفتح بابك قبل أن تلمسه، بسرعة وأمان، مع حماية بتشفير AES-256 GCM.",
+                  en: "AI face recognition unlocks your door before you even touch it — fast, secure, and protected with AES-256 GCM encryption.",
+                  ar: "الذكاء الاصطناعي للتعرّف على الوجه يفتح بابك قبل أن تلمسه — بسرعة وأمان، مع حماية بتشفير AES-256 GCM.",
                 })}
               </p>
               <ul className="mt-6 md:mt-10 space-y-3 md:space-y-5">
@@ -267,8 +477,8 @@ const Home = () => {
                 </h2>
                 <p className="mt-4 text-neutral-500 text-sm sm:text-base md:text-lg leading-relaxed">
                   {t({
-                    en: "The world's smallest smart lock series — universal mounting, AI-powered, made for UAE homes.",
-                    ar: "أصغر سلسلة أقفال ذكية — تركيب شامل ، مدعومة بالذكاء الاصطناعي، لمنازل الإمارات.",
+                    en: "The world's smallest smart lock series — 3-minute install, works with traditional handles, made for UAE homes.",
+                    ar: "أصغر سلسلة أقفال ذكية — تركيب 3 دقائق، متوافقة مع المقابض التقليدية، لمنازل الإمارات.",
                   })}
                 </p>
               </div>
@@ -297,9 +507,65 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Testimonials Section */}
+        <section className="bg-white py-12 md:py-20 lg:py-28">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E60012]/10 border border-[#E60012]/20 mb-6">
+                <Star className="w-4 h-4 text-[#E60012]" />
+                <span className="text-sm font-bold text-[#E60012] uppercase tracking-wider">
+                  {t({ en: "Customer Stories", ar: "قصص العملاء" })}
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">
+                {t({ en: "Real Installations.", ar: "تركيبات حقيقية." })}
+                <br />
+                <span className="text-[#E60012]">{t({ en: "Real UAE Homes.", ar: "منازل إماراتية حقيقية." })}</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {testimonials.map((t, i) => (
+                <div key={i} className="bg-neutral-50 rounded-2xl p-6 border border-neutral-100 hover:border-[#E60012]/30 hover:shadow-lg transition-all duration-300">
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(t.rating)].map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-[#E60012] text-[#E60012]" />
+                    ))}
+                  </div>
+
+                  {/* Quote */}
+                  <p className="text-neutral-700 leading-relaxed mb-6 text-sm">
+                    "{t(t.text)}"
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#E60012] flex items-center justify-center text-white font-bold text-sm">
+                      {t.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm">{t.name}</p>
+                      <p className="text-xs text-neutral-500">{t(t.city)}</p>
+                    </div>
+                  </div>
+
+                  {/* Verified badge */}
+                  <div className="mt-4 pt-4 border-t border-neutral-200">
+                    <div className="flex items-center gap-1.5 text-[#E60012] text-xs font-bold">
+                      <Check className="w-3.5 h-3.5" />
+                      {t({ en: "Verified UAE Customer", ar: "عميل إماراتي موثق" })}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Featured products - Accessories */}
         {accessories.length > 0 && (
-          <section className="bg-white">
+          <section className="bg-neutral-50/50">
             <div className="max-w-7xl mx-auto px-4 pb-14 pt-8 md:pb-24 md:pt-12">
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6">
                 <div className="max-w-2xl">
@@ -489,8 +755,8 @@ const Home = () => {
               </h2>
               <p className="mt-2 text-white/90 text-sm sm:text-base">
                 {t({
-                  en: "Free delivery across UAE • 2-year warranty • 7-day returns.",
-                  ar: "توصيل مجاني داخل الإمارات • ضمان سنتين • إرجاع خلال 7 أيام.",
+                  en: "3-minute install • Works with your existing lock • Free delivery UAE • 2-year warranty",
+                  ar: "تركيب 3 دقائق • متوافق مع قفلك الحالي • توصيل مجاني الإمارات • ضمان سنتين",
                 })}
               </p>
             </div>
