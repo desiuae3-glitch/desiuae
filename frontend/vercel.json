@@ -1,7 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/((?!utopicrx(?:/|$)|popup(?:/|$)|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon(?:/|$)).*)",
+      "source": "/utopicrx",
+      "destination": "/utopicrx/index.html"
+    },
+    {
+      "source": "/((?!utopicrx|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon|assets).*)",
       "destination": "/index.html"
     }
   ]
