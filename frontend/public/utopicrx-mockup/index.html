@@ -59,7 +59,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 /* ====== 3D HERO — black & white ====== */
 .xhero{position:relative;min-height:calc(100vh - 126px);background:var(--black);overflow:hidden;display:flex;align-items:center;color:#fff}
 #scene{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;opacity:.45}
-.xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto;gap:2rem 2rem;align-items:start;pointer-events:none}
+.xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto auto;gap:1.5rem 2rem;align-items:start;pointer-events:none}
 .xhero-copy{grid-column:1;grid-row:1}
 .xhero-ctas{grid-column:1;grid-row:2;margin-top:0}
 .xhero-stage{grid-column:2;grid-row:1 / span 3;align-self:center}
@@ -506,9 +506,6 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <h1 class="xhero-h1">Make Your Existing Door <em>Smart</em> in <span class="outline">Under 5 Minutes*</span></h1>
       <p class="xhero-lead">No cylinder change. Mounts over your existing euro cylinder — no key cutting, no locksmith, no drilling. Every feature of a high-end smart lock.</p>
       <p class="xhero-foot">* Typical DIY install on a standard euro-profile cylinder door.</p>
-      <div class="xhero-ctas">
-        <a href="#configure" class="xbtn xbtn-red">Preorder Now &rarr;</a>
-      </div>
     </div>
     <div class="xhero-stage" id="heroStage">
       <div class="xhero-showcase" id="heroLock">
@@ -517,6 +514,9 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
           <img class="xhero-product" src="../utopicrx/desi-assets/gifs/rxe-install.gif" alt="Utopic RX smart lock installation demo" width="800" height="343" decoding="async" fetchpriority="high">
         </div>
       </div>
+    </div>
+    <div class="xhero-ctas">
+      <a href="#configure" class="xbtn xbtn-red">Preorder Now &rarr;</a>
     </div>
     <div class="xhero-trust">
       <div class="xht">🔒 No Damage</div>
