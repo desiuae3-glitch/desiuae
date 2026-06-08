@@ -184,9 +184,15 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .config{padding:5rem 2rem;background:var(--black);border-top:1px solid var(--brd)}
 .config-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2.5rem}
 .config-base{background:var(--black3);border-radius:var(--r);overflow:hidden;border:1px solid var(--brd);position:sticky;top:140px}
-.config-base-img{padding:2.5rem;display:grid;place-items:center;background:var(--black2)}
-.config-base-img img{max-width:260px;filter:drop-shadow(0 20px 50px rgba(0,0,0,.5));transition:transform .4s}
-.config-base:hover .config-base-img img{transform:scale(1.04)}
+.config-base-img{padding:0;background:var(--black2)}
+.config-gallery{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem 1.25rem 1rem}
+.config-gallery-main{flex:1;display:grid;place-items:center;min-height:220px;padding:.75rem;background:#f4f3ef;border-radius:calc(var(--r) - 4px)}
+.config-gallery-main img{max-width:100%;max-height:240px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(0,0,0,.18));transition:transform .4s}
+.config-base:hover .config-gallery-main img{transform:scale(1.03)}
+.config-gallery-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.config-gallery-thumb{appearance:none;border:2px solid var(--brd);border-radius:8px;background:#f4f3ef;padding:.35rem;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.config-gallery-thumb:hover,.config-gallery-thumb.active{border-color:var(--red);box-shadow:0 0 0 1px rgba(227,30,36,.25)}
+.config-gallery-thumb img{width:100%;height:48px;object-fit:contain;display:block}
 .config-base-body{padding:1.6rem;background:var(--black3);border-top:1px solid var(--brd)}
 .cb-name{font-size:1.2rem;font-weight:800;margin-bottom:.25rem;color:#fff}
 .cb-desc{font-size:.8rem;color:var(--tx2);line-height:1.65;margin-bottom:1rem}
@@ -429,8 +435,11 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .config-layout{display:flex;flex-direction:column;gap:1.5rem;width:100%;align-items:stretch}
   .addons{order:1;width:100%;max-width:100%}
   .config-base{order:2;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box}
-  .config-base-img{display:flex;justify-content:center;align-items:center;width:100%;padding:1.5rem 1rem;box-sizing:border-box}
-  .config-base-img img{display:block;margin:0 auto;max-width:min(260px,88%);width:auto;height:auto;object-fit:contain;object-position:center}
+  .config-base-img{padding:0}
+  .config-gallery{padding:1rem .85rem .85rem}
+  .config-gallery-main{min-height:180px}
+  .config-gallery-main img{max-height:200px}
+  .config-gallery-thumb img{height:40px}
   .config-base-body{padding:1.6rem 1.25rem;box-sizing:border-box}
   .addon{grid-template-columns:56px 1fr;grid-template-rows:auto auto;align-items:start;max-width:100%;box-sizing:border-box;width:100%}
   .addon-img{width:56px;height:45px}
@@ -594,7 +603,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
     <div class="steps-row">
       <div class="step rv">
         <div class="step-n">1</div>
-        <div class="step-img"><img src="../utopicrx/desi-assets/banners/rx-cylinder-exploded.png" alt="Utopic RX fits onto your existing euro-profile cylinder" loading="lazy" style="object-fit:contain;background:#e8e8e8"></div>
+        <div class="step-img"><img src="../utopicrx/desi-assets/products/rx-cylinder-interface.png" alt="Utopic RX fits onto your existing euro-profile cylinder" loading="lazy" style="object-fit:contain;background:#f4f3ef"></div>
         <h3>Mount &amp; Tighten</h3>
         <p>Slip onto your existing cylinder, tighten 4 screws or use 3M adhesive. Fully reversible.</p>
         <p style="margin-top:.7rem;font-size:.72rem;color:var(--tx3);line-height:1.5">* The base lock works on its own with the mobile app — or add wireless readers and remote accessories.</p>
@@ -650,7 +659,16 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
     <div class="config-layout">
       <div class="config-base rv">
         <div class="config-base-img">
-          <img src="../utopicrx/desi-assets/products/desi-utopic-rx-smart-lock-europrofile-smart-locks-169-67-K.png" alt="Utopic RX Smart Lock" id="baseImg" width="260">
+          <div class="config-gallery" id="baseGallery">
+            <div class="config-gallery-main">
+              <img id="baseGalleryMain" src="../utopicrx/desi-assets/products/rx-knob-unit.png" alt="DESi Utopic RX thumb-turn unit">
+            </div>
+            <div class="config-gallery-thumbs">
+              <button type="button" class="config-gallery-thumb active" data-src="../utopicrx/desi-assets/products/rx-knob-unit.png" data-alt="DESi Utopic RX thumb-turn unit"><img src="../utopicrx/desi-assets/products/rx-knob-unit.png" alt="Utopic RX knob unit"></button>
+              <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/rx-key-cylinder-assembly.png" data-alt="Utopic RX with euro cylinder and key"><img src="../utopicrx/desi-assets/products/rx-key-cylinder-assembly.png" alt="Key and cylinder assembly"></button>
+              <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/rx-cylinder-interface.png" data-alt="Utopic RX cylinder interface"><img src="../utopicrx/desi-assets/products/rx-cylinder-interface.png" alt="Cylinder interface"></button>
+            </div>
+          </div>
         </div>
         <div class="config-base-body">
           <div class="cb-name">Utopic RX Smart Lock</div>
@@ -749,7 +767,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
     <article class="fb-hero fb-hero--light rv">
       <span class="fb-idx" aria-hidden="true">03</span>
       <div class="fb-hero-media">
-        <img src="../utopicrx/desi-assets/banners/rx-cylinder-exploded.png" alt="Utopic RX fits onto your existing euro-profile cylinder" loading="lazy">
+        <img src="../utopicrx/desi-assets/products/rx-key-cylinder-assembly.png" alt="Utopic RX fits onto your existing euro-profile cylinder" loading="lazy">
         <div class="fb-hero-glow"></div>
         <div class="fb-tag-badge">DIY INSTALL</div>
       </div>
@@ -1177,6 +1195,15 @@ function submitForm(){
   const msg=encodeURIComponent(`Hi, quote request:\nName: ${n}\nPhone: ${p}\nEmail: ${document.getElementById('f-email').value||'—'}\nEmirate: ${document.getElementById('f-emirate').value||'—'}\nDoor: ${document.getElementById('f-door').value||'—'}\n\n${document.getElementById('f-msg').value}`);
   window.open(`https://wa.me/${WA}?text=${msg}`,'_blank','noopener');
 }
+document.querySelectorAll('#baseGallery .config-gallery-thumb').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var main=document.getElementById('baseGalleryMain');
+    main.src=btn.dataset.src;
+    main.alt=btn.dataset.alt||'';
+    document.querySelectorAll('#baseGallery .config-gallery-thumb').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+  });
+});
 function submitWA(){const n=document.getElementById('f-name').value.trim()||'visitor';window.open(`https://wa.me/${WA}?text=${encodeURIComponent(`Hi, I'm interested in the Utopic RX. My name is ${n}.`)}`,'_blank','noopener');}
 document.getElementById('nav').classList.add('on');
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('on',window.scrollY>10);},{passive:true});
