@@ -23,8 +23,8 @@ const UserManuals = () => {
     {
       slug: "desi-utopic-rx-fingerprint-wifi",
       name: {
-        en: "DESi Utopic RX/RXe Fingerprint Reader & Touch Keypad V3",
-        ar: "قارئ بصمة DESi Utopic RX/RXe ولوحة مفاتيح V3",
+        en: "DESi Utopic RX Fingerprint Reader & Touch Keypad V3",
+        ar: "قارئ بصمة DESi Utopic RX ولوحة مفاتيح V3",
       },
       image:
         "https://endesi.tsoftstatic.com/desi-utopic-rx-rxe-compatible-fingerprint-reader-and-wireless-touch-keypad-v3-accessories-344-74-O.png",
@@ -34,8 +34,8 @@ const UserManuals = () => {
     {
       slug: "desi-utopic-rx-face-recognition",
       name: {
-        en: "DESi Utopic RX/RXe Face Recognition & Touch Keypad",
-        ar: "التعرف على الوجه DESi Utopic RX/RXe ولوحة مفاتيح",
+        en: "DESi Utopic RX Face Recognition & Touch Keypad",
+        ar: "التعرف على الوجه DESi Utopic RX ولوحة مفاتيح",
       },
       image:
         "https://endesi.tsoftstatic.com/desi-utopic-rx-rxe-compatible-face-reader-and-wireless-touch-keypad-accessories-283-81-B.png",
@@ -56,8 +56,8 @@ const UserManuals = () => {
     {
       slug: "door-sensor-auto-lock-v3bl",
       name: {
-        en: "DESi Utopic RX/RXe Door Sensor + Auto Lock V3BL",
-        ar: "حساس الباب DESi Utopic RX/RXe + قفل تلقائي V3BL",
+        en: "DESi Utopic RX Door Sensor + Auto Lock V3BL",
+        ar: "حساس الباب DESi Utopic RX + قفل تلقائي V3BL",
       },
       image:
         "https://endesi.tsoftstatic.com/desi-wireless-auto-locking-module-v2-compatible-with-utopic-smart-locks-accessories-339-49-O.png",
@@ -67,8 +67,8 @@ const UserManuals = () => {
     {
       slug: "wireless-remote-controller-v2bl",
       name: {
-        en: "DESi Utopic RX/RXe Wireless Remote Controller V2BL",
-        ar: "جهاز التحكم اللاسلكي DESi Utopic RX/RXe V2BL",
+        en: "DESi Utopic RX Wireless Remote Controller V2BL",
+        ar: "جهاز التحكم اللاسلكي DESi Utopic RX V2BL",
       },
       image:
         "https://endesi.tsoftstatic.com/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg",
@@ -78,8 +78,8 @@ const UserManuals = () => {
     {
       slug: "smart-home-automation-v3bl",
       name: {
-        en: "DESi Utopic RX/RXe Smart Home Automation Interface V3BL",
-        ar: "واجهة المنزل الذكي DESi Utopic RX/RXe V3BL",
+        en: "DESi Utopic RX Smart Home Automation Interface V3BL",
+        ar: "واجهة المنزل الذكي DESi Utopic RX V3BL",
       },
       image:
         "https://endesi.tsoftstatic.com/desi-utopic-series-smart-home-automation-interface-v2-accessories-117-52-O.png",
