@@ -61,9 +61,11 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 #scene{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;opacity:.45}
 .xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto;gap:2rem 2rem;align-items:start;pointer-events:none}
 .xhero-copy{grid-column:1;grid-row:1}
-.xhero-stage{grid-column:2;grid-row:1 / span 2;align-self:center}
-.xhero-trust{grid-column:1;grid-row:2;margin-top:0}
+.xhero-ctas{grid-column:1;grid-row:2;margin-top:0}
+.xhero-stage{grid-column:2;grid-row:1 / span 3;align-self:center}
+.xhero-trust{grid-column:1;grid-row:3;margin-top:0}
 .xhero-copy>*{pointer-events:auto}
+.xhero-ctas{pointer-events:auto}
 .xhero-eyebrow{font-family:var(--m);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#ff6b6b;margin-bottom:1rem;opacity:0;animation:fadeUp .8s .3s forwards}
 .xhero-h1{font-size:clamp(2.3rem,5vw,4.4rem);font-weight:900;line-height:1;letter-spacing:-.03em;text-transform:uppercase;color:#fff;opacity:0;animation:fadeUp .8s .45s forwards}
 .xhero-h1 em{font-style:normal;color:var(--red)}
@@ -378,7 +380,8 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .xhero-wrap{display:flex!important;flex-direction:column!important;grid-template-columns:1fr!important;grid-template-rows:auto!important;text-align:center;justify-items:center;padding:1rem 1rem 0!important;box-sizing:border-box;width:100%;max-width:100%;gap:0!important}
   .xhero-copy{order:1!important;grid-column:auto!important;grid-row:auto!important;width:100%;display:flex;flex-direction:column;align-items:center}
   .xhero-stage{order:2!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center;min-height:auto!important;align-self:auto!important}
-  .xhero-trust{order:3!important;grid-column:auto!important;grid-row:auto!important;margin-top:1rem!important}
+  .xhero-ctas{order:3!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center}
+  .xhero-trust{order:4!important;grid-column:auto!important;grid-row:auto!important;margin-top:1rem!important}
   .xhero-h1,.xhero-lead,.xhero-foot{text-align:center}
   .xhero-lead,.xhero-foot{margin-left:auto;margin-right:auto}
   .xhero-ctas,.xhero-trust{justify-content:center;margin-left:auto;margin-right:auto}
