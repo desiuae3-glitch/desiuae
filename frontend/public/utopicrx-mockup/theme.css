@@ -39,7 +39,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 126px;
+  scroll-padding-top: 98px;
 }
 
 body {
@@ -49,7 +49,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  padding-top: 126px;
+  padding-top: 98px;
 }
 
 ::selection {
@@ -72,29 +72,6 @@ button {
   cursor: pointer;
 }
 
-/* MOCKUP BAR */
-.mockup-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 28px;
-  z-index: 250;
-  background: #000;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-}
-
-.mockup-bar a {
-  color: #ff8a92;
-  text-decoration: underline;
-}
-
 /* ANN BAR */
 .ann {
   background: var(--red);
@@ -105,7 +82,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.02em;
   position: fixed;
-  top: 28px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 201;
@@ -131,7 +108,7 @@ button {
 /* NAV */
 .nav {
   position: fixed;
-  top: 62px;
+  top: 34px;
   left: 0;
   right: 0;
   z-index: 200;
@@ -237,7 +214,7 @@ button {
 .mob-nav {
   display: none;
   position: fixed;
-  top: 126px;
+  top: 98px;
   left: 0;
   right: 0;
   background: var(--black2);
