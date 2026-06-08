@@ -1,6 +1,14 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.utopicrx.com" }],
+      "destination": "https://utopicrx.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/utopicrx-mockup/(.*)",
