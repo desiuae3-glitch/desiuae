@@ -206,6 +206,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .addon-img img{max-width:70%;max-height:70%;object-fit:contain}
 .addon-info h4{font-size:.82rem;font-weight:700;margin-bottom:.2rem}
 .addon-info p{font-size:.68rem;color:var(--tx2);line-height:1.45}
+.addon-note{font-size:.62rem;color:var(--tx3);font-style:italic;line-height:1.45;margin-top:.35rem}
 .addon-right{text-align:right;min-width:108px}
 .ap{font-size:.96rem;font-weight:800;margin-bottom:.35rem}
 .ap .cur{font-size:.7rem;color:var(--tx3);font-weight:500}
@@ -351,6 +352,7 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
 .waf svg{width:28px;height:28px;fill:#fff}
 .waf-tip{position:absolute;right:calc(100% + .6rem);top:50%;transform:translateY(-50%);background:var(--tx);color:#fff;font-size:.7rem;font-weight:600;padding:.35rem .7rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 .waf:hover .waf-tip{opacity:1}
+.waf.waf-hide{display:none}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -379,8 +381,18 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
   .vc:first-child{grid-row:auto;grid-column:1/3}
   .ft{grid-template-columns:1fr 1fr}
   .stats-inner{grid-template-columns:1fr 1fr}
-  .total-inner{flex-direction:column;align-items:flex-start}
-  .total-btns{width:100%}
+  .total-bar{padding:.85rem 1rem;padding-bottom:calc(.85rem + env(safe-area-inset-bottom,0px))}
+  .total-inner{flex-direction:column;align-items:stretch;gap:.65rem}
+  .total-left{gap:.35rem .65rem}
+  .total-price{font-size:1.55rem}
+  .total-btns{width:100%;flex-direction:row}
+  .total-btns a,.total-btns button{flex:1;justify-content:center;padding:.7rem .5rem;font-size:.78rem}
+  .waf{bottom:calc(11rem + env(safe-area-inset-bottom,0px))}
+  .config-layout{display:flex;flex-direction:column;gap:1.5rem}
+  .addons{order:-1}
+  .config-base-img{padding:1.5rem}
+  .config-base-img img{max-width:200px}
+  .config{padding-bottom:0}
 }
 @media(max-width:640px){
   .hero-inner{padding:0}
@@ -395,8 +407,10 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
   .vc:first-child{grid-column:auto}.vc{height:160px}
   .ft{grid-template-columns:1fr}
   .fbot{flex-direction:column;text-align:center}
-  .total-btns{flex-direction:column}
-  .total-btns a,.total-btns button{width:100%;justify-content:center}
+  .addon{grid-template-columns:56px 1fr;grid-template-rows:auto auto;align-items:start}
+  .addon-right{grid-column:1/-1;display:flex;flex-direction:row;justify-content:space-between;align-items:center;width:100%;min-width:0;text-align:left;margin-top:.35rem;padding-top:.5rem;border-top:1px solid var(--brd)}
+  .addon-actions{flex-direction:row;align-items:center;gap:.5rem}
+  .ap{margin-bottom:0}
   .f-row{grid-template-columns:1fr}
   .f-btns{flex-direction:column}
   .f-submit,.f-wa{width:100%;justify-content:center}
@@ -897,7 +911,7 @@ const ADDONS = [
   {id:'face',name:'Face Recognition + Touch Keypad',price:602,img:'desi-assets/products/desi-utopic-rx-rxe-compatible-face-reader-and-wireless-touch-keypad-accessories-283-81-O.png',desc:'AI face reader — walk up, door opens. Includes PIN keypad. Wireless. 4×AA.'},
   {id:'fp',name:'Fingerprint Reader + Touch Keypad V3',price:602,img:'desi-assets/products/desi-utopic-rx-rxe-compatible-fingerprint-reader-and-wireless-touch-keypad-v3-accessories-344-74-O.png',desc:'Sub-second fingerprint + PIN keypad. Wireless. Black finish.'},
   {id:'wifi',name:'WiFi Bridge Hub',price:228,img:'desi-assets/products/desi-utopic-series-compatible-wifi-bridge-hub-accessories-338-45-O.png',desc:'Remote access from anywhere. Enables Alexa, Google Home, Home Assistant, Siri.'},
-  {id:'sensor',name:'Door Sensor + Auto Locking',price:81,img:'desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg',desc:'Detects door close → triggers auto-lock. Wireless.'},
+  {id:'sensor',name:'Door Sensor + Auto Locking',price:81,img:'desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg',desc:'Detects door close → triggers auto-lock. Wireless.',note:'Not mandatory — the base lock has a built-in timer auto-lock. Add this if you need instant lock when the door closes; otherwise use the standard timer included with the base model.'},
   {id:'smart',name:'Smart Home Interface V3BL',price:118,img:'desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg',desc:'Dry-contact relay output for KNX, BMS, and custom smart home integration.'}
 ];
 
@@ -947,7 +961,8 @@ ADDONS.forEach(a => {
   el.className = 'addon rv';
   el.setAttribute('role','listitem');
   el.dataset.id = a.id;
-  el.innerHTML = `<div class="addon-img"><img src="${a.img}" alt="${a.name}" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name}</h4><p>${a.desc}</p></div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">−</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle ${a.name}" aria-pressed="false"></button></div></div>`;
+  const note = a.note ? `<p class="addon-note">${a.note}</p>` : '';
+  el.innerHTML = `<div class="addon-img"><img src="${a.img}" alt="${a.name}" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name}</h4><p>${a.desc}</p>${note}</div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">−</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle ${a.name}" aria-pressed="false"></button></div></div>`;
   el.addEventListener('click', () => setAddonQty(a.id, addonQty[a.id] ? 0 : 1));
   el.querySelector('.aqty-minus').addEventListener('click', e => { e.stopPropagation(); setAddonQty(a.id, (addonQty[a.id] || 1) - 1); });
   el.querySelector('.aqty-plus').addEventListener('click', e => { e.stopPropagation(); setAddonQty(a.id, (addonQty[a.id] || 0) + 1); });
@@ -1093,6 +1108,10 @@ document.querySelectorAll('.fb').forEach(el => {
   el.style.transform = 'translateY(40px)';
   fbObs.observe(el);
 });
+const wafEl = document.querySelector('.waf'), totalBarEl = document.getElementById('totalBar');
+if (wafEl && totalBarEl && window.matchMedia('(max-width:960px)').matches) {
+  new IntersectionObserver(([e]) => { wafEl.classList.toggle('waf-hide', e.isIntersecting); }, { threshold: 0.15 }).observe(totalBarEl);
+}
 </script>
 </body>
 </html>
