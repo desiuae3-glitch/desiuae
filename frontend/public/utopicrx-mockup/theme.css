@@ -401,6 +401,10 @@ h3 .desi-t {
   .ft {
     grid-template-columns: 1fr 1fr;
   }
+
+  .waf {
+    display: none !important;
+  }
 }
 
 @media (max-width: 640px) {
