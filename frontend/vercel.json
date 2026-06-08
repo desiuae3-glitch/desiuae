@@ -1,11 +1,39 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/utopicrx-mockup/index.html"
+    },
+    {
+      "source": "/returns-warranty",
+      "destination": "/utopicrx-mockup/returns-warranty.html"
+    },
+    {
+      "source": "/product-manuals",
+      "destination": "/utopicrx-mockup/product-manuals.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/utopicrx-mockup/products/index.html"
+    },
+    {
+      "source": "/products/(.*)",
+      "destination": "/utopicrx-mockup/products/$1"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/utopicrx/privacy.html"
+    },
+    {
+      "source": "/utopicrx-mockup",
+      "destination": "/utopicrx-mockup/index.html"
+    },
+    {
       "source": "/utopicrx",
       "destination": "/utopicrx/index.html"
     },
     {
-      "source": "/((?!utopicrx|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon|assets).*)",
+      "source": "/((?!utopicrx|utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy).*)",
       "destination": "/index.html"
     }
   ]

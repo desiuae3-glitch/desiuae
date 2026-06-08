@@ -1,70 +1,77 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy Policy – DESi Smart App</title>
+<title>Privacy Policy – DESi Smart App | Utopic RX UAE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --red:#E31E24;
-  --tx:#111;--tx2:#4A4845;--tx3:#999;
-  --bg:#fff;--brd:#E2E0D9;
+  --red:#e31e24;
+  --black:#0a0a0a;
+  --black2:#111;
+  --black3:#161616;
+  --brd:rgba(255,255,255,.1);
+  --tx:#fff;
+  --tx2:rgba(255,255,255,.62);
+  --tx3:rgba(255,255,255,.38);
   --f:'Plus Jakarta Sans',system-ui,sans-serif;
+  --m:'JetBrains Mono',monospace;
+  --rs:12px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--f);background:var(--bg);color:var(--tx);line-height:1.7;-webkit-font-smoothing:antialiased}
+body{font-family:var(--f);background:var(--black);color:var(--tx);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--red);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.container{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem}
+.pp-header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);padding:1.2rem 2rem;border-bottom:1px solid var(--brd);display:flex;align-items:center;justify-content:center}
+.pp-logo{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-decoration:none}
+.pp-logo-name{font-size:1.15rem;font-weight:900;color:#fff;letter-spacing:-.01em;line-height:1;text-transform:uppercase}
+.pp-logo-name span{color:var(--red);font-weight:900}
+.pp-logo-sub{font-size:.55rem;font-weight:600;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;line-height:1;margin-top:3px}
+.desi-t{color:var(--red);font-weight:900;letter-spacing:inherit;text-transform:none}
 
-h1{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;text-align:center;margin-bottom:2.5rem;letter-spacing:-.03em}
+.container{max-width:780px;margin:0 auto;padding:3rem 2rem 5rem}
 
-h2{font-size:1.15rem;font-weight:800;margin:2.5rem 0 .8rem;padding-left:1rem;border-left:3px solid var(--red);line-height:1.3}
+.policy-hero{padding-bottom:2rem;border-bottom:1px solid var(--brd);margin-bottom:2.5rem;text-align:center}
+.policy-hero .eyebrow{font-family:var(--m);font-size:.62rem;color:var(--red);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.75rem}
+h1{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.15}
+
+h2{font-size:1.1rem;font-weight:800;margin:2.25rem 0 .75rem;padding-left:1rem;border-left:3px solid var(--red);line-height:1.3;color:var(--tx)}
 
 p{color:var(--tx2);font-size:.92rem;margin-bottom:1rem;line-height:1.8}
 
 ul{margin:.8rem 0 1.2rem 1.5rem;color:var(--tx2);font-size:.92rem}
 ul li{margin-bottom:.4rem;line-height:1.7}
 
-.intro{color:var(--tx2);font-size:.95rem;margin-bottom:2rem;line-height:1.8}
+.intro{color:var(--tx2);font-size:.95rem;margin-top:1.25rem;line-height:1.8;max-width:680px;margin-left:auto;margin-right:auto}
 
-/* Purpose cards */
 .purpose-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0 1.5rem}
-.purpose-card{background:#f4f7ff;border-radius:12px;padding:1.4rem 1.5rem}
+.purpose-card{background:var(--black3);border:1px solid var(--brd);border-radius:var(--rs);padding:1.4rem 1.5rem}
 .purpose-card h4{font-size:.85rem;font-weight:700;color:var(--red);margin-bottom:.5rem}
 .purpose-card p{font-size:.82rem;color:var(--tx2);margin-bottom:0;line-height:1.65}
 
-/* Geofence card */
-.info-card{background:#f4f7ff;border-radius:12px;padding:1.5rem 1.8rem;margin:1.2rem 0 1.5rem}
-.info-card h4{font-size:.9rem;font-weight:700;margin-bottom:.6rem}
-.info-card p{font-size:.85rem;margin-bottom:.6rem}
+.info-card{background:var(--black3);border:1px solid var(--brd);border-radius:var(--rs);padding:1.5rem 1.8rem;margin:1.2rem 0 1.5rem}
+.info-card h4{font-size:.9rem;font-weight:700;margin-bottom:.6rem;color:var(--tx)}
+.info-card p{font-size:.85rem;margin-bottom:.6rem;color:var(--tx2)}
 .info-card .bold-note{font-weight:700;color:var(--tx)}
 .info-card .italic-note{font-style:italic;color:var(--red)}
 
-/* Contact card */
-.contact-card{background:#111;color:#fff;border-radius:12px;padding:1.5rem 1.8rem;margin-top:1.5rem}
-.contact-card h4{font-size:.9rem;font-weight:700;margin-bottom:.5rem}
-.contact-card p{color:rgba(255,255,255,.7);font-size:.82rem;margin-bottom:.3rem}
+.contact-card{background:var(--black2);border:1px solid var(--brd);border-radius:var(--rs);padding:1.5rem 1.8rem;margin-top:1.5rem}
+.contact-card h4{font-size:.9rem;font-weight:700;margin-bottom:.5rem;color:var(--tx)}
+.contact-card p{color:var(--tx2);font-size:.82rem;margin-bottom:.3rem}
 
-/* Header */
-.pp-header{background:#fff;padding:1.2rem 2rem;border-bottom:1px solid var(--brd);display:flex;align-items:center;justify-content:center}
-.pp-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none}
-.pp-logo-name{font-size:1.15rem;font-weight:900;color:var(--tx);letter-spacing:-.01em;line-height:1;text-transform:uppercase}
-.pp-logo-name span{color:var(--red);font-weight:900}
-.pp-logo-sub{font-size:.55rem;font-weight:600;color:#999;letter-spacing:.08em;text-transform:uppercase;line-height:1;margin-top:3px}
-
-/* Footer */
-.pp-footer{background:#111;padding:2rem 2rem;text-align:center;margin-top:3rem}
-.pp-footer .pp-logo-name{color:#fff}
-.pp-footer .pp-logo-name span{color:var(--red)}
-.pp-footer .pp-logo-sub{color:rgba(255,255,255,.4)}
-.pp-footer-copy{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:.8rem}
+.pp-footer{background:var(--black2);border-top:1px solid var(--brd);padding:2rem 2rem;text-align:center;margin-top:3rem}
+.pp-footer .pp-logo{display:inline-flex;align-items:center}
+.pp-footer-copy{font-size:.7rem;color:var(--tx3);margin-top:.8rem}
+.pp-footer-links{margin-top:.6rem;font-size:.72rem}
+.pp-footer-links a{color:var(--tx2);margin:0 .5rem}
+.pp-footer-links a:hover{color:#fff}
 
 @media(max-width:600px){
   .purpose-grid{grid-template-columns:1fr}
+  .container{padding:2rem 1.25rem 4rem}
 }
 </style>
 </head>
@@ -73,14 +80,16 @@ ul li{margin-bottom:.4rem;line-height:1.7}
 <header class="pp-header">
   <a href="index.html" class="pp-logo">
     <span class="pp-logo-name">UTOPIC <span>RX</span></span>
-    <span class="pp-logo-sub">DESI T&Uuml;RKIYE</span>
+    <span class="pp-logo-sub"><span class="desi-t">DESi</span> T&Uuml;RKIYE</span>
   </a>
 </header>
 
 <div class="container">
-  <h1>DESi Smart App – Privacy Policy</h1>
-
-  <p class="intro">This Privacy Policy governs the manner in which [DESi Smart] collects, uses, maintains, and discloses information collected from users (each, a "User") of the [DESi Smart] mobile application ("App").</p>
+  <div class="policy-hero">
+    <p class="eyebrow"><span class="desi-t">DESi</span> Smart App</p>
+    <h1>Privacy Policy</h1>
+    <p class="intro">This Privacy Policy governs the manner in which DESi Smart collects, uses, maintains, and discloses information collected from users (each, a "User") of the DESi Smart mobile application ("App").</p>
+  </div>
 
   <h2>1. Personal Identification Information</h2>
   <p>We may collect personal identification information from Users in various ways, including but not limited to when Users download and install the App, register an account, fill out a form within the App, or interact with the App's features and services. The information we may collect includes, but is not limited to:</p>
@@ -147,15 +156,21 @@ ul li{margin-bottom:.4rem;line-height:1.7}
     <h4>Desi Alarm ve Güvenlik Sistemleri San. Ve Tic. A.Ş.</h4>
     <p>Orta mh. Topkapı Maltepe Cd. Anadolu Sk. No:1 Bayrampaşa / İstanbul / Türkiye</p>
     <p>Tel: +902125017272</p>
+    <p style="margin-top:.75rem">UAE distributor: <a href="mailto:support@utopicrx.com">support@utopicrx.com</a> · <a href="https://wa.me/971526187729">WhatsApp</a></p>
   </div>
 </div>
 
 <footer class="pp-footer">
-  <a href="index.html" class="pp-logo" style="display:inline-flex">
+  <a href="index.html" class="pp-logo">
     <span class="pp-logo-name">UTOPIC <span>RX</span></span>
-    <span class="pp-logo-sub">DESI T&Uuml;RKIYE</span>
+    <span class="pp-logo-sub"><span class="desi-t">DESi</span> T&Uuml;RKIYE</span>
   </a>
-  <p class="pp-footer-copy">&copy; 2026 Utopic RX &mdash; DESi Authorized Distributor UAE &amp; GCC</p>
+  <p class="pp-footer-copy">&copy; 2026 Utopic RX &mdash; DESi Turkiye</p>
+  <p class="pp-footer-links">
+    <a href="returns-warranty.html">Returns &amp; Warranty</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="index.html">Home</a>
+  </p>
 </footer>
 
 </body>

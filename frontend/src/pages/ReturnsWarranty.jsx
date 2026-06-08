@@ -26,7 +26,7 @@ const ReturnsWarranty = () => {
         </h1>
         <p className="text-neutral-500 text-sm mb-1">
           {t({ en: "Effective: [insert date]", ar: "ساري: [أدخل التاريخ]" })}{" "}
-          &nbsp;·&nbsp; desilocks.com &nbsp;·&nbsp; v1.9
+          &nbsp;·&nbsp; utopicrx.com &nbsp;·&nbsp; v1.9
         </p>
         <hr className="border-[#E60012] mb-6" />
         <p className="text-neutral-600 leading-relaxed mb-10">
@@ -93,8 +93,8 @@ const ReturnsWarranty = () => {
                     },
                     window: { en: "7 days", ar: "7 أيام" },
                     cost: {
-                      en: "AED 150 deducted from refund",
-                      ar: "خصم 150 درهم من المبلغ المسترد",
+                      en: "AED 100 restocking fee deducted",
+                      ar: "خصم 100 درهم رسوم إعادة التخزين",
                     },
                   },
                   {
@@ -159,10 +159,10 @@ const ReturnsWarranty = () => {
                   <>
                     Email{" "}
                     <a
-                      href="mailto:support@desilocks.com"
+                      href="mailto:support@utopicrx.com"
                       className="text-[#E60012] hover:underline"
                     >
-                      support@desilocks.com
+                      support@utopicrx.com
                     </a>{" "}
                     within 7 days of delivery.
                   </>
@@ -171,10 +171,10 @@ const ReturnsWarranty = () => {
                   <>
                     أرسل بريدًا إلكترونيًا إلى{" "}
                     <a
-                      href="mailto:support@desilocks.com"
+                      href="mailto:support@utopicrx.com"
                       className="text-[#E60012] hover:underline"
                     >
-                      support@desilocks.com
+                      support@utopicrx.com
                     </a>{" "}
                     خلال 7 أيام من التسليم.
                   </>
@@ -281,22 +281,6 @@ const ReturnsWarranty = () => {
                 ar: "رسوم إعادة التخزين — 100 درهم. الفحص وإعادة الضبط وإعادة التعبئة.",
               })}
             </li>
-            <li className="flex gap-2">
-              <span className="text-neutral-400 mt-0.5">·</span>
-              {t({
-                en: "Return collection fee — AED 50. Courier collection from your address.",
-                ar: "رسوم استلام الإرجاع — 50 درهم. الاستلام من عنوانك.",
-              })}
-            </li>
-            <li className="flex gap-2">
-              <span className="text-neutral-400 mt-0.5">·</span>
-              <span className="font-semibold">
-                {t({
-                  en: "Total deduction — AED 150.",
-                  ar: "إجمالي الخصم — 150 درهم.",
-                })}
-              </span>
-            </li>
           </ul>
           <p className="text-neutral-600 text-sm">
             {t({
@@ -386,8 +370,8 @@ const ReturnsWarranty = () => {
                   {
                     step: 1,
                     action: {
-                      en: "Email support@desilocks.com with order number, reason, and photos/video.",
-                      ar: "أرسل بريدًا إلكترونيًا إلى support@desilocks.com مع رقم الطلب والسبب والصور/الفيديو.",
+                      en: "Email support@utopicrx.com with order number, reason, and photos/video.",
+                      ar: "أرسل بريدًا إلكترونيًا إلى support@utopicrx.com مع رقم الطلب والسبب والصور/الفيديو.",
                     },
                     timeline: {
                       en: "Within 7 days of delivery",
@@ -501,8 +485,8 @@ const ReturnsWarranty = () => {
                 ar: "مستشعر البصمة ولوحة المفاتيح وقارئ الوجه/الراحة — 24 شهرًا من التسليم.",
               },
               {
-                en: "Built-in rechargeable battery (main lock unit) — 12 months from delivery, against manufacturing defect or capacity loss exceeding 30% of rated capacity.",
-                ar: "البطارية القابلة لإعادة الشحن المدمجة — 12 شهرًا من التسليم، ضد عيب التصنيع أو فقدان السعة بأكثر من 30%.",
+                en: "Built-in rechargeable battery (main lock unit) — 24 months from delivery, against manufacturing defect or capacity loss exceeding 30% of rated capacity.",
+                ar: "البطارية القابلة لإعادة الشحن المدمجة — 24 شهرًا من التسليم، ضد عيب التصنيع أو فقدان السعة بأكثر من 30%.",
               },
               {
                 en: "Alkaline batteries supplied with wireless readers — not warranted. The batteries in the box are first-use only; the customer is responsible for replacement when flat.",
@@ -558,8 +542,8 @@ const ReturnsWarranty = () => {
           </ul>
           <p className="text-neutral-600 text-sm">
             {t({
-              en: "To raise a warranty claim, email support@desilocks.com with your order number, a description of the fault, and photographs or video.",
-              ar: "لتقديم مطالبة ضمان، أرسل بريدًا إلكترونيًا إلى support@desilocks.com مع رقم طلبك ووصف العيب والصور أو الفيديو.",
+              en: "To raise a warranty claim, email support@utopicrx.com with your order number, a description of the fault, and photographs or video.",
+              ar: "لتقديم مطالبة ضمان، أرسل بريدًا إلكترونيًا إلى support@utopicrx.com مع رقم طلبك ووصف العيب والصور أو الفيديو.",
             })}
           </p>
         </section>
@@ -617,10 +601,10 @@ const ReturnsWarranty = () => {
               </span>{" "}
               &nbsp;{" "}
               <a
-                href="mailto:support@desilocks.com"
+                href="mailto:support@utopicrx.com"
                 className="text-[#E60012] hover:underline"
               >
-                support@desilocks.com
+                support@utopicrx.com
               </a>
             </p>
             <p>
@@ -653,7 +637,7 @@ const ReturnsWarranty = () => {
         </p>
 
         <div className="border-t border-neutral-200 pt-6 text-center text-neutral-400 text-xs">
-          © DESi Türkiye &nbsp;·&nbsp; desilocks.com &nbsp;·&nbsp;{" "}
+          © DESi Türkiye &nbsp;·&nbsp; utopicrx.com &nbsp;·&nbsp;{" "}
           {t({ en: "Returns & Warranty v1.9", ar: "الإرجاع والضمان v1.9" })}
         </div>
       </main>

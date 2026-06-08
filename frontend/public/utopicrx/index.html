@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,10 +7,10 @@
 <meta name="description" content="Patented euro-profile smart lock. Installs in under 3 minutes — no drilling, no damage. App, fingerprint, face, voice. Free delivery UAE.">
 <meta property="og:title" content="Utopic RX — Smart Lock for Any Door, 3 Minutes">
 <meta property="og:description" content="No drilling. No damage. App, fingerprint, face recognition, Alexa. UAE & GCC.">
-<meta property="og:image" content="https://desilocks.com/utopicrx/desi-assets/products/desi-utopic-rx-smart-lock-europrofile-smart-locks-169-67-K.png">
-<meta property="og:url" content="https://desilocks.com/utopicrx">
+<meta property="og:image" content="https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-rx-smart-lock-europrofile-smart-locks-169-67-K.png">
+<meta property="og:url" content="https://utopicrx.com">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://desilocks.com/utopicrx">
+<link rel="canonical" href="https://utopicrx.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Utopic RX Smart Lock","brand":{"@type":"Brand","name":"DESi"},"offers":{"@type":"Offer","priceCurrency":"AED","price":"699","availability":"https://schema.org/InStock","areaServed":"AE"}}</script>
 <style>
@@ -69,6 +69,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .hero-h1 em{font-style:normal;color:var(--red)}
 .hero-h1 .outline{-webkit-text-stroke:3px var(--red);color:transparent;font-size:1.2em;letter-spacing:-.02em}
 .hero-tag{font-size:.95rem;color:var(--tx2);max-width:460px;margin:0 0 2rem;line-height:1.75;text-align:left}
+.hero-foot{font-size:.68rem;color:var(--tx3);max-width:460px;margin:-1.25rem 0 1.5rem;line-height:1.45;text-align:left}
 .hero-ctas{display:flex;justify-content:flex-start;gap:.8rem;flex-wrap:nowrap;margin-bottom:2rem}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:#fff;padding:.88rem 2rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;transition:all .25s;cursor:pointer}
 .btn-primary:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 8px 28px rgba(227,30,36,.3)}
@@ -154,6 +155,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 /* STEPS */
 .steps{background:#fff;color:var(--tx);padding:5rem 2rem}
 .steps-title{text-align:center;margin-bottom:3rem}
+.steps-title .outline{-webkit-text-stroke:2px var(--red);color:transparent}
 .steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .step{background:var(--warm);border:1px solid var(--brd);border-radius:var(--r);padding:1.8rem 1.5rem;text-align:center;transition:all .3s}
 .step:hover{background:#fff;transform:translateY(-4px);box-shadow:var(--s2)}
@@ -185,6 +187,11 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .cb-name{font-size:1.2rem;font-weight:800;margin-bottom:.25rem}
 .cb-desc{font-size:.8rem;color:var(--tx2);line-height:1.65;margin-bottom:1rem}
 .price-row{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.6rem}
+.qty-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+.qty-label{font-size:.72rem;font-weight:700;color:var(--tx2);letter-spacing:.04em;text-transform:uppercase}
+.qty-btn{width:28px;height:28px;border-radius:6px;border:1px solid var(--brd);background:var(--sub);color:var(--tx);font-size:1rem;cursor:pointer;line-height:1;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.qty-btn:hover{background:var(--warm);border-color:var(--brd2)}
+.qty-val{font-size:1rem;font-weight:800;min-width:20px;text-align:center;color:var(--tx)}
 .cb-price{font-size:1.65rem;font-weight:800;color:var(--red)}
 .cb-price .cur{font-size:.85rem;color:var(--tx3);font-weight:500}
 .price-note{font-size:.68rem;color:var(--tx3);background:var(--sub);padding:.2rem .5rem;border-radius:4px;font-weight:600}
@@ -199,9 +206,15 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .addon-img img{max-width:70%;max-height:70%;object-fit:contain}
 .addon-info h4{font-size:.82rem;font-weight:700;margin-bottom:.2rem}
 .addon-info p{font-size:.68rem;color:var(--tx2);line-height:1.45}
-.addon-right{text-align:right;min-width:96px}
+.addon-right{text-align:right;min-width:108px}
 .ap{font-size:.96rem;font-weight:800;margin-bottom:.35rem}
 .ap .cur{font-size:.7rem;color:var(--tx3);font-weight:500}
+.addon-actions{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem}
+.addon-qty{display:flex;align-items:center;gap:.3rem}
+.addon-qty[hidden]{display:none!important}
+.aqty-btn{width:22px;height:22px;border-radius:5px;border:1px solid var(--brd);background:var(--sub);color:var(--tx);font-size:.85rem;cursor:pointer;line-height:1;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.aqty-btn:hover{background:var(--warm);border-color:var(--brd2)}
+.aqty-val{font-size:.72rem;font-weight:800;min-width:14px;text-align:center;color:var(--tx)}
 .atog{width:46px;height:26px;border-radius:13px;border:none;background:var(--brd);position:relative;transition:background .25s;display:block;cursor:pointer}
 .atog::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.2)}
 .addon.sel .atog{background:var(--red)}
@@ -328,6 +341,7 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
 .ft-logo-name{font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.1;text-transform:uppercase}
 .ft-logo-name span{color:var(--red);font-weight:900}
 .ft-logo-sub{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;line-height:1;margin-top:3px}
+.desi-t{color:var(--red);font-weight:900;letter-spacing:inherit;text-transform:none}
 .fbot{max-width:1240px;margin:0 auto;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.66rem;color:rgba(255,255,255,.2)}
 .fbot a{color:rgba(255,255,255,.3)}.fbot a:hover{color:rgba(255,255,255,.6)}
 
@@ -405,7 +419,7 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
   <div class="nv">
     <a href="#" class="n-logo">
       <span class="n-logo-name">UTOPIC <span>RX</span></span>
-      <span class="n-logo-sub">DESI T&Uuml;RKIYE</span>
+      <span class="n-logo-sub"><span class="desi-t">DESi</span> T&Uuml;RKIYE</span>
     </a>
     <div class="n-links" id="nL">
       <a href="#" class="active">Home</a>
@@ -437,8 +451,9 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
   <div class="hero-inner">
     <!-- LEFT: Bold headline + CTAs -->
     <div class="hero-left">
-      <h1 class="hero-h1 rv">Make Your<br>Existing Door<br><em>Smart</em> in<br><span class="outline">90 Seconds.</span></h1>
+      <h1 class="hero-h1 rv">Make Your<br>Existing Door<br><em>Smart</em> in<br><span class="outline">Under 5 Minutes*</span></h1>
       <p class="hero-tag rv">No cutout. No drilling. No cylinder change. One lock that snaps over your existing key — with every feature of a high-end smart lock.</p>
+      <p class="hero-foot rv">* Typical DIY install on a standard euro-profile cylinder door.</p>
       <div class="hero-ctas rv">
         <a href="#configure" class="btn-primary">Preorder Now &rarr;</a>
         <a href="#videos" class="btn-ghost">
@@ -490,8 +505,8 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
 <section class="steps" id="how-it-works">
   <div class="inner">
     <div class="steps-title rv">
-      <h2 style="font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.02em">Smart in 3 Simple Steps</h2>
-      <p style="color:rgba(255,255,255,.45);font-size:.86rem;margin-top:.4rem">No locksmith. No drilling. Just you and 3 minutes.</p>
+      <h2 style="font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.02em">Smart in <span class="outline">5 Minutes*</span></h2>
+      <p style="color:rgba(255,255,255,.45);font-size:.86rem;margin-top:.4rem">3 simple steps. No locksmith needed.</p>
     </div>
     <div class="steps-row">
       <div class="step rv">
@@ -499,6 +514,7 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
         <div class="step-img"><img src="desi-assets/gifs/rxe-install.gif" alt="Mount on cylinder and tighten" loading="lazy"></div>
         <h3>Mount &amp; Tighten</h3>
         <p>Slip onto your existing cylinder, tighten 4 screws or use 3M adhesive. No holes drilled. Fully reversible.</p>
+        <p style="margin-top:.7rem;font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.5">* The base lock works on its own with the mobile app — or add wireless readers and remote accessories.</p>
       </div>
       <div class="step rv">
         <div class="step-n">2</div>
@@ -556,6 +572,12 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
         <div class="config-base-body">
           <div class="cb-name">Utopic RX Smart Lock</div>
           <div class="cb-desc">Euro-profile smart lock with BLE 5.0 app control, 37 user profiles, time-based access, auto-lock, silent mode, and physical key backup. Nickel or Black finish.</div>
+          <div class="qty-row">
+            <span class="qty-label">Qty</span>
+            <button id="qtyMinus" type="button" class="qty-btn" aria-label="Decrease quantity">−</button>
+            <span id="qtyVal" class="qty-val">1</span>
+            <button id="qtyPlus" type="button" class="qty-btn" aria-label="Increase quantity">+</button>
+          </div>
           <div class="price-row">
             <div class="cb-price">699 <span class="cur">AED</span></div>
             <span class="price-note">incl. VAT</span>
@@ -774,7 +796,7 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
       <div class="qt-list">
         <div class="qt"><div class="qt-ico">📦</div>Free delivery across UAE &amp; GCC</div>
         <div class="qt"><div class="qt-ico">🔧</div>Installation support available</div>
-        <div class="qt"><div class="qt-ico">🛡️</div>Official DESi authorized distributor</div>
+        <div class="qt"><div class="qt-ico">🛡️</div>2-year manufacturer warranty</div>
         <div class="qt"><div class="qt-ico">↩️</div>7-day returns on unopened units</div>
         <div class="qt"><div class="qt-ico">📞</div>WhatsApp support Mon–Sat 9am–7pm</div>
       </div>
@@ -823,9 +845,9 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
     <div class="fl">
       <div class="ft-logo">
         <span class="ft-logo-name">UTOPIC <span>RX</span></span>
-        <span class="ft-logo-sub">DESI T&Uuml;RKIYE</span>
+        <span class="ft-logo-sub"><span class="desi-t">DESi</span> T&Uuml;RKIYE</span>
       </div>
-      <p>Patented euro-profile smart lock. DIY install, no damage, fully removable. Authorized distributor UAE &amp; GCC.</p>
+      <p>Patented euro-profile smart lock. DIY install, no damage, fully removable.</p>
       <div class="fl-apps">
         <a href="https://apps.apple.com" target="_blank" rel="noopener" class="app-btn">App Store</a>
         <a href="https://play.google.com" target="_blank" rel="noopener" class="app-btn">Google Play</a>
@@ -842,21 +864,22 @@ footer{background:#0d0d0d;color:#fff;padding:4.5rem 2rem 1.5rem}
     <div class="fcc">
       <h4>Support</h4>
       <a href="#faq">FAQ</a>
-      <a href="#">Product Manual</a>
+      <a href="returns-warranty.html">Returns &amp; Warranty</a>
+      <a href="product-manuals.html">Product Manuals</a>
       <a href="https://www.youtube.com/user/desialarmsecurity" target="_blank" rel="noopener">YouTube</a>
       <a href="https://www.instagram.com/desismartlock/" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="fcc">
       <h4>Contact</h4>
-      <a href="mailto:info@desilocks.com">info@desilocks.com</a>
+      <a href="mailto:support@utopicrx.com">support@utopicrx.com</a>
       <a href="https://wa.me/971526187729" target="_blank" rel="noopener">WhatsApp</a>
       <a href="https://maps.google.com/?q=Dubai+UAE" target="_blank" rel="noopener">Dubai, UAE</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="fbot">
-    <span>&copy; 2026 Utopic RX &mdash; DESi Authorized Distributor UAE &amp; GCC</span>
-    <span><a href="#">Returns &amp; Warranty</a></span>
+    <span>&copy; 2026 Utopic RX &mdash; DESi Turkiye</span>
+    <span><a href="returns-warranty.html">Returns &amp; Warranty</a></span>
   </div>
 </footer>
 
@@ -887,34 +910,78 @@ const FAQS = [
   ['Can I share with Airbnb guests?','Yes. Send time-limited digital e-keys from the DESi Smart app. Works offline. Revoke any user instantly.'],
   ['Battery life?','~6 months per charge via USB-C. Physical key always works even with a completely dead battery.'],
   ['Can I take it when I move?','Yes. Unscrew, take it, no trace left. Ideal for leases and short-term rentals.'],
-  ['What warranty do you offer?','1-year manufacturer warranty. Contact us for extended warranty options. Official DESi authorized distributor UAE & GCC.']
+  ['What warranty do you offer?','1-year manufacturer warranty. Contact us for extended warranty options.']
 ];
 
 // Render add-ons
 const addonsEl = document.getElementById('addons');
-const selected = new Set();
+const addonQty = {};
+function formatAp(a, q) {
+  return q > 1 ? `+${a.price * q} <span class="cur">AED</span>` : `+${a.price} <span class="cur">AED</span>`;
+}
+function setAddonQty(id, q) {
+  const el = document.querySelector(`.addon[data-id="${id}"]`);
+  const a = ADDONS.find(x => x.id === id);
+  if (!el || !a) return;
+  const qtyEl = el.querySelector('.addon-qty');
+  const ap = el.querySelector('.ap');
+  const btn = el.querySelector('.atog');
+  if (q <= 0) {
+    delete addonQty[id];
+    el.classList.remove('sel');
+    btn.setAttribute('aria-pressed', 'false');
+    qtyEl.hidden = true;
+    ap.innerHTML = `+${a.price} <span class="cur">AED</span>`;
+  } else {
+    addonQty[id] = q;
+    el.classList.add('sel');
+    btn.setAttribute('aria-pressed', 'true');
+    qtyEl.hidden = false;
+    el.querySelector('.aqty-val').textContent = q;
+    ap.innerHTML = formatAp(a, q);
+  }
+  updateTotal();
+}
 ADDONS.forEach(a => {
   const el = document.createElement('div');
   el.className = 'addon rv';
   el.setAttribute('role','listitem');
   el.dataset.id = a.id;
-  el.innerHTML = `<div class="addon-img"><img src="${a.img}" alt="${a.name}" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name}</h4><p>${a.desc}</p></div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><button class="atog" aria-label="Toggle ${a.name}" aria-pressed="false"></button></div>`;
-  el.addEventListener('click', () => {
-    const btn = el.querySelector('.atog');
-    if (selected.has(a.id)) { selected.delete(a.id); el.classList.remove('sel'); btn.setAttribute('aria-pressed','false'); }
-    else { selected.add(a.id); el.classList.add('sel'); btn.setAttribute('aria-pressed','true'); }
-    updateTotal();
-  });
+  el.innerHTML = `<div class="addon-img"><img src="${a.img}" alt="${a.name}" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name}</h4><p>${a.desc}</p></div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">−</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle ${a.name}" aria-pressed="false"></button></div></div>`;
+  el.addEventListener('click', () => setAddonQty(a.id, addonQty[a.id] ? 0 : 1));
+  el.querySelector('.aqty-minus').addEventListener('click', e => { e.stopPropagation(); setAddonQty(a.id, (addonQty[a.id] || 1) - 1); });
+  el.querySelector('.aqty-plus').addEventListener('click', e => { e.stopPropagation(); setAddonQty(a.id, (addonQty[a.id] || 0) + 1); });
+  el.querySelector('.atog').addEventListener('click', e => { e.stopPropagation(); setAddonQty(a.id, addonQty[a.id] ? 0 : 1); });
   addonsEl.appendChild(el);
 });
 
+let qty = 1;
+document.getElementById('qtyMinus').addEventListener('click', () => {
+  if (qty > 1) { qty--; document.getElementById('qtyVal').textContent = qty; updateTotal(); }
+});
+document.getElementById('qtyPlus').addEventListener('click', () => {
+  qty++; document.getElementById('qtyVal').textContent = qty; updateTotal();
+});
+
 function updateTotal() {
-  let total = BASE;
-  const items = ['Utopic RX Lock'];
-  selected.forEach(id => { const a = ADDONS.find(x=>x.id===id); if(a){total+=a.price;items.push(a.name);} });
+  let addonTotal = 0;
+  let addonUnits = 0;
+  const addonLines = [];
+  Object.entries(addonQty).forEach(([id, q]) => {
+    const a = ADDONS.find(x => x.id === id);
+    if (a && q > 0) {
+      const line = a.price * q;
+      addonTotal += line;
+      addonUnits += q;
+      addonLines.push(`  + ${a.name} × ${q} (${line} AED)`);
+    }
+  });
+  const lockTotal = BASE * qty;
+  const total = lockTotal + addonTotal;
   document.getElementById('totalPrice').innerHTML = `${total} <span class="cur">AED</span>`;
-  document.getElementById('totalItems').textContent = items.length===1?'Base lock only':`${items.length} items selected`;
-  const msg = encodeURIComponent(`Hi, I'd like to order:\n\n${items.map((x,i)=>i===0?`• ${x} (${BASE} AED)`:`• + ${x}`).join('\n')}\n\nTotal: ${total} AED`);
+  document.getElementById('totalItems').textContent = addonUnits === 0 ? `${qty}× base lock` : `${qty}× lock + ${addonUnits} accessory item${addonUnits > 1 ? 's' : ''}`;
+  const lockLine = `• Utopic RX Lock × ${qty} (${lockTotal} AED)`;
+  const msg = encodeURIComponent(`Hi, I'd like to order:\n\n${lockLine}${addonLines.length ? '\n' + addonLines.join('\n') : ''}\n\nTotal: ${total} AED`);
   document.getElementById('waBtn').href = `https://wa.me/${WA}?text=${msg}`;
 }
 updateTotal();

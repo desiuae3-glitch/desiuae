@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Utopic RX System | DESi UAE Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="product.css">
+<style>
+.catalog-hero{padding:2rem 0;text-align:center;max-width:640px;margin:0 auto}
+.catalog-hero .eyebrow{font-family:var(--m);font-size:.62rem;color:var(--red);letter-spacing:.2em;text-transform:uppercase}
+.catalog-hero h1{font-size:clamp(2rem,4vw,2.75rem);font-weight:900;letter-spacing:-.03em;color:#fff}
+.catalog-hero p{color:var(--tx2);margin-top:.75rem}
+.catalog-section{padding:2.5rem 0 1rem}
+.catalog-section h2{font-size:1.1rem;font-weight:800;margin-bottom:.35rem;color:#fff}
+.catalog-section .sub{font-size:.82rem;color:var(--tx3);margin-bottom:1.25rem}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.p-card{border:1px solid var(--brd);border-radius:var(--r);background:var(--black3);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;color:inherit}
+.p-card:hover{transform:translateY(-4px);box-shadow:var(--s2);border-color:var(--brd2)}
+.p-card .img{background:var(--black2);padding:1.5rem;display:grid;place-items:center;min-height:160px;position:relative}
+.p-card .img img{max-height:110px;object-fit:contain}
+.p-card .flag{position:absolute;top:.65rem;left:.65rem;font-size:.55rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .45rem;border-radius:999px}
+.p-card .flag.core{background:var(--red);color:#fff}
+.p-card .flag.rx{background:rgba(74,222,128,.12);color:var(--grn);border:1px solid rgba(74,222,128,.25)}
+.p-card .flag.other{background:var(--warn-bg);color:var(--warn);border:1px solid rgba(251,191,36,.3)}
+.p-card .body{padding:1.15rem}
+.p-card h3{font-size:.9rem;font-weight:800;line-height:1.35;min-height:2.5rem;color:#fff}
+.p-card .desc{font-size:.75rem;color:var(--tx2);margin:.5rem 0 .75rem;line-height:1.5}
+.p-card .price{font-weight:900;color:var(--red);font-size:1rem}
+.p-card .link{display:inline-flex;margin-top:.75rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--red)}
+@media(max-width:900px){.product-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="mockup-bar">Mockup - <a href="../index.html">Home</a> | <a href="index.html">Products</a> | <a href="https://utopicrx.com">Live site</a></div>
+<div class="ann"><strong>Free installation</strong> in Dubai &amp; Sharjah · <strong>Cash on Delivery</strong> · Free UAE delivery — for limited period… <a href="../index.html#configure">Preorder now</a></div>
+<nav class="nav" id="nav"><div class="nv">
+  <a href="../index.html" class="n-logo">
+    <span class="n-logo-name">UTOPIC <span>RX</span></span>
+    <span class="n-logo-sub"><span class="desi-t">DESi</span> TURKIYE</span>
+  </a>
+  <div class="n-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#how-it-works">Install</a>
+    <a href="index.html" class="active">Products</a>
+    <a href="../index.html#configure">Build</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../index.html#configure" class="n-cta">Preorder</a>
+  </div>
+  <button class="mob-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+</div></nav>
+<div class="mob-nav" id="mobNav">
+  <a href="../index.html">Home</a>
+  <a href="../index.html#how-it-works">How It Works</a>
+  <a href="index.html">Products</a>
+  <a href="../index.html#configure">Configure</a>
+  <a href="../index.html#faq">FAQ</a>
+  <a href="../index.html#configure" class="m-cta">Preorder</a>
+</div>
+
+<div class="container">
+  <div class="catalog-hero">
+    <p class="eyebrow">Utopic RX Ecosystem</p>
+    <h1>Every product. Full details.</h1>
+    <p>Individual pages from the official DESi catalog, localized for UAE with AED pricing and WhatsApp ordering.</p>
+  </div>
+
+  <section class="catalog-section">
+    <h2>Core lock</h2>
+    <p class="sub">Start here ? everything else plugs into the Utopic RX base lock.</p>
+    <div class="product-grid">
+      <a class="p-card" href="utopic-rx.html">
+        <div class="img"><span class="flag core">Flagship</span><img src="../../utopicrx/desi-assets/products/desi-utopic-rx-smart-lock-europrofile-smart-locks-169-67-K.png" alt="Utopic RX"></div>
+        <div class="body">
+          <h3>Utopic RX Smart Lock</h3>
+          <p class="desc">Euro-profile smart lock. 3-min install, 37 users, 6-month battery, patented key-through design.</p>
+          <div class="price">699 AED <span style="font-size:.75rem;color:var(--tx3)">� 190 EUR</span></div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="catalog-section">
+    <h2>RX / RXe accessories</h2>
+    <p class="sub">Compatible with Utopic RX and RXe. Add during configuration or read full specs first.</p>
+    <div class="product-grid">
+      <a class="p-card" href="fingerprint-reader.html">
+        <div class="img"><span class="flag rx">RX / RXe</span><img src="../../utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-fingerprint-reader-and-wireless-touch-keypad-v3-accessories-344-74-O.png" alt="Fingerprint Reader V3"></div>
+        <div class="body">
+          <h3>Fingerprint Reader + Touch Keypad V3</h3>
+          <p class="desc">500 DPI sensor, 100 fingerprints, PIN backup. Wireless wall mount. Black finish.</p>
+          <div class="price">602 AED · 164 EUR</div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+      <a class="p-card" href="face-reader.html">
+        <div class="img"><span class="flag rx">RX / RXe</span><img src="../../utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-face-reader-and-wireless-touch-keypad-accessories-283-81-O.png" alt="Face reader"></div>
+        <div class="body">
+          <h3>Face Recognition + Touch Keypad</h3>
+          <p class="desc">3D face ID, 100 faces, anti-spoofing, PIN backup. Wireless wall mount.</p>
+          <div class="price">602 AED � 164 EUR</div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+      <a class="p-card" href="wifi-bridge.html">
+        <div class="img"><span class="flag rx">RX series</span><img src="../../utopicrx/desi-assets/products/desi-utopic-series-compatible-wifi-bridge-hub-accessories-338-45-O.png" alt="WiFi Bridge"></div>
+        <div class="body">
+          <h3>WiFi Bridge Hub</h3>
+          <p class="desc">Remote lock/unlock, Alexa, Google Home, Home Assistant. Manages up to 4 locks.</p>
+          <div class="price">228 AED � 62 EUR</div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+      <a class="p-card" href="smart-home-interface.html">
+        <div class="img"><span class="flag rx">RX / RXe only</span><img src="../../utopicrx/desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg" alt="Smart Home Interface"></div>
+        <div class="body">
+          <h3>Smart Home Interface V3BL</h3>
+          <p class="desc">Dry-contact relay for KNX, BMS, and custom automation scenes.</p>
+          <div class="price">118 AED � 32 EUR</div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+      <a class="p-card" href="remote-controller.html">
+        <div class="img"><span class="flag rx">RX / RXe</span><img src="../../utopicrx/desi-assets/products/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg" alt="Remote Controller V2BL"></div>
+        <div class="body">
+          <h3>Wireless Remote Controller V2BL</h3>
+          <p class="desc">Pocket remote ? 50m range, rolling code AES encryption, 3-year CR2032 battery.</p>
+          <div class="price">81 AED � 22 EUR</div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+      <a class="p-card" href="door-sensor.html">
+        <div class="img"><span class="flag rx">RX / RXe</span><img src="../../utopicrx/desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg" alt="Door Sensor + Auto Lock"></div>
+        <div class="body">
+          <h3>Door Sensor + Auto Lock V3BL</h3>
+          <p class="desc">Detects door close and triggers auto-lock wirelessly. Adhesive mount.</p>
+          <div class="price">81 AED · 22 EUR</div>
+          <span class="link">View details</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="catalog-section" style="padding-bottom:3rem">
+    <h2>Documentation</h2>
+    <p class="sub">Download official user manuals for every product in the Utopic RX ecosystem.</p>
+    <p style="margin-top:.5rem"><a href="../product-manuals.html" style="color:var(--red);font-weight:700;font-size:.85rem">View all product manuals →</a></p>
+  </section>
+</div>
+
+<footer>
+  <div class="ft">
+    <div class="fl">
+      <div class="ft-logo">
+        <span class="ft-logo-name">UTOPIC <span>RX</span></span>
+        <span class="ft-logo-sub"><span class="desi-t">DESi</span> TURKIYE</span>
+      </div>
+      <p>Patented euro-profile smart lock. DIY install, no damage, fully removable.</p>
+    </div>
+    <div class="fcc">
+      <h4>Product</h4>
+      <a href="../index.html#how-it-works">How It Works</a>
+      <a href="../index.html#configure">Build Yours</a>
+      <a href="utopic-rx.html">Utopic RX Lock</a>
+      <a href="face-reader.html">Face Reader</a>
+    </div>
+    <div class="fcc">
+      <h4>Support</h4>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../returns-warranty.html">Returns &amp; Warranty</a>
+      <a href="../product-manuals.html">Product Manuals</a>
+      <a href="mailto:support@utopicrx.com">support@utopicrx.com</a>
+      <a href="https://wa.me/971526187729">WhatsApp</a>
+    </div>
+    <div class="fcc">
+      <h4>Explore</h4>
+      <a href="../index.html">Home</a>
+      <a href="https://utopicrx.com">Live Site</a>
+      <a href="https://en.desi.com.tr/" target="_blank" rel="noopener">DESi Catalog</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>&copy; 2026 Utopic RX &mdash; DESi Turkiye</span>
+    <span><a href="mailto:support@utopicrx.com">support@utopicrx.com</a></span>
+  </div>
+</footer>
+<script src="../nav.js"></script>
+<a href="https://wa.me/971526187729?text=Hi%2C%20I%27d%20like%20help%20choosing%20Utopic%20RX%20products." class="waf" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
+</body>
+</html>
