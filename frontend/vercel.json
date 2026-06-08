@@ -43,6 +43,14 @@
       "destination": "/utopicrx-mockup/products/$1"
     },
     {
+      "source": "/theme.css",
+      "destination": "/utopicrx-mockup/theme.css"
+    },
+    {
+      "source": "/nav.js",
+      "destination": "/utopicrx-mockup/nav.js"
+    },
+    {
       "source": "/privacy",
       "destination": "/utopicrx/privacy.html"
     },
