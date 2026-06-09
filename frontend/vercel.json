@@ -49,6 +49,14 @@
   ],
   "rewrites": [
     {
+      "source": "/sitemap.xml",
+      "destination": "/utopicrx-mockup/sitemap.xml"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/utopicrx-mockup/robots.txt"
+    },
+    {
       "source": "/",
       "destination": "/utopicrx-mockup/index.html"
     },

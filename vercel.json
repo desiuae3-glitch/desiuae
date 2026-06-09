@@ -45,6 +45,8 @@
     }
   ],
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/utopicrx-mockup/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/utopicrx-mockup/robots.txt" },
     { "source": "/", "destination": "/utopicrx-mockup/index.html" },
     { "source": "/returns-warranty.html", "destination": "/utopicrx-mockup/returns-warranty.html" },
     { "source": "/product-manuals.html", "destination": "/utopicrx-mockup/product-manuals.html" },
