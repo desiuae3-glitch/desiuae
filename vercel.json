@@ -25,13 +25,6 @@
       ]
     },
     {
-      "source": "/utopicrx-mockup/(?!sitemap\\.xml|robots\\.txt)(.*)",
-      "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/utopicrx-mockup/sitemap.xml",
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
@@ -76,11 +69,12 @@
     { "source": "/products/(.*)", "destination": "/utopicrx-mockup/products/$1" },
     { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
     { "source": "/nav.js", "destination": "/utopicrx-mockup/nav.js" },
+    { "source": "/content.css", "destination": "/utopicrx-mockup/content.css" },
     { "source": "/privacy", "destination": "/utopicrx/privacy.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
     { "source": "/utopicrx", "destination": "/utopicrx/index.html" },
     {
-      "source": "/((?!utopicrx|utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy).*)",
+      "source": "/((?!utopicrx|utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|content\\.css).*)",
       "destination": "/index.html"
     }
   ]
