@@ -1,0 +1,65 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.utopicrx.com" }],
+      "destination": "https://utopicrx.com/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/utopicrx-mockup/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/products/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/utopicrx-mockup/index.html" },
+    { "source": "/returns-warranty.html", "destination": "/utopicrx-mockup/returns-warranty.html" },
+    { "source": "/product-manuals.html", "destination": "/utopicrx-mockup/product-manuals.html" },
+    { "source": "/returns-warranty", "destination": "/utopicrx-mockup/returns-warranty.html" },
+    { "source": "/product-manuals", "destination": "/utopicrx-mockup/product-manuals.html" },
+    { "source": "/products", "destination": "/utopicrx-mockup/products/index.html" },
+    { "source": "/products/(.*)", "destination": "/utopicrx-mockup/products/$1" },
+    { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
+    { "source": "/nav.js", "destination": "/utopicrx-mockup/nav.js" },
+    { "source": "/privacy", "destination": "/utopicrx/privacy.html" },
+    { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
+    { "source": "/utopicrx", "destination": "/utopicrx/index.html" },
+    {
+      "source": "/((?!utopicrx|utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
