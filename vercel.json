@@ -11,6 +11,27 @@
   ],
   "headers": [
     {
+      "source": "/theme.css",
+      "headers": [
+        { "key": "Content-Type", "value": "text/css; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/content.css",
+      "headers": [
+        { "key": "Content-Type", "value": "text/css; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/products/product.css",
+      "headers": [
+        { "key": "Content-Type", "value": "text/css; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
       "source": "/sitemap.xml",
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
@@ -39,12 +60,6 @@
       ]
     },
     {
-      "source": "/products/(.*)",
-      "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
-      ]
-    },
-    {
       "source": "/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -60,6 +75,10 @@
     { "source": "/compare/desi-vs-nuki", "destination": "/utopicrx-mockup/compare/desi-vs-nuki.html" },
     { "source": "/sitemap.xml", "destination": "/utopicrx-mockup/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/utopicrx-mockup/robots.txt" },
+    { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
+    { "source": "/content.css", "destination": "/utopicrx-mockup/content.css" },
+    { "source": "/nav.js", "destination": "/utopicrx-mockup/nav.js" },
+    { "source": "/products/product.css", "destination": "/utopicrx-mockup/products/product.css" },
     { "source": "/", "destination": "/utopicrx-mockup/index.html" },
     { "source": "/returns-warranty.html", "destination": "/utopicrx-mockup/returns-warranty.html" },
     { "source": "/product-manuals.html", "destination": "/utopicrx-mockup/product-manuals.html" },
@@ -67,9 +86,6 @@
     { "source": "/product-manuals", "destination": "/utopicrx-mockup/product-manuals.html" },
     { "source": "/products", "destination": "/utopicrx-mockup/products/index.html" },
     { "source": "/products/(.*)", "destination": "/utopicrx-mockup/products/$1" },
-    { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
-    { "source": "/nav.js", "destination": "/utopicrx-mockup/nav.js" },
-    { "source": "/content.css", "destination": "/utopicrx-mockup/content.css" },
     { "source": "/privacy", "destination": "/utopicrx/privacy.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
     { "source": "/utopicrx", "destination": "/utopicrx/index.html" },

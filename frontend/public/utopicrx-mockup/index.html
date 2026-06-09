@@ -1215,6 +1215,6 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 const fbObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.transition='transform .7s ease, opacity .7s ease';e.target.style.opacity='1';e.target.style.transform='translateY(0)';fbObs.unobserve(e.target);}});},{threshold:0.1});
 document.querySelectorAll('.fb-hero').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(40px)';fbObs.observe(el);});
 </script>
-<script src="nav.js"></script>
+<script src="/nav.js?v=20260610"></script>
 </body>
 </html>
