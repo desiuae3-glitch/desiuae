@@ -63,6 +63,30 @@
   ],
   "rewrites": [
     {
+      "source": "/faq",
+      "destination": "/utopicrx-mockup/faq.html"
+    },
+    {
+      "source": "/smart-lock-rented-apartment",
+      "destination": "/utopicrx-mockup/smart-lock-rented-apartment.html"
+    },
+    {
+      "source": "/airbnb-smart-lock-dubai",
+      "destination": "/utopicrx-mockup/airbnb-smart-lock-dubai.html"
+    },
+    {
+      "source": "/blog/smart-lock-rented-apartment-dubai",
+      "destination": "/utopicrx-mockup/blog/smart-lock-rented-apartment-dubai.html"
+    },
+    {
+      "source": "/blog/best-smart-locks-dubai-apartments-2026",
+      "destination": "/utopicrx-mockup/blog/best-smart-locks-dubai-apartments-2026.html"
+    },
+    {
+      "source": "/compare/desi-vs-nuki",
+      "destination": "/utopicrx-mockup/compare/desi-vs-nuki.html"
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/utopicrx-mockup/sitemap.xml"
     },

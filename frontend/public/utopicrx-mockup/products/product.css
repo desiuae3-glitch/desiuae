@@ -275,9 +275,13 @@
   align-items: center;
 }
 
-.split img {
+.split img,
+.split video {
+  width: 100%;
+  display: block;
   border-radius: var(--r);
   border: 1px solid var(--brd);
+  object-fit: cover;
 }
 
 .spec-grid {
