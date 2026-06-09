@@ -6,6 +6,7 @@ const EXACT = {
   "/airbnb-smart-lock-dubai": "/utopicrx-mockup/airbnb-smart-lock-dubai.html",
   "/blog": "/utopicrx-mockup/blog/index.html",
   "/blog/smart-lock-rented-apartment-dubai": "/utopicrx-mockup/blog/smart-lock-rented-apartment-dubai.html",
+  "/blog/best-smart-locks-dubai-apartments-2026": "/utopicrx-mockup/blog/best-smart-locks-dubai-apartments-2026.html",
   "/compare/desi-vs-nuki": "/utopicrx-mockup/compare/desi-vs-nuki.html",
   "/sitemap.xml": "/utopicrx-mockup/sitemap.xml",
   "/robots.txt": "/utopicrx-mockup/robots.txt",
