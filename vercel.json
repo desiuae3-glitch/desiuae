@@ -88,6 +88,7 @@
     { "source": "/products", "destination": "/utopicrx-mockup/products/index.html" },
     { "source": "/products/(.*)", "destination": "/utopicrx-mockup/products/$1" },
     { "source": "/privacy", "destination": "/utopicrx/privacy.html" },
+    { "source": "/privacy.html", "destination": "/utopicrx/privacy.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
     { "source": "/utopicrx", "destination": "/utopicrx/index.html" },
     {

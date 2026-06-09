@@ -20,6 +20,7 @@ const EXACT = {
   "/content.css": "/utopicrx-mockup/content.css",
   "/nav.js": "/utopicrx-mockup/nav.js",
   "/privacy": "/utopicrx/privacy.html",
+  "/privacy.html": "/utopicrx/privacy.html",
   "/utopicrx-mockup": "/utopicrx-mockup/index.html",
   "/utopicrx": "/utopicrx/index.html",
 };
