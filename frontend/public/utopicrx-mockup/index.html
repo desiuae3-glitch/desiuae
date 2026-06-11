@@ -7,7 +7,7 @@
 <title>Utopic RX Smart Lock | DESi UAE &amp; GCC</title>
 <meta name="description" content="DESi Utopic RX smart lock — no-drill retrofit keyless lock for UAE renters. Face recognition, fingerprint &amp; PIN. Installs in 3 minutes, leaves no trace. Ships across Dubai and GCC."><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="../utopicrx/desi-assets/products/rx-knob-unit.webp" fetchpriority="high">
+<link rel="preload" as="image" href="../utopicrx/desi-assets/gifs/rxe-install-static.webp" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
@@ -755,7 +755,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
         <div class="config-base-img">
           <div class="config-gallery" id="baseGallery">
             <div class="config-gallery-main">
-              <img id="baseGalleryMain" src="../utopicrx/desi-assets/products/rx-knob-unit.webp" alt="DESi Utopic RX thumb-turn unit" fetchpriority="high">
+              <img id="baseGalleryMain" src="../utopicrx/desi-assets/products/rx-knob-unit.webp" alt="DESi Utopic RX thumb-turn unit">
             </div>
             <div class="config-gallery-thumbs">
               <button type="button" class="config-gallery-thumb active" data-src="../utopicrx/desi-assets/products/rx-knob-unit.webp" data-alt="DESi Utopic RX thumb-turn unit"><img src="../utopicrx/desi-assets/products/rx-knob-unit.webp" alt="Utopic RX knob unit"></button>
@@ -1190,7 +1190,7 @@ function init(){
   animate();
 }
 let step=0;
-function prog(){step=Math.min(100,step+Math.random()*24);ldrPct.textContent=Math.floor(step)+'%';if(step<100)setTimeout(prog,100);else finishLoad();}
+function prog(){step=Math.min(100,step+Math.random()*30);ldrPct.textContent=Math.floor(step)+'%';if(step<100)setTimeout(prog,50);else finishLoad();}
 function finishLoad(){ldrPct.textContent='100%';setTimeout(()=>loader.classList.add('done'),200);requestAnimationFrame(()=>heroStage&&heroStage.classList.add('in'));}
 function animate(){
   raf=requestAnimationFrame(animate);
@@ -1211,12 +1211,16 @@ const heroObs=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){if(ready&&!raf)animate();}else{if(raf){cancelAnimationFrame(raf);raf=null;}}
 }),{threshold:0.01});
 if(heroEl)heroObs.observe(heroEl);
+// Start the hero fade right away (under the loader overlay) so the LCP
+// element paints early instead of waiting for the progress counter.
+heroStage&&heroStage.classList.add('in');
 prog();
 // Load Three.js lazily so the page paints without waiting on the CDN.
 function loadScene(){
   import('three').then(mod=>{THREE=mod;canvas.style.opacity='0';init();requestAnimationFrame(()=>{canvas.style.opacity='.45';});}).catch(()=>{});
 }
-if('requestIdleCallback' in window)requestIdleCallback(loadScene,{timeout:2000});else setTimeout(loadScene,1);
+function queueScene(){if('requestIdleCallback' in window)requestIdleCallback(loadScene,{timeout:3000});else setTimeout(loadScene,300);}
+if(document.readyState==='complete')queueScene();else window.addEventListener('load',queueScene,{once:true});
 </script>
 
 <script>
