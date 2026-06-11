@@ -14,7 +14,7 @@ if (!existsSync(mockupIndex)) {
 copyFileSync(mockupIndex, distIndex);
 console.log("postbuild-utopicrx: dist/index.html set to Utopic RX homepage");
 
-for (const file of ["sitemap.xml", "robots.txt"]) {
+for (const file of ["sitemap.xml", "robots.txt", "llms.txt"]) {
   const root = join(dist, file);
   const mockup = join(dist, "utopicrx-mockup", file);
   if (!existsSync(root)) {
