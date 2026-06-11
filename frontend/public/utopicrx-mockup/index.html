@@ -6,6 +6,7 @@
 <link rel="canonical" href="https://utopicrx.com/" />
 <title>Utopic RX Smart Lock | DESi UAE &amp; GCC</title>
 <meta name="description" content="DESi Utopic RX smart lock — no-drill retrofit keyless lock for UAE renters. Face recognition, fingerprint &amp; PIN. Installs in 3 minutes, leaves no trace. Ships across Dubai and GCC."><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it fit my door?","acceptedAnswer":{"@type":"Answer","text":"If your door has a euro-profile (oval) cylinder &mdash; standard in UAE apartments, villas, offices &mdash; it fits. Send us a photo and we'll confirm within hours."}},{"@type":"Question","name":"Can I still use my physical key?","acceptedAnswer":{"@type":"Answer","text":"Yes, always. The patented design even lets you open from outside when another key is already inserted inside &mdash; no other smart lock offers this."}},{"@type":"Question","name":"Will it damage my door?","acceptedAnswer":{"@type":"Answer","text":"Zero damage. Mounts on the existing cylinder. Remove it and the door is completely original. Perfect for rentals."}},{"@type":"Question","name":"Does it work with multi-point locks?","acceptedAnswer":{"@type":"Answer","text":"Yes. Motor has enough torque. Auto-detects the number of turns during first-time calibration."}},{"@type":"Question","name":"How does remote access work?","acceptedAnswer":{"@type":"Answer","text":"Bluetooth by default (close range). Add the WiFi Bridge for internet control, Alexa, Google Home, Home Assistant, and Siri Shortcuts."}},{"@type":"Question","name":"Can I share with Airbnb guests?","acceptedAnswer":{"@type":"Answer","text":"Yes. Send time-limited digital e-keys from the DESi Smart app. Works offline. Revoke any user instantly."}},{"@type":"Question","name":"Battery life?","acceptedAnswer":{"@type":"Answer","text":"~6 months per charge via USB-C. Physical key always works even with a completely dead battery."}},{"@type":"Question","name":"Can I take it when I move?","acceptedAnswer":{"@type":"Answer","text":"Yes. Unscrew, take it, no trace left. Ideal for leases and short-term rentals."}},{"@type":"Question","name":"What warranty do you offer?","acceptedAnswer":{"@type":"Answer","text":"2-year manufacturer warranty on lock body and electronics. Contact us via WhatsApp for full coverage details."}}]}</script>
 <style>
@@ -1153,12 +1154,12 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" }}
 </script>
 <script type="module">
-import * as THREE from 'three';
 const canvas=document.getElementById('scene');
 const loader=document.getElementById('loader');
 const ldrPct=document.getElementById('ldrPct');
 const heroStage=document.getElementById('heroStage');
 const heroEl=document.querySelector('.xhero');
+let THREE;
 let renderer,scene,camera,raf,ready=false;
 let pointer={x:0,y:0},targ={x:0,y:0};
 let scrollT=0;
@@ -1181,13 +1182,13 @@ function init(){
   g2.setAttribute('position',new THREE.BufferAttribute(a2,3));
   const p2=new THREE.Points(g2,new THREE.PointsMaterial({color:0xffffff,size:0.03,transparent:true,opacity:0.25,depthWrite:false}));scene.add(p2);
   scene.userData.p=[p1,p2];
-  sizeIt();ready=true;finishLoad();
-  requestAnimationFrame(()=>heroStage&&heroStage.classList.add('in'));
+  sizeIt();ready=true;
+  canvas.style.transition='opacity .8s';
   animate();
 }
 let step=0;
-function prog(){step=Math.min(100,step+Math.random()*24);ldrPct.textContent=Math.floor(step)+'%';if(step<100)setTimeout(prog,100);}
-function finishLoad(){step=100;ldrPct.textContent='100%';setTimeout(()=>loader.classList.add('done'),300);}
+function prog(){step=Math.min(100,step+Math.random()*24);ldrPct.textContent=Math.floor(step)+'%';if(step<100)setTimeout(prog,100);else finishLoad();}
+function finishLoad(){ldrPct.textContent='100%';setTimeout(()=>loader.classList.add('done'),200);requestAnimationFrame(()=>heroStage&&heroStage.classList.add('in'));}
 function animate(){
   raf=requestAnimationFrame(animate);
   targ.x+=(pointer.x-targ.x)*0.06;targ.y+=(pointer.y-targ.y)*0.06;
@@ -1207,7 +1208,12 @@ const heroObs=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){if(ready&&!raf)animate();}else{if(raf){cancelAnimationFrame(raf);raf=null;}}
 }),{threshold:0.01});
 if(heroEl)heroObs.observe(heroEl);
-prog();init();
+prog();
+// Load Three.js lazily so the page paints without waiting on the CDN.
+function loadScene(){
+  import('three').then(mod=>{THREE=mod;canvas.style.opacity='0';init();requestAnimationFrame(()=>{canvas.style.opacity='.45';});}).catch(()=>{});
+}
+if('requestIdleCallback' in window)requestIdleCallback(loadScene,{timeout:2000});else setTimeout(loadScene,1);
 </script>
 
 <script>
