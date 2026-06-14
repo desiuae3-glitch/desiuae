@@ -14,16 +14,18 @@ if (!existsSync(mockupIndex)) {
 copyFileSync(mockupIndex, distIndex);
 console.log("postbuild-utopicrx: dist/index.html set to Utopic RX homepage");
 
+const mockup404 = join(dist, "utopicrx-mockup", "404.html");
+const dist404 = join(dist, "404.html");
+if (existsSync(mockup404)) {
+  copyFileSync(mockup404, dist404);
+  console.log("postbuild-utopicrx: dist/404.html set from mockup 404 page");
+}
+
 for (const file of ["sitemap.xml", "robots.txt", "llms.txt"]) {
-  const root = join(dist, file);
-  const mockup = join(dist, "utopicrx-mockup", file);
-  if (!existsSync(root)) {
+  const rootFile = join(dist, file);
+  if (!existsSync(rootFile)) {
     console.error(`postbuild-utopicrx: missing ${file} in dist output`);
     process.exit(1);
   }
-  if (!existsSync(mockup)) {
-    console.error(`postbuild-utopicrx: missing utopicrx-mockup/${file} in dist output`);
-    process.exit(1);
-  }
-  console.log(`postbuild-utopicrx: ${file} present at dist/${file} and dist/utopicrx-mockup/${file}`);
+  console.log(`postbuild-utopicrx: ${file} present at dist/${file}`);
 }

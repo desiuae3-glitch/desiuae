@@ -8,9 +8,9 @@ const EXACT = {
   "/blog/smart-lock-rented-apartment-dubai": "/utopicrx-mockup/blog/smart-lock-rented-apartment-dubai.html",
   "/blog/smart-lock-buyers-guide-dubai-2026": "/utopicrx-mockup/blog/smart-lock-buyers-guide-dubai-2026.html",
   "/compare/desi-vs-nuki": "/utopicrx-mockup/compare/desi-vs-nuki.html",
-  "/sitemap.xml": "/utopicrx-mockup/sitemap.xml",
   "/robots.txt": "/utopicrx-mockup/robots.txt",
   "/llms.txt": "/utopicrx-mockup/llms.txt",
+  "/404": "/utopicrx-mockup/404.html",
   "/returns-warranty": "/utopicrx-mockup/returns-warranty.html",
   "/returns-warranty.html": "/utopicrx-mockup/returns-warranty.html",
   "/product-manuals": "/utopicrx-mockup/product-manuals.html",
@@ -23,7 +23,6 @@ const EXACT = {
   "/privacy": "/utopicrx/privacy.html",
   "/privacy.html": "/utopicrx/privacy.html",
   "/utopicrx-mockup": "/utopicrx-mockup/index.html",
-  "/utopicrx": "/utopicrx/index.html",
 };
 
 const PREFIX = [

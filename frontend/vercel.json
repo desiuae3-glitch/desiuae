@@ -12,6 +12,21 @@
       "source": "/blog/best-smart-locks-dubai-apartments-2026",
       "destination": "/blog/smart-lock-buyers-guide-dubai-2026",
       "permanent": true
+    },
+    {
+      "source": "/utopicrx",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/utopicrx/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/utopicrx/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -67,17 +82,16 @@
       ]
     },
     {
-      "source": "/utopicrx-mockup/sitemap.xml",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
-    },
-    {
       "source": "/utopicrx-mockup/robots.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/404.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
       ]
     },
     {
@@ -95,7 +109,6 @@
     { "source": "/blog/smart-lock-rented-apartment-dubai", "destination": "/utopicrx-mockup/blog/smart-lock-rented-apartment-dubai.html" },
     { "source": "/blog/smart-lock-buyers-guide-dubai-2026", "destination": "/utopicrx-mockup/blog/smart-lock-buyers-guide-dubai-2026.html" },
     { "source": "/compare/desi-vs-nuki", "destination": "/utopicrx-mockup/compare/desi-vs-nuki.html" },
-    { "source": "/sitemap.xml", "destination": "/utopicrx-mockup/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/utopicrx-mockup/robots.txt" },
     { "source": "/llms.txt", "destination": "/utopicrx-mockup/llms.txt" },
     { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
@@ -111,11 +124,12 @@
     { "source": "/products/(.*)", "destination": "/utopicrx-mockup/products/$1" },
     { "source": "/privacy", "destination": "/utopicrx/privacy.html" },
     { "source": "/privacy.html", "destination": "/utopicrx/privacy.html" },
+    { "source": "/404", "destination": "/utopicrx-mockup/404.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
-    { "source": "/utopicrx", "destination": "/utopicrx/index.html" },
     {
-      "source": "/((?!utopicrx|utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|content\\.css).*)",
-      "destination": "/index.html"
+      "source": "/((?!utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|content\\.css|404\\.html|404).*)",
+      "destination": "/404.html",
+      "statusCode": 404
     }
   ]
 }

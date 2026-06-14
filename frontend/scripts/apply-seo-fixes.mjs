@@ -43,48 +43,41 @@ const PRODUCT_META =
 const ABOUT_META =
   "Utopic RX is the UAE retail partner for DESi smart locks. Fast Dubai delivery, local warranty, and support for renters, Airbnb hosts, and property managers across the GCC.";
 
-// Organization-only graph for all pages except the homepage.
-const ORG_GRAPH = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://utopicrx.com/#organization",
-      name: "Utopic RX",
-      url: "https://utopicrx.com",
-      logo: "https://utopicrx.com/utopicrx/desi-assets/logo/utopic-rx-logo.png",
-      description:
-        "UAE and GCC retail brand for DESi modular retrofit smart door locks. No-drill keyless smart locks for renters, Airbnb hosts, and property managers in Dubai.",
-      areaServed: ["AE", "SA", "QA", "KW", "BH", "OM"],
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: "support@utopicrx.com",
-        contactType: "customer support",
-      },
-      sameAs: [],
-    },
-  ],
-};
+const NOINDEX_PAGES = new Set([
+  "utopicrx-mockup/experience.html",
+  "utopicrx-mockup/index_revised.html",
+]);
 
-// Entity-disambiguation Organization for the homepage (Fix Pack #1, Fix 3).
-const HOME_ORG = {
-  "@context": "https://schema.org",
+// Unified Organization — smart-lock retailer; omit sameAs (no Utopic-owned social profiles).
+const ORG_NODE = {
   "@type": "Organization",
+  "@id": "https://utopicrx.com/#organization",
   name: "Utopic RX UAE",
   url: "https://utopicrx.com/",
-  logo: "https://utopicrx.com/utopicrx/desi-assets/banners/RX2new.jpg",
+  logo: "https://utopicrx.com/utopicrx/desi-assets/logo/utopic-rx-logo.png",
   description:
-    "Authorized UAE & GCC distributor of DESi Utopic RX smart locks — no-drill retrofit smart locks for euro-profile cylinder doors.",
+    "Authorized UAE and GCC retailer and distributor of DESi Utopic RX smart locks — no-drill retrofit smart locks for euro-profile cylinder doors. Not affiliated with medical or pharmaceutical products.",
   email: "support@utopicrx.com",
-  areaServed: ["AE", "SA", "KW", "QA", "BH", "OM"],
-  sameAs: [
-    "https://en.desi.com.tr/",
-    "https://www.instagram.com/desismartlock/",
-    "https://www.youtube.com/user/desialarmsecurity",
-    "https://apps.apple.com/us/app/desi-smart/id6443391277",
-    "https://play.google.com/store/apps/details?id=com.desi.roof",
-  ],
+  areaServed: ["AE", "SA", "QA", "KW", "BH", "OM"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "support@utopicrx.com",
+    contactType: "customer support",
+  },
 };
+
+const ORG_GRAPH = {
+  "@context": "https://schema.org",
+  "@graph": [ORG_NODE],
+};
+
+const HOME_ORG = {
+  "@context": "https://schema.org",
+  ...ORG_NODE,
+};
+
+const MANUFACTURER_PRODUCT_URL =
+  "https://en.desi.com.tr/desi-utopic-rx-smart-lock-europrofile";
 
 // Complete Product schema for rich results (Fix Pack #1, Fix 2).
 const PRODUCT_SCHEMA = {
@@ -99,6 +92,7 @@ const PRODUCT_SCHEMA = {
   ],
   sku: "UTOPIC-RX",
   brand: { "@type": "Brand", name: "DESi" },
+  sameAs: [MANUFACTURER_PRODUCT_URL],
   offers: {
     "@type": "Offer",
     url: "https://utopicrx.com/products/utopic-rx.html",
@@ -198,6 +192,16 @@ function upsertMetaDescription(html, desc) {
   return html.replace(/(<link\s+rel="canonical"[^>]*>)/i, `$1\n${tag}`);
 }
 
+function upsertRobotsMeta(html, noindex) {
+  const tag = noindex
+    ? `<meta name="robots" content="noindex, follow">`
+    : `<meta name="robots" content="index, follow">`;
+  if (/<meta\s+name="robots"/i.test(html)) {
+    return html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, tag);
+  }
+  return html.replace(/(<meta\s+name="viewport"[^>]*>)/i, `$1\n${tag}`);
+}
+
 /** Remove blocks this script previously injected, so re-runs stay idempotent. */
 function removeInjectedBlocks(html) {
   return (
@@ -273,6 +277,7 @@ for (const file of htmlFiles) {
 
   html = upsertCanonical(html, url);
   html = upsertMetaDescription(html, desc);
+  html = upsertRobotsMeta(html, NOINDEX_PAGES.has(rel));
   html = removePartialOg(html);
   html = removeInjectedBlocks(html);
 
