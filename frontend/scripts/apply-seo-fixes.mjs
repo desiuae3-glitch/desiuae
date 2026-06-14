@@ -37,15 +37,34 @@ const URL_MAP = {
 };
 
 const HOME_META =
-  "DESi Utopic RX smart lock — no-drill retrofit keyless lock for UAE renters. Face recognition, fingerprint & PIN. Installs in 3 minutes, leaves no trace. Ships across Dubai and GCC.";
+  "DESi Utopic RX smart lock — no-drill retrofit keyless lock for UAE renters. Face recognition, fingerprint & PIN. Installs in under 5 minutes, leaves no trace. Ships across Dubai and GCC.";
 const PRODUCT_META =
-  "Buy DESi Utopic RX smart lock in UAE. Retrofit euro-cylinder design, no drilling required. Face recognition, fingerprint, PIN and app access. Landlord-friendly, renter-safe.";
+  "Browse DESi Utopic RX smart locks and accessories for UAE euro-profile doors. No-drill retrofit lock, face & fingerprint readers, WiFi bridge, and more.";
+const PRODUCT_META_MAP = {
+  "utopicrx-mockup/products/utopic-rx.html":
+    "DESi Utopic RX smart lock for UAE euro-profile doors. No-drill retrofit, 37 users, 6-month battery, app & key backup. 699 AED, free Dubai install.",
+  "utopicrx-mockup/products/face-reader.html":
+    "DESi face recognition + touch keypad for Utopic RX. 3D Face ID, 100 faces, PIN backup, AES-256 GCM wireless. Wall mount, 602 AED in UAE.",
+  "utopicrx-mockup/products/fingerprint-reader.html":
+    "DESi fingerprint reader + touch keypad V3 for Utopic RX. 500 DPI sensor, 100 prints, PIN backup, AES-256 GCM wireless. 602 AED UAE.",
+  "utopicrx-mockup/products/wifi-bridge.html":
+    "DESi Smart Bridge WiFi hub for Utopic RX. Remote lock/unlock, Alexa, Google Home & Home Assistant. Manages up to 4 locks. 228 AED UAE.",
+  "utopicrx-mockup/products/door-sensor.html":
+    "DESi door sensor + auto-lock V3BL for Utopic RX. Locks when the door closes — wireless adhesive mount, no wiring. Pairs in DESi Smart app. 81 AED.",
+  "utopicrx-mockup/products/smart-home-interface.html":
+    "DESi Smart Home Interface V3BL for Utopic RX. Dry-contact relay for KNX, BMS & custom automation. RX-only accessory. 118 AED UAE.",
+  "utopicrx-mockup/products/remote-controller.html":
+    "DESi wireless remote V2BL for Utopic RX. Pocket lock/unlock, 50 m range, AES rolling code. 3-year CR2032 battery. 81 AED UAE.",
+  "utopicrx-mockup/products/auto-lock-module.html":
+    "DESi Auto-Lock Module V2 for Utopic R, ROK & 3 series only — not compatible with Utopic RX. Wireless auto-lock on door close. 81 AED.",
+};
 const ABOUT_META =
   "Utopic RX is the UAE retail partner for DESi smart locks. Fast Dubai delivery, local warranty, and support for renters, Airbnb hosts, and property managers across the GCC.";
 
 const NOINDEX_PAGES = new Set([
   "utopicrx-mockup/experience.html",
   "utopicrx-mockup/index_revised.html",
+  "utopicrx-mockup/products/auto-lock-module.html",
 ]);
 
 // Unified Organization — smart-lock retailer; omit sameAs (no Utopic-owned social profiles).
@@ -144,6 +163,7 @@ function resolveUrl(relPath) {
 function getMetaDescription(relPath, html) {
   const key = relPath.replace(/\\/g, "/");
   if (key === HOMEPAGE) return HOME_META;
+  if (PRODUCT_META_MAP[key]) return PRODUCT_META_MAP[key];
   if (key.startsWith("utopicrx-mockup/products/")) return PRODUCT_META;
   if (
     ["utopicrx/returns-warranty.html", "utopicrx/product-manuals.html", "utopicrx/privacy.html"].includes(key)

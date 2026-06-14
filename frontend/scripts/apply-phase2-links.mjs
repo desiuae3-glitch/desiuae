@@ -25,7 +25,6 @@ const HOMEPAGE_SHOP_COLUMN = `    <div class="fcc">
       <a href="/products/door-sensor.html">Door Sensor</a>
       <a href="/products/smart-home-interface.html">Smart Home Interface</a>
       <a href="/products/remote-controller.html">Remote Controller</a>
-      <a href="/products/auto-lock-module.html">Auto-Lock Module</a>
       <a href="/products">All products</a>
     </div>`;
 
