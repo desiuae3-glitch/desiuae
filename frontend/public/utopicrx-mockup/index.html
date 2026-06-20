@@ -1075,7 +1075,10 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
         <div class="qt"><div class="qt-ico">📞</div>WhatsApp support Mon–Sat 9am–7pm</div>
       </div>
     </div>
-    <form id="enquiryForm" class="qform rv">
+    <form id="enquiryForm" class="qform rv" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="6dd63664-f060-4f42-8ef2-16495a43de74">
+      <input type="hidden" name="subject" value="Utopic RX quote enquiry">
+      <input type="hidden" name="from_name" value="Utopic RX website">
       <!-- Web3Forms honeypot — leave empty; bots that fill it are rejected -->
       <input type="checkbox" name="botcheck" id="f-botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="f-row">
@@ -1086,7 +1089,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <div class="f-row">
         <div class="fg">
           <label for="f-emirate">Emirate / Country</label>
-          <select id="f-emirate">
+          <select id="f-emirate" name="emirate">
             <option value="">Select...</option>
             <option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option>
             <option>Ajman</option><option>RAK</option><option>Fujairah</option>
@@ -1096,7 +1099,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
         </div>
         <div class="fg">
           <label for="f-door">Door / Cylinder Type</label>
-          <select id="f-door">
+          <select id="f-door" name="door_type">
             <option value="">Select...</option>
             <option>Euro-profile (I have this)</option>
             <option>Not sure &mdash; need help</option>
@@ -1104,7 +1107,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
           </select>
         </div>
       </div>
-      <div class="fg"><label for="f-msg">Your Question or Setup</label><textarea id="f-msg" placeholder="E.g. I want base lock + fingerprint reader for a Dubai apartment. Is it compatible with multi-point locks?"></textarea></div>
+      <div class="fg"><label for="f-msg">Your Question or Setup</label><textarea id="f-msg" name="message" placeholder="E.g. I want base lock + fingerprint reader for a Dubai apartment. Is it compatible with multi-point locks?"></textarea></div>
       <div class="f-btns">
         <button type="submit" class="f-submit">Send Enquiry</button>
         <button type="button" class="f-wa" onclick="submitWA()">
@@ -1311,9 +1314,6 @@ function updateTotal(){
 updateTotal();
 function tgFAQ(btn){const open=btn.parentElement.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');}
 function playV(el,id){el.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="Utopic RX" style="width:100%;height:100%;border:0"></iframe>`;el.onclick=null;}
-// Web3Forms — create a free key at https://web3forms.com/ → Create Access Key
-// Paste the key emailed to you below (safe to expose client-side; restrict by domain in Web3Forms dashboard)
-const WEB3FORMS_ACCESS_KEY='6dd63664-f060-4f42-8ef2-16495a43de74';
 function buildEnquiryWaUrl(){
   const n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim();
   const msg=encodeURIComponent(`Hi, quote request:\nName: ${n}\nPhone: ${p}\nEmail: ${document.getElementById('f-email').value||'—'}\nEmirate: ${document.getElementById('f-emirate').value||'—'}\nDoor: ${document.getElementById('f-door').value||'—'}\n\n${document.getElementById('f-msg').value}`);
@@ -1323,35 +1323,24 @@ document.getElementById('enquiryForm').addEventListener('submit',async function(
   e.preventDefault();
   const form=e.target,statusEl=document.getElementById('enquiryStatus'),submitBtn=form.querySelector('.f-submit');
   submitBtn.disabled=true;statusEl.hidden=true;statusEl.className='enquiry-status';
-  if(WEB3FORMS_ACCESS_KEY==='REPLACE_WITH_WEB3FORMS_ACCESS_KEY'){
-    submitBtn.disabled=false;
-    statusEl.hidden=false;
-    statusEl.className='enquiry-status enquiry-error';
-    statusEl.innerHTML='Quote form is not wired yet. <a href="'+buildEnquiryWaUrl()+'" target="_blank" rel="noopener">Send via WhatsApp</a> or email <a href="mailto:support@utopicrx.com">support@utopicrx.com</a>.';
-    return;
-  }
-  const email=document.getElementById('f-email').value.trim();
-  const payload={
-    access_key:WEB3FORMS_ACCESS_KEY,
-    name:document.getElementById('f-name').value.trim(),
-    phone:document.getElementById('f-phone').value.trim(),
-    email,
-    subject:'Utopic RX quote enquiry',
-    from_name:'Utopic RX website',
-    message:`Phone/WhatsApp: ${document.getElementById('f-phone').value.trim()}\nEmirate/Country: ${document.getElementById('f-emirate').value||'—'}\nDoor/Cylinder: ${document.getElementById('f-door').value||'—'}\n\n${document.getElementById('f-msg').value.trim()||'—'}`,
-    botcheck:false
-  };
-  if(email)payload.replyto=email;
+  const formData=new FormData(form);
+  const phone=(formData.get('phone')||'').trim();
+  const emirate=formData.get('emirate')||'—';
+  const door=formData.get('door_type')||'—';
+  const question=(formData.get('message')||'').trim()||'—';
+  formData.set('message',`Phone/WhatsApp: ${phone}\nEmirate/Country: ${emirate}\nDoor/Cylinder: ${door}\n\n${question}`);
+  const email=(formData.get('email')||'').trim();
+  if(email)formData.set('replyto',email);
   try{
-    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(formData))});
     const data=await res.json();
-    if(data.success){
+    if(res.status===200){
       if(window.dataLayer)dataLayer.push({event:'enquiry_submit'});
       const waUrl=buildEnquiryWaUrl();
       form.replaceWith(Object.assign(document.createElement('div'),{className:'qform enquiry-success rv v',innerHTML:`<h3>Thanks &mdash; we&apos;ll reply on WhatsApp/email within a few hours.</h3><p>Need something sooner? <a href="${waUrl}" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>`}));
       return;
     }
-    throw new Error(data.message||'Submit failed');
+    throw new Error(data.message||('HTTP '+res.status));
   }catch(err){
     submitBtn.disabled=false;
     const waUrl=buildEnquiryWaUrl();
