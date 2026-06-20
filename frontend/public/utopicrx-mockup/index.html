@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -350,8 +350,15 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .f-btns{display:flex;gap:.7rem;margin-top:.5rem;flex-wrap:wrap}
 .f-submit{background:var(--red);color:#fff;border:none;padding:.9rem 2rem;border-radius:var(--rs);font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s;flex:1}
 .f-submit:hover{background:var(--red-d);transform:translateY(-1px)}
-.f-wa{background:#25D366;color:#fff;border:none;padding:.9rem 1.4rem;border-radius:var(--rs);font-weight:700;font-size:.9rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:all .25s}
-.f-wa:hover{background:#1EB254}
+.f-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.f-wa{background:transparent;color:#25D366;border:2px solid #25D366;padding:.85rem 1.4rem;border-radius:var(--rs);font-weight:700;font-size:.85rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:all .25s}
+.f-wa:hover{background:rgba(37,211,102,.08)}
+.f-wa-hint{flex-basis:100%;font-size:.75rem;color:var(--tx2);margin:.15rem 0 0}
+.enquiry-success{padding:2rem;text-align:center}
+.enquiry-success h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem;color:var(--tx)}
+.enquiry-success p{font-size:.9rem;color:var(--tx2)}
+.enquiry-error{flex-basis:100%;color:#c0392b;font-size:.85rem;margin-top:.5rem}
+.enquiry-error a{color:inherit;font-weight:600}
 
 /* FOOTER */
 footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:1px solid var(--brd)}
@@ -584,7 +591,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <a href="#how-it-works">Install</a>
       <a href="#features">Features</a>
       <a href="#configure">Build</a>
-      <a href="products/index.html">Products</a>
+      <a href="/products">Products</a>
       <a href="/faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
@@ -598,7 +605,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   <a href="#configure">Configure</a>
   <a href="#features">Features</a>
   <a href="#specs">Specs</a>
-  <a href="products/index.html">Products</a>
+  <a href="/products">Products</a>
   <a href="/faq">FAQ</a>
   <a href="#contact" class="m-cta">Get Quote →</a>
 </div>
@@ -616,7 +623,8 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <div class="xhero-showcase" id="heroLock">
         <div class="xhero-ambient" aria-hidden="true"></div>
         <div class="xhero-frame">
-          <video class="xhero-product" autoplay loop muted playsinline width="800" height="343" poster="../utopicrx/desi-assets/gifs/rxe-install-static.webp" fetchpriority="high" preload="auto" aria-label="Utopic RX smart lock installation demo">
+          <video class="xhero-product" autoplay loop muted playsinline width="800" height="343" poster="../utopicrx/desi-assets/gifs/rxe-install-static.webp" fetchpriority="high" preload="none" aria-label="Utopic RX smart lock installation demo">
+            <!-- TODO: re-encode RX.mp4 to under 2 MB (H.264 high-compression or H.265/AV1) -->
             <source src="../utopicrx/desi-assets/RX.mp4" type="video/mp4">
           </video>
         </div>
@@ -1067,12 +1075,14 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
         <div class="qt"><div class="qt-ico">📞</div>WhatsApp support Mon–Sat 9am–7pm</div>
       </div>
     </div>
-    <div class="qform rv">
+    <form id="enquiryForm" class="qform rv">
+      <!-- Web3Forms honeypot — leave empty; bots that fill it are rejected -->
+      <input type="checkbox" name="botcheck" id="f-botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="f-row">
-        <div class="fg"><label for="f-name">Full Name</label><input type="text" id="f-name" placeholder="Ahmed Al Rashidi" autocomplete="name"></div>
-        <div class="fg"><label for="f-phone">WhatsApp / Phone</label><input type="tel" id="f-phone" placeholder="+971 5X XXX XXXX" autocomplete="tel"></div>
+        <div class="fg"><label for="f-name">Full Name</label><input type="text" id="f-name" name="name" placeholder="Ahmed Al Rashidi" autocomplete="name" required></div>
+        <div class="fg"><label for="f-phone">WhatsApp / Phone</label><input type="tel" id="f-phone" name="phone" placeholder="+971 5X XXX XXXX" autocomplete="tel" required></div>
       </div>
-      <div class="fg"><label for="f-email">Email Address</label><input type="email" id="f-email" placeholder="name@example.com" autocomplete="email"></div>
+      <div class="fg"><label for="f-email">Email Address</label><input type="email" id="f-email" name="email" placeholder="name@example.com" autocomplete="email"></div>
       <div class="f-row">
         <div class="fg">
           <label for="f-emirate">Emirate / Country</label>
@@ -1096,13 +1106,15 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       </div>
       <div class="fg"><label for="f-msg">Your Question or Setup</label><textarea id="f-msg" placeholder="E.g. I want base lock + fingerprint reader for a Dubai apartment. Is it compatible with multi-point locks?"></textarea></div>
       <div class="f-btns">
-        <button class="f-submit" onclick="submitForm()">Send Enquiry</button>
-        <button class="f-wa" onclick="submitWA()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        <button type="submit" class="f-submit">Send Enquiry</button>
+        <button type="button" class="f-wa" onclick="submitWA()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
           Send via WhatsApp
         </button>
+        <p class="f-wa-hint">Prefer chat? WhatsApp sends the same details instantly.</p>
+        <div id="enquiryStatus" class="enquiry-status" hidden></div>
       </div>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -1299,12 +1311,55 @@ function updateTotal(){
 updateTotal();
 function tgFAQ(btn){const open=btn.parentElement.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');}
 function playV(el,id){el.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="Utopic RX" style="width:100%;height:100%;border:0"></iframe>`;el.onclick=null;}
-function submitForm(){
+// Web3Forms — create a free key at https://web3forms.com/ → Create Access Key
+// Paste the key emailed to you below (safe to expose client-side; restrict by domain in Web3Forms dashboard)
+const WEB3FORMS_ACCESS_KEY='6dd63664-f060-4f42-8ef2-16495a43de74';
+function buildEnquiryWaUrl(){
   const n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim();
-  if(!n||!p){alert('Please enter your name and phone number.');return;}
   const msg=encodeURIComponent(`Hi, quote request:\nName: ${n}\nPhone: ${p}\nEmail: ${document.getElementById('f-email').value||'—'}\nEmirate: ${document.getElementById('f-emirate').value||'—'}\nDoor: ${document.getElementById('f-door').value||'—'}\n\n${document.getElementById('f-msg').value}`);
-  window.open(`https://wa.me/${WA}?text=${msg}`,'_blank','noopener');
+  return `https://wa.me/${WA}?text=${msg}`;
 }
+document.getElementById('enquiryForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const form=e.target,statusEl=document.getElementById('enquiryStatus'),submitBtn=form.querySelector('.f-submit');
+  submitBtn.disabled=true;statusEl.hidden=true;statusEl.className='enquiry-status';
+  if(WEB3FORMS_ACCESS_KEY==='REPLACE_WITH_WEB3FORMS_ACCESS_KEY'){
+    submitBtn.disabled=false;
+    statusEl.hidden=false;
+    statusEl.className='enquiry-status enquiry-error';
+    statusEl.innerHTML='Quote form is not wired yet. <a href="'+buildEnquiryWaUrl()+'" target="_blank" rel="noopener">Send via WhatsApp</a> or email <a href="mailto:support@utopicrx.com">support@utopicrx.com</a>.';
+    return;
+  }
+  const email=document.getElementById('f-email').value.trim();
+  const payload={
+    access_key:WEB3FORMS_ACCESS_KEY,
+    name:document.getElementById('f-name').value.trim(),
+    phone:document.getElementById('f-phone').value.trim(),
+    email,
+    subject:'Utopic RX quote enquiry',
+    from_name:'Utopic RX website',
+    message:`Phone/WhatsApp: ${document.getElementById('f-phone').value.trim()}\nEmirate/Country: ${document.getElementById('f-emirate').value||'—'}\nDoor/Cylinder: ${document.getElementById('f-door').value||'—'}\n\n${document.getElementById('f-msg').value.trim()||'—'}`,
+    botcheck:false
+  };
+  if(email)payload.replyto=email;
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json();
+    if(data.success){
+      if(window.dataLayer)dataLayer.push({event:'enquiry_submit'});
+      const waUrl=buildEnquiryWaUrl();
+      form.replaceWith(Object.assign(document.createElement('div'),{className:'qform enquiry-success rv v',innerHTML:`<h3>Thanks &mdash; we&apos;ll reply on WhatsApp/email within a few hours.</h3><p>Need something sooner? <a href="${waUrl}" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>`}));
+      return;
+    }
+    throw new Error(data.message||'Submit failed');
+  }catch(err){
+    submitBtn.disabled=false;
+    const waUrl=buildEnquiryWaUrl();
+    statusEl.hidden=false;
+    statusEl.className='enquiry-status enquiry-error';
+    statusEl.innerHTML=`Something went wrong sending your enquiry. <a href="${waUrl}" target="_blank" rel="noopener">Send via WhatsApp instead</a>.`;
+  }
+});
 document.querySelectorAll('#baseGallery .config-gallery-thumb').forEach(function(btn){
   btn.addEventListener('click',function(){
     var main=document.getElementById('baseGalleryMain');

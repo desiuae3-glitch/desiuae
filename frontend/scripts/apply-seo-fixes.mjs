@@ -5,8 +5,6 @@ const ROOT = join(import.meta.dirname, "..", "public");
 
 const URL_MAP = {
   "utopicrx-mockup/index.html": "https://utopicrx.com/",
-  "utopicrx-mockup/index_revised.html": "https://utopicrx.com/",
-  "utopicrx-mockup/experience.html": "https://utopicrx.com/",
   "utopicrx-mockup/faq.html": "https://utopicrx.com/faq",
   "utopicrx-mockup/smart-lock-rented-apartment.html": "https://utopicrx.com/smart-lock-rented-apartment",
   "utopicrx-mockup/airbnb-smart-lock-dubai.html": "https://utopicrx.com/airbnb-smart-lock-dubai",
@@ -19,7 +17,6 @@ const URL_MAP = {
     "https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026",
   "utopicrx-mockup/compare/desi-vs-nuki.html": "https://utopicrx.com/compare/desi-vs-nuki",
   "utopicrx-mockup/products/index.html": "https://utopicrx.com/products",
-  "redesign-preview.html": "https://utopicrx.com/redesign-preview.html",
   "utopicrx-mockup/products/utopic-rx.html": "https://utopicrx.com/products/utopic-rx.html",
   "utopicrx-mockup/products/wifi-bridge.html": "https://utopicrx.com/products/wifi-bridge.html",
   "utopicrx-mockup/products/smart-home-interface.html":
@@ -61,11 +58,7 @@ const PRODUCT_META_MAP = {
 const ABOUT_META =
   "Utopic RX is the UAE retail partner for DESi smart locks. Fast Dubai delivery, local warranty, and support for renters, Airbnb hosts, and property managers across the GCC.";
 
-const NOINDEX_PAGES = new Set([
-  "utopicrx-mockup/experience.html",
-  "utopicrx-mockup/index_revised.html",
-  "utopicrx-mockup/products/auto-lock-module.html",
-]);
+const NOINDEX_PAGES = new Set(["utopicrx-mockup/products/auto-lock-module.html"]);
 
 // Unified Organization — smart-lock retailer; omit sameAs (no Utopic-owned social profiles).
 const ORG_NODE = {

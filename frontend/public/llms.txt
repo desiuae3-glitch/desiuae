@@ -7,7 +7,7 @@
 
 ## Products
 - [Utopic RX Smart Lock — full specs](https://utopicrx.com/products/utopic-rx.html): Base lock, 699 AED, euro-profile retrofit, 37 users, 6-month battery
-- [All products](https://utopicrx.com/products/index.html): Face reader, fingerprint reader, WiFi bridge add-ons
+- [All products](https://utopicrx.com/products): Face reader, fingerprint reader, WiFi bridge add-ons
 
 ## Guides
 - [Smart Lock Buyer's Guide for Dubai 2026](https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026): Utopic RX vs Solity vs Yale vs Philips for UAE doors

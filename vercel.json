@@ -89,7 +89,11 @@
       ]
     },
     {
-      "source": "/404.html",
+      "source": "/utopicrx-mockup/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, follow" }
       ]
@@ -127,7 +131,7 @@
     { "source": "/404", "destination": "/utopicrx-mockup/404.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
     {
-      "source": "/((?!utopicrx-mockup|popup|redesign-preview\\.html|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|content\\.css|404\\.html|404).*)",
+      "source": "/((?!utopicrx-mockup|popup|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|content\\.css|404\\.html|404).*)",
       "destination": "/404.html",
       "statusCode": 404
     }
