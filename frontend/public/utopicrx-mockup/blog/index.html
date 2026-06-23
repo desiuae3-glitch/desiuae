@@ -86,17 +86,19 @@
   </div>
 
   <div class="soro-blog-wrap">
-    <div id="soro-blog">
-      <section class="blog-grid soro-prerender" aria-label="Latest articles">
-        <article class="blog-card">
-          <p class="blog-card-tag">Door fit guide &middot; UAE</p>
-          <h2><a href="/blog?post=will-smart-lock-fit-my-door">Will Smart Lock Fit My Door? Check This First</a></h2>
-          <p class="blog-card-meta">June 2026</p>
-          <p class="blog-card-excerpt">Will smart lock fit my door? Learn how to check euro cylinder type, door clearance, thumbturn access, and rental-safe setup in minutes.</p>
-          <a class="blog-card-link" href="/blog?post=will-smart-lock-fit-my-door">Read article &rarr;</a>
-        </article>
-      </section>
-    </div>
+    <div id="soro-blog"></div>
+  </div>
+
+  <div class="blog-static-latest" id="blogStaticLatest">
+    <section class="blog-grid" aria-label="Latest articles">
+      <article class="blog-card">
+        <p class="blog-card-tag">Door fit guide &middot; UAE</p>
+        <h2><a href="/blog?post=will-smart-lock-fit-my-door">Will Smart Lock Fit My Door? Check This First</a></h2>
+        <p class="blog-card-meta">June 2026</p>
+        <p class="blog-card-excerpt">Will smart lock fit my door? Learn how to check euro cylinder type, door clearance, thumbturn access, and rental-safe setup in minutes.</p>
+        <a class="blog-card-link" href="/blog?post=will-smart-lock-fit-my-door">Read article &rarr;</a>
+      </article>
+    </section>
   </div>
 
   <div class="blog-fallback" id="blogFallback">
@@ -182,39 +184,37 @@
 <script>
 (function(){
   var SORO_TOKEN='79163d3d-ecd0-4c08-917f-785329f4c42d';
-  var SORO_API='https://app.trysoro.com';
-  var el=document.getElementById('soro-blog'),fallback=document.getElementById('blogFallback');
-  function soroMounted(){return el&&el.querySelector('.soro-blog')!==null;}
-  function syncFallback(){if(fallback)fallback.hidden=soroMounted();}
-  function loadSoro(){
-    if(document.querySelector('script[data-soro-embed]'))return;
+  var el=document.getElementById('soro-blog');
+  var latest=document.getElementById('blogStaticLatest');
+  var fallback=document.getElementById('blogFallback');
+  var soroLive=false;
+  function soroHasContent(){
+    if(!el)return false;
+    var root=el.querySelector('.soro-blog');
+    if(!root)return false;
+    var content=root.querySelector('.soro-blog-content');
+    return !!(content&&content.children.length);
+  }
+  function syncUI(){
+    if(soroHasContent())soroLive=true;
+    if(latest)latest.hidden=soroLive;
+    if(fallback)fallback.hidden=soroLive;
+  }
+  if(!document.querySelector('script[data-soro-embed]')){
     var s=document.createElement('script');
-    s.src=SORO_API+'/api/embed/'+SORO_TOKEN;
+    s.src='https://app.trysoro.com/api/embed/'+SORO_TOKEN;
     s.async=true;
     s.setAttribute('data-soro-embed','');
-    s.onerror=function(){if(el&&!soroMounted())el.insertAdjacentHTML('beforeend','<p class="content-note" style="margin-top:1rem">Could not load the blog feed. Use the article links below.</p>');};
     document.body.appendChild(s);
   }
-  function articleFallback(){
-    if(soroMounted()||!el)return;
-    var slug=new URLSearchParams(location.search).get('post');
-    if(slug!=='will-smart-lock-fit-my-door')return;
-    el.innerHTML='<div class="soro-blog-article-fallback"><p class="content-note">Loading article…</p></div>';
-    fetch(SORO_API+'/api/embed/'+SORO_TOKEN+'/article/1c3cc21f-6f65-4399-9f9d-6f9c6e6baaa3')
-      .then(function(r){return r.json();})
-      .then(function(data){
-        if(soroMounted())return;
-        el.innerHTML='<article class="soro-article-fallback"><p class="blog-card-tag">Door fit guide &middot; UAE</p><h1>Will Smart Lock Fit My Door? Check This First</h1><div class="soro-article-body">'+data.content+'</div><p class="related-links"><a href="/blog">&larr; All articles</a></p></article>';
-        syncFallback();
-      })
-      .catch(function(){
-        if(!soroMounted())el.innerHTML='<p class="content-note">Article could not be loaded. <a href="/blog">Back to blog</a>.</p>';
-      });
+  if(el){
+    var debounce;
+    new MutationObserver(function(){
+      clearTimeout(debounce);
+      debounce=setTimeout(syncUI,150);
+    }).observe(el,{childList:true,subtree:true});
   }
-  syncFallback();
-  if(el)new MutationObserver(syncFallback).observe(el,{childList:true,subtree:true});
-  loadSoro();
-  setTimeout(function(){syncFallback();if(!soroMounted())articleFallback();},4000);
+  syncUI();
 })();
 </script>
 <a href="https://wa.me/971526187729?text=Hi%2C%20I%20have%20a%20smart%20lock%20question." class="waf" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
