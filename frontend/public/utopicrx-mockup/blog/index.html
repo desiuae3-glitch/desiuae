@@ -88,9 +88,9 @@
   <div class="soro-blog-wrap">
     <div id="soro-blog"></div>
     <script src="https://app.trysoro.com/api/embed/79163d3d-ecd0-4c08-917f-785329f4c42d" defer></script>
-    <p class="soro-blog-note" id="soroBlogNote">New articles from our content hub appear here once the embed is activated in Soro.</p>
   </div>
 
+  <div class="blog-fallback" id="blogFallback">
   <h2 class="blog-section-title">Featured guides</h2>
   <div class="blog-grid">
     <article class="blog-card">
@@ -108,6 +108,7 @@
       <p class="blog-card-excerpt">Utopic RX, Solity, Yale, and Philips compared &mdash; euro-cylinder retrofit vs full-size, fire-rated locks, face recognition, and renter fit.</p>
       <a class="blog-card-link" href="/blog/smart-lock-buyers-guide-dubai-2026">Read article &rarr;</a>
     </article>
+  </div>
   </div>
 
   <div class="cta-box">
@@ -171,12 +172,18 @@
 <script src="/nav.js?v=20260610"></script>
 <script>
 (function(){
-  var el=document.getElementById('soro-blog'),note=document.getElementById('soroBlogNote');
-  if(!el||!note)return;
-  function check(){if(el.children.length||el.textContent.trim())note.hidden=true;}
-  check();
-  new MutationObserver(check).observe(el,{childList:true,subtree:true,characterData:true});
-  setTimeout(check,3000);
+  var el=document.getElementById('soro-blog'),fallback=document.getElementById('blogFallback');
+  if(!el)return;
+  function hasSoroContent(){
+    return el.querySelector('.soro-blog-list,.soro-blog-article.visible')!==null;
+  }
+  function sync(){
+    if(fallback)fallback.hidden=hasSoroContent();
+  }
+  sync();
+  new MutationObserver(sync).observe(el,{childList:true,subtree:true});
+  setTimeout(sync,500);
+  setTimeout(sync,2500);
 })();
 </script>
 <a href="https://wa.me/971526187729?text=Hi%2C%20I%20have%20a%20smart%20lock%20question." class="waf" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
