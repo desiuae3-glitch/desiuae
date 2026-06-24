@@ -297,19 +297,15 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 
 /* VIDEOS */
 .vid{padding:5rem 2rem;background:var(--black);border-top:1px solid var(--brd)}
-.vid-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:.6rem;height:420px;margin-top:2.5rem}
+.vid-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:.6rem;height:min(72vh,640px);max-width:920px;margin:2.5rem auto 0}
 .vc{border-radius:var(--rs);overflow:hidden;position:relative;cursor:pointer;background:#111;border:none;padding:0}
-.vc:first-child{grid-row:1/3}
-.vc img{width:100%;height:100%;object-fit:cover;opacity:.6;transition:opacity .3s}
+.vc img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.75;transition:opacity .3s}
 .vc:hover img{opacity:.35}
 .vc .play{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
 .vc-lbl{position:absolute;bottom:.6rem;left:.7rem;color:#fff;font-size:.64rem;font-weight:700;z-index:3;text-shadow:0 1px 4px rgba(0,0,0,.5)}
-.pb2{width:44px;height:44px;background:var(--red);border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(227,30,36,.35);transition:transform .2s}
+.pb2{width:48px;height:48px;background:var(--red);border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(227,30,36,.35);transition:transform .2s}
 .vc:hover .pb2{transform:scale(1.1)}
-.vc:first-child .pb2{width:58px;height:58px}
 .pb2 svg{width:14px;height:14px;fill:#fff;margin-left:2px}
-
-/* SPECS */
 .sec{padding:5rem 2rem;max-width:1240px;margin:0 auto;background:var(--black)}
 .s-hdr{margin-bottom:2.5rem}
 .spg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--brd);border-radius:var(--r);overflow:hidden}
@@ -996,20 +992,17 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <h2 class="sec-h2">See It Work</h2>
     </div>
     <div class="vid-grid rv">
-      <button class="vc" onclick="playV(this,'L1qVCJAMMvg')" aria-label="Play full overview video">
-        <img src="../utopicrx/desi-assets/banners/banner-8.webp" alt="Utopic R overview" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Full Overview</span>
+      <button class="vc" onclick="playV(this,'qg1-1l8TkzI')" aria-label="Play face recognition and keypad demo">
+        <img src="https://i.ytimg.com/vi/qg1-1l8TkzI/hqdefault.jpg" alt="DESi Utopic — face recognition and keypad" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Face Recognition &amp; Keypad</span>
       </button>
-      <button class="vc" onclick="playV(this,'YQHzRB7QaMQ')" aria-label="Play install demo">
-        <img src="../utopicrx/desi-assets/banners/RXnew1.webp" alt="Install demo" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Install Demo</span>
+      <button class="vc" onclick="playV(this,'xLdQ4QNAkYY')" aria-label="Play easy installation demo">
+        <img src="https://i.ytimg.com/vi/xLdQ4QNAkYY/hqdefault.jpg" alt="DESi Utopic R easy installation" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Easy Installation</span>
       </button>
-      <button class="vc" onclick="playV(this,'xLdQ4QNAkYY')" aria-label="Play app walkthrough">
-        <img src="../utopicrx/desi-assets/banners/rxbanner2.webp" alt="App walkthrough" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">App Walkthrough</span>
+      <button class="vc" onclick="playV(this,'nkYbHtTW08o')" aria-label="Play entry options demo">
+        <img src="https://i.ytimg.com/vi/nkYbHtTW08o/hqdefault.jpg" alt="DESi Utopic R entry options" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Entry Options</span>
       </button>
-      <button class="vc" onclick="playV(this,'KF7SPaxDIws')" aria-label="Play face recognition demo">
-        <img src="../utopicrx/desi-assets/banners/RX2new.webp" alt="Face recognition" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Face Recognition</span>
-      </button>
-      <button class="vc" onclick="playV(this,'v3MUCZCppbg')" aria-label="Play accessories video">
-        <img src="../utopicrx/desi-assets/banners/desismarenban2.webp" alt="Accessories" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Accessories</span>
+      <button class="vc" onclick="playV(this,'HDLMe3ESSvI')" aria-label="Play wireless face recognition demo">
+        <img src="https://i.ytimg.com/vi/HDLMe3ESSvI/hqdefault.jpg" alt="DESi wireless face recognition smart lock" loading="lazy"><div class="play"><div class="pb2"><svg viewBox="0 0 24 24"><polygon points="9,6 19,12 9,18"/></svg></div></div><span class="vc-lbl">Wireless Face Recognition</span>
       </button>
     </div>
   </div>
@@ -1298,7 +1291,7 @@ function updateTotal(){
 }
 updateTotal();
 function tgFAQ(btn){const open=btn.parentElement.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');}
-function playV(el,id){el.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="Utopic R" style="width:100%;height:100%;border:0"></iframe>`;el.onclick=null;}
+function playV(el,id){el.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1" frameborder="0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="DESi Utopic R" style="width:100%;height:100%;border:0"></iframe>`;el.onclick=null;}
 function buildEnquiryWaUrl(){
   const n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim();
   const msg=encodeURIComponent(`Hi, quote request:\nName: ${n}\nPhone: ${p}\nEmail: ${document.getElementById('f-email').value||'—'}\nEmirate: ${document.getElementById('f-emirate').value||'—'}\nDoor: ${document.getElementById('f-door').value||'—'}\n\n${document.getElementById('f-msg').value}`);
