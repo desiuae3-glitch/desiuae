@@ -73,8 +73,11 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .xhero-h1{font-size:clamp(2.3rem,5vw,4.4rem);font-weight:900;line-height:1;letter-spacing:-.03em;text-transform:uppercase;color:#fff;opacity:0;animation:fadeUp .8s .45s forwards}
 .xhero-h1 em{font-style:normal;color:var(--red)}
 .xhero-h1 .outline{-webkit-text-stroke:0;color:var(--red)}
-.xhero-lead{font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--tx2);max-width:46ch;margin-top:1.2rem;line-height:1.7;opacity:0;animation:fadeUp .8s .6s forwards}
-.xhero-foot{font-size:.68rem;color:var(--tx3);margin-top:.55rem;line-height:1.45;max-width:46ch;opacity:0;animation:fadeUp .8s .7s forwards}
+.xhero-lead{font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--tx2);max-width:52ch;margin-top:1.2rem;line-height:1.7;opacity:0;animation:fadeUp .8s .6s forwards}
+.xhero-feats{list-style:none;margin:1rem 0 0;padding:0;max-width:52ch;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;opacity:0;animation:fadeUp .8s .65s forwards}
+.xhero-feats li{font-size:.72rem;color:var(--tx2);line-height:1.45;display:flex;align-items:flex-start;gap:.4rem}
+.xhero-feats li::before{content:'✓';color:var(--grn);font-weight:800;font-size:.65rem;flex-shrink:0;margin-top:.12rem}
+.xhero-foot{font-size:.68rem;color:var(--tx3);margin-top:.75rem;line-height:1.45;max-width:52ch;opacity:0;animation:fadeUp .8s .7s forwards}
 .xhero-ctas{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .75s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .xbtn{padding:.9rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,background .2s,border-color .2s;cursor:pointer}
@@ -392,10 +395,11 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .xhero-stage{order:2!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center;min-height:auto!important;align-self:auto!important}
   .xhero-ctas{order:3!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center}
   .xhero-trust{order:4!important;grid-column:auto!important;grid-row:auto!important;margin-top:1rem!important}
-  .xhero-h1,.xhero-lead,.xhero-foot{text-align:center}
-  .xhero-lead,.xhero-foot{margin-left:auto;margin-right:auto}
+  .xhero-h1,.xhero-lead,.xhero-foot,.xhero-feats{text-align:center}
+  .xhero-lead,.xhero-foot,.xhero-feats{margin-left:auto;margin-right:auto}
+  .xhero-feats{grid-template-columns:1fr;max-width:36ch;text-align:left}
   .xhero-ctas,.xhero-trust{justify-content:center;margin-left:auto;margin-right:auto}
-  .xhero-h1,.xhero-lead,.xhero-foot,.xhero-ctas,.xhero-trust{opacity:1!important;animation:none!important;transform:none!important}
+  .xhero-h1,.xhero-lead,.xhero-foot,.xhero-feats,.xhero-ctas,.xhero-trust{opacity:1!important;animation:none!important;transform:none!important}
   #scene{opacity:.12!important}
   .xhero-showcase{width:min(90vw,520px);margin:0 auto}
   .xhero-ambient{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(227,30,36,.16) 0%,rgba(227,30,36,.04) 45%,transparent 72%)}
@@ -614,7 +618,17 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   <div class="xhero-wrap">
     <div class="xhero-copy">
       <h1 class="xhero-h1">Make Your Door <em>Smart</em> in <span class="outline">Under 5 Minutes*</span></h1>
-      <p class="xhero-lead">No cylinder change. Mounts over your existing euro cylinder &mdash; no key cutting, no locksmith, no drilling. Every feature of a high-end smart lock.</p>
+      <p class="xhero-lead">No drilling. No door cutouts. No locksmith. Mounts on your existing euro cylinder in minutes &mdash; with every feature you expect from a high-end smart lock.</p>
+      <ul class="xhero-feats" aria-label="Smart lock features">
+        <li>App lock &amp; unlock &middot; 37 users</li>
+        <li>Offline e-keys &amp; guest access schedules</li>
+        <li>Auto-lock &amp; full activity logs</li>
+        <li>Physical key backup &mdash; always works</li>
+        <li>Up to 3 months on a full charge</li>
+        <li>Optional face ID &amp; fingerprint readers</li>
+        <li>WiFi remote &middot; Alexa &amp; Google Home</li>
+        <li>Multi-point lock support</li>
+      </ul>
       <p class="xhero-foot">* Typical DIY install on a standard euro-profile cylinder door.</p>
     </div>
     <div class="xhero-stage" id="heroStage">
