@@ -39,7 +39,7 @@ const PRODUCT_META =
   "Browse DESi Utopic R smart locks and accessories for UAE euro-profile doors. Compact cylinder lock, face & fingerprint readers, WiFi bridge, and more.";
 const PRODUCT_META_MAP = {
   "utopicrx-mockup/products/utopic-rx.html":
-    "DESi Utopic R smart lock for UAE euro-profile doors. Single-screw install, 37 users, rechargeable battery, app & key backup. 799 AED, free Dubai install.",
+    "DESi Utopic R smart lock for UAE euro-profile doors. Single-screw install, 37 users, up to 3 months on a full charge, app & key backup. 799 AED, free Dubai install.",
   "utopicrx-mockup/products/face-reader.html":
     "DESi face recognition + touch keypad for Utopic R. 3D Face ID, 100 faces, PIN backup, AES-256 GCM wireless. Wall mount, 602 AED in UAE.",
   "utopicrx-mockup/products/fingerprint-reader.html":
