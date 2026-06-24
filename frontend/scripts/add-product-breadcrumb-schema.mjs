@@ -28,7 +28,7 @@ const ACCESSORIES = {
   "face-reader.html": {
     name: "DESi Face Recognition + Touch Keypad",
     description:
-      "3D face recognition reader with touch keypad for Utopic RX. 100 faces, PIN backup, AES-256 GCM wireless. Wall mount, no cables.",
+      "3D face recognition reader with touch keypad for Utopic R. 100 faces, PIN backup, AES-256 GCM wireless. Wall mount, no cables.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-face-reader-and-wireless-touch-keypad-accessories-283-81-O.webp",
     sku: "FACE-READER-KEYPAD",
     price: "602",
@@ -37,7 +37,7 @@ const ACCESSORIES = {
   "fingerprint-reader.html": {
     name: "DESi Fingerprint Reader + Touch Keypad V3",
     description:
-      "500 DPI capacitive fingerprint reader with secure wireless keypad for Utopic RX. 100 fingerprints, 10 PIN codes, AES-256 GCM.",
+      "500 DPI capacitive fingerprint reader with secure wireless keypad for Utopic R. 100 fingerprints, 10 PIN codes, AES-256 GCM.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-fingerprint-reader-and-wireless-touch-keypad-v3-accessories-344-74-O.webp",
     sku: "FINGERPRINT-READER-V3",
     price: "602",
@@ -46,7 +46,7 @@ const ACCESSORIES = {
   "wifi-bridge.html": {
     name: "DESi Smart Bridge WiFi Hub",
     description:
-      "WiFi bridge for Utopic RX remote lock/unlock. Alexa, Google Home and Home Assistant compatible. Manages up to 4 locks.",
+      "WiFi bridge for Utopic R remote lock/unlock. Alexa, Google Home and Home Assistant compatible. Manages up to 4 locks.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-series-compatible-wifi-bridge-hub-accessories-338-45-O.webp",
     sku: "WIFI-BRIDGE",
     price: "228",
@@ -55,7 +55,7 @@ const ACCESSORIES = {
   "door-sensor.html": {
     name: "DESi Door Sensor + Auto-Lock V3BL",
     description:
-      "Wireless door sensor for Utopic RX that auto-locks when the door closes. Adhesive mount, no wiring, pairs in DESi Smart app.",
+      "Wireless door sensor for Utopic R that auto-locks when the door closes. Adhesive mount, no wiring, pairs in DESi Smart app.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg",
     sku: "DOOR-SENSOR-V3BL",
     price: "81",
@@ -64,7 +64,7 @@ const ACCESSORIES = {
   "smart-home-interface.html": {
     name: "DESi Smart Home Interface V3BL",
     description:
-      "Dry-contact relay interface for Utopic RX integration with KNX, BMS and custom automation systems. RX-only accessory.",
+      "Dry-contact relay interface for Utopic R integration with KNX, BMS and custom automation systems. RX-only accessory.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg",
     sku: "SMART-HOME-INTERFACE-V3BL",
     price: "118",
@@ -73,7 +73,7 @@ const ACCESSORIES = {
   "remote-controller.html": {
     name: "DESi Wireless Remote Controller V2BL",
     description:
-      "Pocket remote for Utopic RX lock/unlock. 50 m range, AES rolling code, 3-year CR2032 battery life.",
+      "Pocket remote for Utopic R lock/unlock. 50 m range, AES rolling code, 3-year CR2032 battery life.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg",
     sku: "REMOTE-CONTROLLER-V2BL",
     price: "81",
@@ -82,7 +82,7 @@ const ACCESSORIES = {
   "auto-lock-module.html": {
     name: "DESi Auto-Lock Module V2",
     description:
-      "Wireless auto-lock module for Utopic R, ROK and 3 series — not compatible with Utopic RX. Locks automatically on door close.",
+      "Wireless auto-lock module for Utopic R, ROK and 3 series — not compatible with Utopic R. Locks automatically on door close.",
     image: "https://utopicrx.com/utopicrx/desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg",
     sku: "AUTO-LOCK-MODULE-V2",
     price: "81",
@@ -91,7 +91,7 @@ const ACCESSORIES = {
 };
 
 const PRODUCT_BREADCRUMBS = {
-  "utopic-rx.html": "Utopic RX Smart Lock",
+  "utopic-rx.html": "Utopic R Smart Lock",
 };
 
 const BLOG_BREADCRUMBS = {

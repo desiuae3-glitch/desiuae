@@ -53,9 +53,26 @@
 .soro-blog-wrap{margin-bottom:1.25rem;min-height:4rem}
 .blog-static-latest[hidden]{display:none}
 .blog-static-latest{margin-bottom:2.5rem}
+/* Soro embed — readable on dark utopicrx theme */
+#soro-blog .soro-blog{color:#1a1a1a}
+#soro-blog .soro-blog-header{margin-bottom:1rem}
+#soro-blog .soro-blog-back{color:rgba(255,255,255,.9)!important;font-size:.85rem;font-weight:600}
+#soro-blog .soro-blog-back:hover{color:#fff!important}
 #soro-blog .soro-blog-list{display:grid;gap:1rem}
-#soro-blog .soro-blog-card{background:#fff}
-#soro-blog .soro-blog-article.visible{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:1.5rem}
+#soro-blog .soro-blog-card{background:#fff;color:#1a1a1a}
+#soro-blog .soro-blog-card-title,#soro-blog .soro-blog-card-excerpt,#soro-blog .soro-blog-card-date{color:inherit}
+#soro-blog .soro-blog-card-title{color:#1a1a1a!important}
+#soro-blog .soro-blog-card-excerpt{color:#555!important}
+#soro-blog .soro-blog-card-date{color:#888!important}
+#soro-blog .soro-blog-article.visible{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:1.5rem 1.75rem;color:#1a1a1a}
+#soro-blog .soro-blog-article-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#111!important;margin:0 0 .5rem;line-height:1.15}
+#soro-blog .soro-blog-article-date{color:#666!important;margin-bottom:1.25rem;display:block}
+#soro-blog .soro-blog-article-image{width:100%;max-height:420px;object-fit:cover;border-radius:12px;margin-bottom:1.25rem}
+#soro-blog .soro-blog-article-content{font-size:1rem;line-height:1.75;color:#1a1a1a!important}
+#soro-blog .soro-blog-article-content :where(p,li,span,div,blockquote,strong,em){color:#1a1a1a!important}
+#soro-blog .soro-blog-article-content :where(h2,h3,h4){color:#111!important;margin:1.5rem 0 .75rem;line-height:1.25}
+#soro-blog .soro-blog-article-content a{color:var(--red)!important;text-decoration:underline}
+#soro-blog .soro-blog-loading,#soro-blog .soro-blog-error,#soro-blog .soro-blog-empty{color:rgba(255,255,255,.75)!important}
 .blog-fallback[hidden]{display:none}
 .blog-section-title{font-size:1.1rem;font-weight:800;letter-spacing:-.02em;margin:0 0 1.25rem;text-transform:uppercase}
 .blog-card{background:var(--black3);border:1px solid var(--brd);border-radius:var(--r);padding:1.5rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;transition:border-color .2s,box-shadow .2s}

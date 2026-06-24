@@ -34,41 +34,41 @@ const URL_MAP = {
 };
 
 const HOME_META =
-  "DESi Utopic RX smart lock — no-drill retrofit keyless lock for UAE renters. Face recognition, fingerprint & PIN. Installs in under 5 minutes, leaves no trace. Ships across Dubai and GCC.";
+  "DESi Utopic R smart lock — one of the world's smallest euro-profile locks for UAE homes. App control, 37 users, rechargeable battery, optional face & fingerprint readers. 799 AED. Ships across Dubai and GCC.";
 const PRODUCT_META =
-  "Browse DESi Utopic RX smart locks and accessories for UAE euro-profile doors. No-drill retrofit lock, face & fingerprint readers, WiFi bridge, and more.";
+  "Browse DESi Utopic R smart locks and accessories for UAE euro-profile doors. Compact cylinder lock, face & fingerprint readers, WiFi bridge, and more.";
 const PRODUCT_META_MAP = {
   "utopicrx-mockup/products/utopic-rx.html":
-    "DESi Utopic RX smart lock for UAE euro-profile doors. No-drill retrofit, 37 users, 6-month battery, app & key backup. 699 AED, free Dubai install.",
+    "DESi Utopic R smart lock for UAE euro-profile doors. Single-screw install, 37 users, rechargeable battery, app & key backup. 799 AED, free Dubai install.",
   "utopicrx-mockup/products/face-reader.html":
-    "DESi face recognition + touch keypad for Utopic RX. 3D Face ID, 100 faces, PIN backup, AES-256 GCM wireless. Wall mount, 602 AED in UAE.",
+    "DESi face recognition + touch keypad for Utopic R. 3D Face ID, 100 faces, PIN backup, AES-256 GCM wireless. Wall mount, 602 AED in UAE.",
   "utopicrx-mockup/products/fingerprint-reader.html":
-    "DESi fingerprint reader + touch keypad V3 for Utopic RX. 500 DPI sensor, 100 prints, PIN backup, AES-256 GCM wireless. 602 AED UAE.",
+    "DESi fingerprint reader + touch keypad V3 for Utopic R. 500 DPI sensor, 100 prints, PIN backup, AES-256 GCM wireless. 602 AED UAE.",
   "utopicrx-mockup/products/wifi-bridge.html":
-    "DESi Smart Bridge WiFi hub for Utopic RX. Remote lock/unlock, Alexa, Google Home & Home Assistant. Manages up to 4 locks. 228 AED UAE.",
+    "DESi Smart Bridge WiFi hub for Utopic R. Remote lock/unlock, Alexa, Google Home & Home Assistant. Manages up to 4 locks. 228 AED UAE.",
   "utopicrx-mockup/products/door-sensor.html":
-    "DESi door sensor + auto-lock V3BL for Utopic RX. Locks when the door closes — wireless adhesive mount, no wiring. Pairs in DESi Smart app. 81 AED.",
+    "DESi door sensor + auto-lock V3BL for Utopic R. Locks when the door closes — wireless adhesive mount, no wiring. Pairs in DESi Smart app. 81 AED.",
   "utopicrx-mockup/products/smart-home-interface.html":
-    "DESi Smart Home Interface V3BL for Utopic RX. Dry-contact relay for KNX, BMS & custom automation. RX-only accessory. 118 AED UAE.",
+    "DESi Smart Home Interface V3BL for Utopic R. Dry-contact relay for KNX, BMS & custom automation. RX-only accessory. 118 AED UAE.",
   "utopicrx-mockup/products/remote-controller.html":
-    "DESi wireless remote V2BL for Utopic RX. Pocket lock/unlock, 50 m range, AES rolling code. 3-year CR2032 battery. 81 AED UAE.",
+    "DESi wireless remote V2BL for Utopic R. Pocket lock/unlock, 50 m range, AES rolling code. 3-year CR2032 battery. 81 AED UAE.",
   "utopicrx-mockup/products/auto-lock-module.html":
-    "DESi Auto-Lock Module V2 for Utopic R, ROK & 3 series only — not compatible with Utopic RX. Wireless auto-lock on door close. 81 AED.",
+    "DESi Auto-Lock Module V2 for Utopic R, ROK & 3 series. Wireless auto-lock when the door closes. 81 AED UAE.",
 };
 const ABOUT_META =
-  "Utopic RX is the UAE retail partner for DESi smart locks. Fast Dubai delivery, local warranty, and support for renters, Airbnb hosts, and property managers across the GCC.";
+  "Utopic R is the UAE retail partner for DESi smart locks. Fast Dubai delivery, local warranty, and support for renters, Airbnb hosts, and property managers across the GCC.";
 
-const NOINDEX_PAGES = new Set(["utopicrx-mockup/products/auto-lock-module.html"]);
+const NOINDEX_PAGES = new Set([]);
 
 // Unified Organization — smart-lock retailer; omit sameAs (no Utopic-owned social profiles).
 const ORG_NODE = {
   "@type": "Organization",
   "@id": "https://utopicrx.com/#organization",
-  name: "Utopic RX UAE",
+  name: "Utopic R UAE",
   url: "https://utopicrx.com/",
   logo: "https://utopicrx.com/utopicrx/desi-assets/logo/utopic-rx-logo.png",
   description:
-    "Authorized UAE and GCC retailer and distributor of DESi Utopic RX smart locks — no-drill retrofit smart locks for euro-profile cylinder doors. Not affiliated with medical or pharmaceutical products.",
+    "Authorized UAE and GCC retailer and distributor of DESi Utopic R smart locks for euro-profile cylinder doors. Not affiliated with medical or pharmaceutical products.",
   email: "support@utopicrx.com",
   areaServed: ["AE", "SA", "QA", "KW", "BH", "OM"],
   contactPoint: {
@@ -89,27 +89,27 @@ const HOME_ORG = {
 };
 
 const MANUFACTURER_PRODUCT_URL =
-  "https://en.desi.com.tr/desi-utopic-rx-smart-lock-europrofile";
+  "https://en.desi.com.tr/desi-utopic-r-smart-lock-iosandroid-compatible-euro-profile";
 
 // Complete Product schema for rich results (Fix Pack #1, Fix 2).
 const PRODUCT_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "DESi Utopic RX Smart Lock",
+  name: "DESi Utopic R Smart Lock",
   description:
-    "No-drill retrofit smart lock for euro-profile cylinder doors. App control, 37 users, offline e-keys, auto-lock, 6-month battery, physical key backup. Optional face recognition and fingerprint readers.",
+    "Compact euro-profile cylinder smart lock. App control, 37 users, offline e-keys, auto-lock, rechargeable battery, physical key backup. Optional face recognition and fingerprint readers.",
   image: [
-    "https://utopicrx.com/utopicrx/desi-assets/products/rx-knob-unit.png",
-    "https://utopicrx.com/utopicrx/desi-assets/banners/RX2new.jpg",
+    "https://utopicrx.com/utopicrx/desi-assets/products/utopic-r-main.png",
+    "https://utopicrx.com/utopicrx/desi-assets/products/utopic-r-angle.png",
   ],
-  sku: "UTOPIC-RX",
+  sku: "UTOPIC-R",
   brand: { "@type": "Brand", name: "DESi" },
   sameAs: [MANUFACTURER_PRODUCT_URL],
   offers: {
     "@type": "Offer",
     url: "https://utopicrx.com/products/utopic-rx.html",
     priceCurrency: "AED",
-    price: "699",
+    price: "799",
     availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     shippingDetails: {
@@ -186,7 +186,7 @@ function decodeHtmlEntities(s) {
 
 function getTitle(html) {
   const m = html.match(/<title>([^<]*)<\/title>/i);
-  return m ? decodeHtmlEntities(m[1].trim()) : "Utopic RX";
+  return m ? decodeHtmlEntities(m[1].trim()) : "Utopic R";
 }
 
 function upsertCanonical(html, url) {
@@ -256,7 +256,7 @@ function escAttr(s) {
 
 function buildOgBlock(title, desc, url) {
   return `<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Utopic RX" />
+<meta property="og:site_name" content="Utopic R" />
 <meta property="og:title" content="${escAttr(title)}" />
 <meta property="og:description" content="${escAttr(desc)}" />
 <meta property="og:url" content="${url}" />
