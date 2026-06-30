@@ -70,22 +70,61 @@ const ORG_NODE = {
   description:
     "Authorized UAE and GCC retailer and distributor of DESi Utopic R smart locks for euro-profile cylinder doors. Not affiliated with medical or pharmaceutical products.",
   email: "support@utopicrx.com",
+  telephone: "+971-52-618-7729",
   areaServed: ["AE", "SA", "QA", "KW", "BH", "OM"],
   contactPoint: {
     "@type": "ContactPoint",
+    telephone: "+971-52-618-7729",
     email: "support@utopicrx.com",
     contactType: "customer support",
+    areaServed: "AE",
+    availableLanguage: ["English", "Arabic"],
   },
+};
+
+const LOCAL_BUSINESS_NODE = {
+  "@type": "LocalBusiness",
+  "@id": "https://utopicrx.com/#localbusiness",
+  name: "Utopic R UAE — DESi Smart Locks",
+  image: "https://utopicrx.com/utopicrx/desi-assets/products/utopic-r-main.png",
+  url: "https://utopicrx.com/",
+  telephone: "+971-52-618-7729",
+  email: "support@utopicrx.com",
+  priceRange: "AED",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dubai",
+    addressCountry: "AE",
+  },
+  areaServed: ["AE", "SA", "QA", "KW", "BH", "OM"],
+  parentOrganization: { "@id": "https://utopicrx.com/#organization" },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
+};
+
+const WEBSITE_NODE = {
+  "@type": "WebSite",
+  "@id": "https://utopicrx.com/#website",
+  url: "https://utopicrx.com/",
+  name: "Utopic R — DESi Smart Locks UAE & GCC",
+  publisher: { "@id": "https://utopicrx.com/#organization" },
+  inLanguage: "en",
 };
 
 const ORG_GRAPH = {
   "@context": "https://schema.org",
-  "@graph": [ORG_NODE],
+  "@graph": [ORG_NODE, LOCAL_BUSINESS_NODE, WEBSITE_NODE],
 };
 
-const HOME_ORG = {
+const HOME_GRAPH = {
   "@context": "https://schema.org",
-  ...ORG_NODE,
+  "@graph": [ORG_NODE, LOCAL_BUSINESS_NODE, WEBSITE_NODE],
 };
 
 const MANUFACTURER_PRODUCT_URL =
@@ -96,6 +135,7 @@ const PRODUCT_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "DESi Utopic R Smart Lock",
+  alternateName: ["Utopic R", "DESi Utopic R", "Utopic R Smart Lock"],
   description:
     "Compact euro-profile cylinder smart lock. App control, 37 users, offline e-keys, auto-lock, rechargeable battery, physical key backup. Optional face recognition and fingerprint readers.",
   image: [
@@ -296,7 +336,7 @@ for (const file of htmlFiles) {
 
   const blocks = [buildOgBlock(title, desc, url)];
   if (rel === HOMEPAGE) {
-    blocks.push(ldJson(HOME_ORG), ldJson(PRODUCT_SCHEMA));
+    blocks.push(ldJson(HOME_GRAPH), ldJson(PRODUCT_SCHEMA));
   } else if (rel === MAIN_PRODUCT_PAGE) {
     blocks.push(ldJson(ORG_GRAPH), ldJson(PRODUCT_SCHEMA));
   } else {

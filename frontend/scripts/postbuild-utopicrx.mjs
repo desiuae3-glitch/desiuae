@@ -12,7 +12,7 @@ if (!existsSync(mockupIndex)) {
 }
 
 copyFileSync(mockupIndex, distIndex);
-console.log("postbuild-utopicrx: dist/index.html set to Utopic RX homepage");
+console.log("postbuild-utopicrx: dist/index.html set to Utopic R homepage");
 
 const mockup404 = join(dist, "utopicrx-mockup", "404.html");
 const dist404 = join(dist, "404.html");

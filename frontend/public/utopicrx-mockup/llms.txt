@@ -1,9 +1,10 @@
 # Utopic R — DESi Smart Locks UAE & GCC
 
-> Authorized UAE & GCC distributor of DESi Utopic R smart locks: no-drill,
-> retrofit smart locks for euro-profile cylinder doors. Face recognition,
-> fingerprint, PIN, and app control. Ships across UAE and GCC; free
-> installation in Dubai & Sharjah; cash on delivery; 2-year warranty.
+> Authorized UAE & GCC distributor of DESi Utopic R smart locks. Single-screw
+> euro-cylinder install with the included DESi cylinder — no drilling into
+> your door. Face recognition, fingerprint, PIN, and app control. Ships across
+> UAE and GCC; free installation in Dubai & Sharjah; cash on delivery;
+> 2-year warranty.
 
 ## Products
 - [Utopic R Smart Lock — full specs](https://utopicrx.com/products/utopic-rx.html): Base lock, 799 AED, euro-profile cylinder, 37 users, up to 3 months on a full charge
@@ -12,8 +13,11 @@
 ## Guides
 - [Smart Lock Buyer's Guide for Dubai 2026](https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026): Utopic R vs Solity vs Yale vs Philips for UAE doors
 - [Smart locks in rented Dubai apartments](https://utopicrx.com/blog/smart-lock-rented-apartment-dubai): RERA rules, deposit safety, landlord permission
-- [FAQ](https://utopicrx.com/faq): 10 common questions for UAE renters and homeowners
+- [Smart lock for renters](https://utopicrx.com/smart-lock-rented-apartment): No-drill install overview for UAE tenants
+- [DESi vs Nuki comparison](https://utopicrx.com/compare/desi-vs-nuki): Local stock, warranty, and price in AED
+- [FAQ](https://utopicrx.com/faq): Common questions for UAE renters and homeowners
 
 ## Company
 - Brand: DESi (manufacturer, Türkiye) — utopicrx.com is the UAE/GCC distributor
+- Product URL: https://utopicrx.com/products/utopic-rx.html (Utopic R; legacy RX slug retained)
 - Contact: support@utopicrx.com · WhatsApp +971 52 618 7729 · Dubai, UAE
