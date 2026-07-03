@@ -18,6 +18,7 @@ const EXACT = {
   "/theme.css": "/utopicrx-mockup/theme.css",
   "/content.css": "/utopicrx-mockup/content.css",
   "/nav.js": "/utopicrx-mockup/nav.js",
+  "/analytics.js": "/utopicrx-mockup/analytics.js",
   "/privacy": "/utopicrx/privacy.html",
   "/privacy.html": "/utopicrx/privacy.html",
   "/utopicrx-mockup": "/utopicrx-mockup/index.html",

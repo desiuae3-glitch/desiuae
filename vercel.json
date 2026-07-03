@@ -123,6 +123,7 @@
     { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
     { "source": "/content.css", "destination": "/utopicrx-mockup/content.css" },
     { "source": "/nav.js", "destination": "/utopicrx-mockup/nav.js" },
+    { "source": "/analytics.js", "destination": "/utopicrx-mockup/analytics.js" },
     { "source": "/products/product.css", "destination": "/utopicrx-mockup/products/product.css" },
     { "source": "/", "destination": "/utopicrx-mockup/index.html" },
     { "source": "/returns-warranty.html", "destination": "/utopicrx-mockup/returns-warranty.html" },
@@ -136,7 +137,7 @@
     { "source": "/404", "destination": "/utopicrx-mockup/404.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
     {
-      "source": "/((?!utopicrx-mockup|popup|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|content\\.css|404\\.html|404).*)",
+      "source": "/((?!utopicrx-mockup|popup|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|analytics\\.js|content\\.css|404\\.html|404).*)",
       "destination": "/404.html",
       "statusCode": 404
     }
