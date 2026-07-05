@@ -62,14 +62,14 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 /* ====== 3D HERO &mdash; black & white ====== */
 .xhero{position:relative;min-height:calc(100vh - 126px);background:var(--black);overflow:hidden;display:flex;align-items:center;color:#fff}
 #scene{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;opacity:.45}
-.xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto auto auto;gap:1.5rem 2rem;align-items:start;pointer-events:none}
-.xhero-made-in{grid-column:1/-1;grid-row:1;display:flex;align-items:center;justify-content:center;gap:.55rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;pointer-events:auto;opacity:0;animation:fadeUp .8s .35s forwards}
-.xhero-made-in strong{font-weight:800}
-.tr-flag{width:22px;height:15px;border-radius:2px;overflow:hidden;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
-.xhero-copy{grid-column:1;grid-row:2}
-.xhero-ctas{grid-column:1;grid-row:3;margin-top:0}
-.xhero-stage{grid-column:2;grid-row:2 / span 3;align-self:center}
-.xhero-trust{grid-column:1;grid-row:4;margin-top:0}
+.xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto auto;gap:1.5rem 2rem;align-items:start;pointer-events:none}
+.xhero-copy{grid-column:1;grid-row:1}
+.xhero-ctas{grid-column:1;grid-row:2;margin-top:0}
+.xhero-stage{grid-column:2;grid-row:1 / span 3;align-self:center;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.85rem;min-height:min(52vh,520px);opacity:0;transition:opacity 1.2s ease .4s;pointer-events:none}
+.xhero-made-in{margin:0;pointer-events:auto;opacity:0;animation:fadeUp .8s .4s forwards}
+.xhero-made-in img{width:min(240px,62vw);height:auto;display:block}
+.xhero-stage.in{opacity:1}
+.xhero-trust{grid-column:1;grid-row:3;margin-top:0}
 .xhero-copy>*{pointer-events:auto}
 .xhero-ctas{pointer-events:auto}
 .xhero-eyebrow{font-family:var(--m);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#ff6b6b;margin-bottom:1rem;opacity:0;animation:fadeUp .8s .3s forwards}
@@ -97,8 +97,6 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .xhero-trust{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.8rem;max-width:620px;opacity:0;animation:fadeUp .8s .9s forwards}
 .xht{display:flex;align-items:center;gap:.35rem;font-size:.66rem;font-weight:600;color:var(--tx2);background:rgba(255,255,255,.06);border:1px solid var(--brd);border-radius:100px;padding:.3rem .75rem}
 .xht.hl{background:var(--red);color:#fff;border-color:var(--red);font-weight:700}
-.xhero-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:min(52vh,520px);opacity:0;transition:opacity 1.2s ease .4s;pointer-events:none}
-.xhero-stage.in{opacity:1}
 .xhero-showcase{position:relative;width:min(54vw,640px);isolation:isolate}
 .xhero-ambient{position:absolute;inset:-12% -6%;background:radial-gradient(ellipse 70% 60% at 58% 50%,rgba(227,30,36,.16) 0%,rgba(227,30,36,.04) 45%,transparent 72%);filter:blur(44px);z-index:0;pointer-events:none}
 .xhero-frame{position:relative;z-index:2;border-radius:16px;overflow:hidden;border:1px solid var(--brd);background:var(--black2);box-shadow:0 32px 64px rgba(0,0,0,.55)}
@@ -405,7 +403,6 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
 @media(max-width:1024px){
   .xhero{align-items:flex-start!important;min-height:auto!important;padding:1rem 0 2rem!important}
   .xhero-wrap{display:flex!important;flex-direction:column!important;grid-template-columns:1fr!important;grid-template-rows:auto!important;text-align:center;justify-items:center;padding:1rem 1rem 0!important;box-sizing:border-box;width:100%;max-width:100%;gap:0!important}
-  .xhero-made-in{order:0!important;margin:0 0 1rem!important;width:100%;opacity:1!important;animation:none!important}
   .xhero-copy{order:1!important;grid-column:auto!important;grid-row:auto!important;width:100%;display:flex;flex-direction:column;align-items:center}
   .xhero-stage{order:2!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center;min-height:auto!important;align-self:auto!important}
   .xhero-ctas{order:3!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center}
@@ -415,7 +412,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .xhero-voice{align-items:center}
   .xhero-voice-logos{justify-content:center}
   .xhero-ctas,.xhero-trust{justify-content:center;margin-left:auto;margin-right:auto}
-  .xhero-h1,.xhero-lead,.xhero-tag,.xhero-voice,.xhero-foot,.xhero-ctas,.xhero-trust{opacity:1!important;animation:none!important;transform:none!important}
+  .xhero-h1,.xhero-lead,.xhero-tag,.xhero-voice,.xhero-foot,.xhero-ctas,.xhero-trust,.xhero-made-in{opacity:1!important;animation:none!important;transform:none!important}
   #scene{opacity:.12!important}
   .xhero-showcase{width:min(90vw,520px);margin:0 auto}
   .xhero-ambient{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(227,30,36,.16) 0%,rgba(227,30,36,.04) 45%,transparent 72%)}
@@ -705,10 +702,6 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
 <section class="xhero" id="top">
   <canvas id="scene"></canvas>
   <div class="xhero-wrap">
-    <p class="xhero-made-in" aria-label="Made in Turkiye">
-      <svg class="tr-flag" viewBox="0 0 22 15" aria-hidden="true"><rect width="22" height="15" fill="#E30A17"/><circle cx="8.2" cy="7.5" r="3.6" fill="#fff"/><circle cx="9.35" cy="7.5" r="2.85" fill="#E30A17"/><path fill="#fff" d="M14.1 7.5l1.05 3.23h3.4l-2.75 2 1.05 3.23L14.1 13.96l-2.75 2 1.05-3.23-2.75-2h3.4z"/></svg>
-      <strong>Made in Turkiye</strong>
-    </p>
     <div class="xhero-copy">
       <h1 class="xhero-h1">Make Your Door <em>Smart</em> in <span class="outline">Under 5 Minutes*</span></h1>
       <p class="xhero-lead">Made for Dubai renters &mdash; swap in the included euro cylinder with a single screw. No drilling into your door, so your deposit stays yours.</p>
@@ -733,6 +726,9 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <p class="xhero-foot">* Typical DIY install on a standard euro-profile cylinder door.</p>
     </div>
     <div class="xhero-stage" id="heroStage">
+      <p class="xhero-made-in">
+        <img src="../utopicrx/desi-assets/badges/made-in-turkey.png" alt="Made in Turkey" width="240" height="72" loading="eager">
+      </p>
       <div class="xhero-showcase" id="heroLock">
         <div class="xhero-ambient" aria-hidden="true"></div>
         <div class="xhero-frame">
