@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, readFileSync } from "node:fs";
+import { copyFileSync, existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root = join(import.meta.dirname, "..");
@@ -19,6 +19,28 @@ const dist404 = join(dist, "404.html");
 if (existsSync(mockup404)) {
   copyFileSync(mockup404, dist404);
   console.log("postbuild-utopicrx: dist/404.html set from mockup 404 page");
+}
+
+function syncHtmlDir(srcDir, dstDir) {
+  for (const name of readdirSync(srcDir)) {
+    const src = join(srcDir, name);
+    const dst = join(dstDir, name);
+    if (statSync(src).isDirectory()) {
+      syncHtmlDir(src, dst);
+    } else if (name.endsWith(".html")) {
+      copyFileSync(src, dst);
+    }
+  }
+}
+
+const publicMockup = join(root, "public", "utopicrx-mockup");
+const distMockup = join(dist, "utopicrx-mockup");
+syncHtmlDir(publicMockup, distMockup);
+console.log("postbuild-utopicrx: synced all HTML from public/utopicrx-mockup/ to dist/");
+
+copyFileSync(join(distMockup, "index.html"), distIndex);
+if (existsSync(join(distMockup, "404.html"))) {
+  copyFileSync(join(distMockup, "404.html"), dist404);
 }
 
 for (const file of ["sitemap.xml", "robots.txt", "llms.txt"]) {
