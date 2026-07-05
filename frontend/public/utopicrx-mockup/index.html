@@ -1395,13 +1395,13 @@ function updateTotal(){
   let addonTotal=0;let addonUnits=0;const addonLines=[];
   Object.entries(addonQty).forEach(([id,q])=>{
     const a=ADDONS.find(x=>x.id===id);
-    if(a&&q>0){const line=a.price*q;addonTotal+=line;addonUnits+=q;addonLines.push(`  + ${a.name} ù ${q} (${line} AED)`);}
+    if(a&&q>0){const line=a.price*q;addonTotal+=line;addonUnits+=q;addonLines.push(`  + ${a.name} \u00d7 ${q} (${line} AED)`);}
   });
   const lockTotal=BASE*qty;
   const total=lockTotal+addonTotal;
   document.getElementById('totalPrice').innerHTML=`${total} <span class="cur">AED</span>`;
-  document.getElementById('totalItems').textContent=addonUnits===0?`${qty}ù base lock`:`${qty}ù lock + ${addonUnits} accessory item${addonUnits>1?'s':''}`;
-  const lockLine=`ù Utopic R Lock ù ${qty} (${lockTotal} AED)`;
+  document.getElementById('totalItems').textContent=addonUnits===0?`${qty}\u00d7 base lock`:`${qty}\u00d7 lock + ${addonUnits} accessory item${addonUnits>1?'s':''}`;
+  const lockLine=`\u2022 Utopic R Lock \u00d7 ${qty} (${lockTotal} AED)`;
   const msg=encodeURIComponent(`Hi, I'd like to order:\n\n${lockLine}${addonLines.length?'\n'+addonLines.join('\n'):''}\n\nTotal: ${total} AED`);
   document.getElementById('waBtn').href=`https://wa.me/${WA}?text=${msg}`;
 }
@@ -1410,7 +1410,7 @@ function tgFAQ(btn){const open=btn.parentElement.classList.toggle('open');btn.se
 function playV(el,id){el.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1" frameborder="0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen title="Utopic R" style="width:100%;height:100%;border:0"></iframe>`;el.onclick=null;}
 function buildEnquiryWaUrl(){
   const n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim();
-  const msg=encodeURIComponent(`Hi, quote request:\nName: ${n}\nPhone: ${p}\nEmail: ${document.getElementById('f-email').value||'ù'}\nEmirate: ${document.getElementById('f-emirate').value||'ù'}\nDoor: ${document.getElementById('f-door').value||'ù'}\n\n${document.getElementById('f-msg').value}`);
+  const msg=encodeURIComponent(`Hi, quote request:\nName: ${n}\nPhone: ${p}\nEmail: ${document.getElementById('f-email').value||'\u2014'}\nEmirate: ${document.getElementById('f-emirate').value||'\u2014'}\nDoor: ${document.getElementById('f-door').value||'\u2014'}\n\n${document.getElementById('f-msg').value}`);
   return `https://wa.me/${WA}?text=${msg}`;
 }
 document.getElementById('enquiryForm').addEventListener('submit',async function(e){

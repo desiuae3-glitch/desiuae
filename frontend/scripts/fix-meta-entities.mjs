@@ -21,8 +21,12 @@ function fixMetaEntities(text) {
   t = t.replace(/content="([^"]*)\u2013([^"]*)"/g, (_, a, c) => `content="${a}&ndash;${c}"`);
   t = t.replace(/<title>([^<]*)\u2014([^<]*)<\/title>/g, (_, a, c) => `<title>${a}&mdash;${c}</title>`);
   t = t.replace(/Buyer\u2014s/g, "Buyer&rsquo;s");
-  t = t.replace(/\uFFFD/g, "&mdash;");
   t = t.replace(/â€"/g, "&mdash;");
+  // HTML entities decode in static markup only — not in <script> (textContent shows &mdash; literally)
+  t = t.split(/(<script[\s\S]*?<\/script>)/gi).map((part) => {
+    if (/^<script/i.test(part)) return part;
+    return part.replace(/\uFFFD/g, "&mdash;");
+  }).join("");
   return t;
 }
 
