@@ -7,7 +7,7 @@
 > 2-year warranty.
 
 ## Products
-- [Utopic R Smart Lock — full specs](https://utopicrx.com/products/utopic-rx.html): Base lock, 799 AED, euro-profile cylinder, 37 users, up to 3 months on a full charge
+- [Utopic R Smart Lock — full specs](https://utopicrx.com/products/utopic-r): Base lock, 799 AED, euro-profile cylinder, 37 users, up to 3 months on a full charge
 - [All products](/products): Face reader, fingerprint reader, WiFi bridge add-ons
 
 ## Guides
@@ -19,5 +19,5 @@
 
 ## Company
 - Brand: DESi (manufacturer, Türkiye) — utopicrx.com is the UAE/GCC distributor
-- Product URL: https://utopicrx.com/products/utopic-rx.html (Utopic R; legacy RX slug retained)
+- Product URL: https://utopicrx.com/products/utopic-r (Utopic R; legacy RX slug retained)
 - Contact: support@utopicrx.com · WhatsApp +971 52 618 7729 · Dubai, UAE

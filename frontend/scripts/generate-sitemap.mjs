@@ -6,7 +6,7 @@ const LASTMOD = "2026-06-30";
 const URLS = [
   "https://utopicrx.com/",
   "https://utopicrx.com/products",
-  "https://utopicrx.com/products/utopic-rx.html",
+  "https://utopicrx.com/products/utopic-r",
   "https://utopicrx.com/products/face-reader.html",
   "https://utopicrx.com/products/fingerprint-reader.html",
   "https://utopicrx.com/products/wifi-bridge.html",
@@ -28,7 +28,7 @@ const URLS = [
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${URLS.map((loc) => `  <url><loc>${loc}</loc><lastmod>${LASTMOD}</lastmod><changefreq>weekly</changefreq><priority>${loc.endsWith("/") ? "1.0" : loc.includes("/products/utopic-rx") ? "0.9" : "0.8"}</priority></url>`).join("\n")}
+${URLS.map((loc) => `  <url><loc>${loc}</loc><lastmod>${LASTMOD}</lastmod><changefreq>weekly</changefreq><priority>${loc.endsWith("/") ? "1.0" : loc.includes("/products/utopic-r") && !loc.endsWith("/products") ? "0.9" : "0.8"}</priority></url>`).join("\n")}
 </urlset>
 `;
 

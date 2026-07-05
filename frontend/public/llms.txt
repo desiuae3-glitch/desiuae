@@ -3,7 +3,7 @@
 > Utopic R is a euro-profile smart lock sold in the UAE by an authorized distributor. Installs in under 5 minutes on any euro-cylinder door without drilling. Renter-friendly and fully removable.
 
 ## Products
-- [Utopic R Smart Lock](https://utopicrx.com/products/utopic-rx.html): 799 AED. Euro-profile retrofit, 37 users, rechargeable battery, app control, optional face/fingerprint readers.
+- [Utopic R Smart Lock](https://utopicrx.com/products/utopic-r): 799 AED. Euro-profile retrofit, 37 users, rechargeable battery, app control, optional face/fingerprint readers.
 - [Face Reader + Keypad](https://utopicrx.com/products/face-reader.html): 602 AED add-on.
 - [Fingerprint Reader V3](https://utopicrx.com/products/fingerprint-reader.html): 602 AED add-on.
 - [WiFi Bridge Hub](https://utopicrx.com/products/wifi-bridge.html): 228 AED add-on. Enables remote access, Alexa, Google Home.

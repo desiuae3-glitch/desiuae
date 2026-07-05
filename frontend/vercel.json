@@ -29,8 +29,13 @@
       "permanent": true
     },
     {
+      "source": "/products/utopic-rx.html",
+      "destination": "/products/utopic-r",
+      "permanent": true
+    },
+    {
       "source": "/products/utopic-r.html",
-      "destination": "/products/utopic-rx.html",
+      "destination": "/products/utopic-r",
       "permanent": true
     }
   ],
@@ -133,6 +138,7 @@
     { "source": "/product-manuals.html", "destination": "/utopicrx-mockup/product-manuals.html" },
     { "source": "/returns-warranty", "destination": "/utopicrx-mockup/returns-warranty.html" },
     { "source": "/product-manuals", "destination": "/utopicrx-mockup/product-manuals.html" },
+    { "source": "/products/utopic-r", "destination": "/utopicrx-mockup/products/utopic-rx.html" },
     { "source": "/products", "destination": "/utopicrx-mockup/products/index.html" },
     { "source": "/products/(.*)", "destination": "/utopicrx-mockup/products/$1" },
     { "source": "/privacy", "destination": "/utopicrx/privacy.html" },
