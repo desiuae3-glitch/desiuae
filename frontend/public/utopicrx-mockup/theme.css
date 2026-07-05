@@ -99,21 +99,6 @@ button {
   font-weight: 800;
 }
 
-.stock-notice {
-  margin: 0.85rem 0 0;
-  padding: 0.75rem 1rem;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--warn);
-  background: var(--warn-bg);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  border-radius: 10px;
-}
-
-.stock-notice strong {
-  color: #fff;
-}
-
 .ann a {
   color: #fff;
   text-decoration: underline;
