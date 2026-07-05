@@ -1356,6 +1356,7 @@ const ADDONS=[
   {id:'smart',name:'Smart Home Interface V3BL',price:118,page:'products/smart-home-interface.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg',desc:'Dry-contact relay output for KNX, BMS, and custom smart home integration.'},
   {id:'remote',name:'Wireless Remote Controller V2BL',price:81,page:'products/remote-controller.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg',desc:'Pocket remote &mdash; 50m range, rolling code AES encryption. Lock/unlock without your phone.'}
 ];
+const READER_EXCLUSIVE=['face','fp'];
 const addonsEl=document.getElementById('addons');
 const addonQty={};
 function formatAp(a,q){return q>1?`+${a.price*q} <span class="cur">AED</span>`:`+${a.price} <span class="cur">AED</span>`;}
@@ -1373,6 +1374,11 @@ function setAddonQty(id,q){
     qtyEl.hidden=true;
     ap.innerHTML=`+${a.price} <span class="cur">AED</span>`;
   }else{
+    if(READER_EXCLUSIVE.includes(id)){
+      READER_EXCLUSIVE.forEach(other=>{
+        if(other!==id&&addonQty[other])setAddonQty(other,0);
+      });
+    }
     addonQty[id]=q;
     el.classList.add('sel');
     btn.setAttribute('aria-pressed','true');
