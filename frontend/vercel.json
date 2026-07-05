@@ -146,7 +146,7 @@
     { "source": "/404", "destination": "/utopicrx-mockup/404.html" },
     { "source": "/utopicrx-mockup", "destination": "/utopicrx-mockup/index.html" },
     {
-      "source": "/((?!utopicrx-mockup|popup|sitemap\\.xml|robots\\.txt|llms\\.txt|favicon|assets|returns-warranty|product-manuals|products|privacy|faq|smart-lock-rented-apartment|airbnb-smart-lock-dubai|blog|compare|theme\\.css|nav\\.js|analytics\\.js|content\\.css|404\\.html|404).*)",
+      "source": "/((?!sitemap\\.xml|robots\\.txt|llms\\.txt).*)",
       "destination": "/404.html",
       "statusCode": 404
     }
