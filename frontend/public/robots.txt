@@ -24,3 +24,6 @@ User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://utopicrx.com/sitemap.xml
+
+# LLM / AI crawlers
+# https://utopicrx.com/llms.txt
