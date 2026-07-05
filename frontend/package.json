@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.mjs && vite build && node scripts/postbuild-utopicrx.mjs",
+    "build": "node scripts/generate-sitemap.mjs && vite build && node scripts/postbuild-utopicrx.mjs && node scripts/fix-meta-entities.mjs --dist",
     "lint": "eslint .",
     "preview": "vite preview --port 8123"
   },

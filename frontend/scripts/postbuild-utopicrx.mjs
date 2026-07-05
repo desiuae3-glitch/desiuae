@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync } from "node:fs";
+import { copyFileSync, existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = join(import.meta.dirname, "..");
@@ -25,6 +25,11 @@ for (const file of ["sitemap.xml", "robots.txt", "llms.txt"]) {
   const rootFile = join(dist, file);
   if (!existsSync(rootFile)) {
     console.error(`postbuild-utopicrx: missing ${file} in dist output`);
+    process.exit(1);
+  }
+  const head = readFileSync(rootFile, "utf8").slice(0, 80);
+  if (file === "sitemap.xml" && !head.includes("<?xml")) {
+    console.error(`postbuild-utopicrx: ${file} is not valid XML`);
     process.exit(1);
   }
   console.log(`postbuild-utopicrx: ${file} present at dist/${file}`);

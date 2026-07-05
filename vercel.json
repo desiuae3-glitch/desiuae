@@ -116,6 +116,7 @@
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/faq", "destination": "/utopicrx-mockup/faq.html" },
     { "source": "/smart-lock-rented-apartment", "destination": "/utopicrx-mockup/smart-lock-rented-apartment.html" },
     { "source": "/airbnb-smart-lock-dubai", "destination": "/utopicrx-mockup/airbnb-smart-lock-dubai.html" },
     { "source": "/blog", "destination": "/utopicrx-mockup/blog/index.html" },
