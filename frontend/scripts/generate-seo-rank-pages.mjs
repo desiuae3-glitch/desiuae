@@ -72,9 +72,9 @@ const FOOTER_GUIDES = `
       <a href="/smart-lock-sharjah">Smart Lock Sharjah</a>
       <a href="/smart-lock-abu-dhabi">Smart Lock Abu Dhabi</a>
       <a href="/blog/smart-lock-buyers-guide-dubai-2026">Smart Lock Buyer&rsquo;s Guide</a>
-      <a href="/compare/desi-vs-yale">DESi vs Yale</a>
-      <a href="/compare/desi-vs-philips">DESi vs Philips</a>
-      <a href="/compare/desi-vs-nuki">DESi vs Nuki</a>`;
+      <a href="/compare/utopic-r-vs-yale">Utopic R vs Yale</a>
+      <a href="/compare/utopic-r-vs-philips">Utopic R vs Philips</a>
+      <a href="/compare/utopic-r-vs-nuki">Utopic R vs Nuki</a>`;
 
 function shell({ canonical, title, description, keywords, schemaExtra, body, waText, breadcrumbs }) {
   const crumbJson = breadcrumbs
@@ -297,7 +297,7 @@ write(
   <div class="related-links">
     <a href="/smart-lock-rented-apartment">For renters</a>
     <a href="/airbnb-smart-lock-dubai">Airbnb hosts</a>
-    <a href="/compare/desi-vs-yale">vs Yale</a>
+    <a href="/compare/utopic-r-vs-yale">vs Yale</a>
     <a href="/faq">FAQ</a>
   </div>
 </div>`,
@@ -347,7 +347,7 @@ function geoPage({ slug, city, title, description, freeInstall }) {
       <a href="/smart-lock-installation-dubai">Installation</a>
       <a href="/smart-lock-rented-apartment">Renters</a>
       <a href="/airbnb-smart-lock-dubai">Airbnb</a>
-      <a href="/compare/desi-vs-yale">vs Yale</a>
+      <a href="/compare/utopic-r-vs-yale">vs Yale</a>
     </div>
   </section>
   <div class="cta-box">
@@ -394,7 +394,7 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
       breadcrumbs: [
         { name: "Home", item: "https://utopicrx.com/" },
         { name: "Compare", item: "https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026" },
-        { name: `DESi vs ${brand}`, item: `https://utopicrx.com/compare/${slug}` },
+        { name: `Utopic R vs ${brand}`, item: `https://utopicrx.com/compare/${slug}` },
       ],
       schemaExtra: {
         "@context": "https://schema.org",
@@ -417,7 +417,7 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
   </div>
   <section class="content-sec">
     <p class="tag">Side by side</p>
-    <h2>DESi vs ${brand} smart lock UAE</h2>
+    <h2>Utopic R vs ${brand} smart lock UAE</h2>
     <table class="content-table">
       <thead><tr><th>Factor</th><th>${brand}</th><th><span class="desi-t">DESi</span> Utopic R</th></tr></thead>
       <tbody>${tableRows}</tbody>
@@ -436,9 +436,9 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
     </div>
   </div>
   <div class="related-links">
-    <a href="/compare/desi-vs-nuki">vs Nuki</a>
-    <a href="/compare/desi-vs-yale">vs Yale</a>
-    <a href="/compare/desi-vs-philips">vs Philips</a>
+    <a href="/compare/utopic-r-vs-nuki">vs Nuki</a>
+    <a href="/compare/utopic-r-vs-yale">vs Yale</a>
+    <a href="/compare/utopic-r-vs-philips">vs Philips</a>
     <a href="/smart-lock-installation-dubai">Installation</a>
     <a href="/blog/smart-lock-buyers-guide-dubai-2026">Buyer&rsquo;s guide</a>
   </div>
@@ -449,11 +449,11 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
 }
 
 comparePage({
-  slug: "desi-vs-yale",
+  slug: "utopic-r-vs-yale",
   brand: "Yale",
-  title: "DESi Utopic R vs Yale Smart Lock UAE | Dubai Comparison",
+  title: "Utopic R vs Yale Smart Lock UAE | Dubai Comparison",
   description:
-    "Yale vs DESi Utopic R for UAE doors. Price in AED, install type, renter fit, and local warranty compared for Dubai buyers.",
+    "Yale vs Utopic R for UAE doors. Price in AED, install type, renter fit, and local warranty compared for Dubai buyers.",
   intro:
     "Yale is one of the most searched <strong>smart lock Dubai</strong> brands. Full Yale mortise units look premium but usually need a locksmith and permanent door work. The DESi Utopic R is a euro-cylinder retrofit aimed at renters and fast installs. Here is an honest UAE comparison.",
   rows: [
@@ -469,11 +469,11 @@ comparePage({
 
 
 comparePage({
-  slug: "desi-vs-philips",
+  slug: "utopic-r-vs-philips",
   brand: "Philips",
-  title: "DESi Utopic R vs Philips Smart Lock UAE | 2026 Guide",
+  title: "Utopic R vs Philips Smart Lock UAE | 2026 Guide",
   description:
-    "Philips EasyKey vs DESi Utopic R in UAE. Price, install method, Airbnb fit, and local warranty compared for Dubai buyers.",
+    "Philips EasyKey vs Utopic R in UAE. Price, install method, Airbnb fit, and local warranty compared for Dubai buyers.",
   intro:
     "Philips EasyKey models appear across noon, Amazon.ae, and electronics retailers. Many are full-body digital locks. Utopic R targets the euro-cylinder retrofit niche — faster for tenants, cheaper total cost of ownership for short leases.",
   rows: [

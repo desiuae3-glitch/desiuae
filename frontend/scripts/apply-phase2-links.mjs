@@ -13,7 +13,7 @@ function walk(dir, out = []) {
   return out;
 }
 
-const COMPARE_LINK = `<a href="/compare/desi-vs-nuki">DESi vs Nuki</a>`;
+const COMPARE_LINK = `<a href="/compare/utopic-r-vs-nuki">Utopic R vs Nuki</a>`;
 const BUYERS_GUIDE_MARKER = `<a href="/blog/smart-lock-buyers-guide-dubai-2026">Smart Lock Buyer&rsquo;s Guide</a>`;
 
 const HOMEPAGE_SHOP_COLUMN = `    <div class="fcc">
@@ -62,7 +62,7 @@ for (const f of walk(MOCKUP)) {
   let html = readFileSync(f, "utf8");
   const orig = html;
 
-  if (html.includes(BUYERS_GUIDE_MARKER) && !html.includes('/compare/desi-vs-nuki">DESi vs Nuki')) {
+  if (html.includes(BUYERS_GUIDE_MARKER) && !html.includes('/compare/utopic-r-vs-nuki">Utopic R vs Nuki')) {
     html = html.replace(
       BUYERS_GUIDE_MARKER,
       `${BUYERS_GUIDE_MARKER}\n      ${COMPARE_LINK}`,
