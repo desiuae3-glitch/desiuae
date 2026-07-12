@@ -307,14 +307,13 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .total-price .cur{font-size:.78rem;color:var(--tx3);font-weight:500}
 .total-price.flash{animation:priceFlash .2s ease}
 @keyframes priceFlash{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
-.total-items{font-size:.7rem;color:rgba(255,255,255,.65);line-height:1.3;max-width:42ch}
+.total-items{font-size:.7rem;color:rgba(255,255,255,.65);line-height:1.3;max-width:42ch;display:block}
 .total-trust{font-size:.62rem;color:var(--tx3);line-height:1.3;display:none}
-.total-summary-toggle{display:inline-block;appearance:none;background:transparent;border:none;color:rgba(255,255,255,.5);font-size:.68rem;font-weight:600;padding:0;cursor:pointer;text-align:left;white-space:nowrap}
-.total-summary-toggle::after{content:' ▾';font-size:.6rem}
-.total-summary-toggle[aria-expanded="true"]::after{content:' ▴'}
-.total-expand{display:none;width:100%;flex-basis:100%}
-.total-expand.open{display:block}
-.total-expand.open .total-trust{display:block;margin-top:.15rem}
+.total-summary-toggle{display:inline-block;appearance:none;background:transparent;border:none;color:rgba(255,255,255,.72);font-size:.68rem;font-weight:600;padding:0;cursor:pointer;text-align:left;white-space:nowrap;text-decoration:none;transition:color .2s}
+.total-summary-toggle:hover{color:#fff}
+.total-summary-toggle::after{content:' →';font-size:.65rem}
+.total-expand{display:block;width:100%;flex-basis:100%}
+.total-expand .total-trust{display:block;margin-top:.15rem}
 .total-btns{display:flex;gap:.5rem;flex-shrink:0}
 .btn-r{background:var(--red);color:#fff;padding:.55rem 1.2rem;border-radius:var(--rs);font-weight:700;font-size:.78rem;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem}
 .btn-r:hover{background:var(--red-d);transform:translateY(-1px)}
@@ -507,11 +506,9 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .total-left{flex-direction:row;align-items:center;justify-content:flex-start;width:auto;max-width:none;margin:0;gap:.5rem;text-align:left;flex:1;min-width:0;flex-wrap:wrap}
   .total-head{justify-content:flex-start;align-items:baseline;gap:.45rem;width:auto}
   .total-summary-toggle{display:inline-block}
-  .total-expand{display:none}
-  .total-expand.open{display:block;flex-basis:100%}
+  .total-expand{display:block;flex-basis:100%}
   .total-items{width:100%;text-align:left;display:block;font-size:.68rem}
   .total-trust{display:none}
-  .total-expand.open .total-trust{display:block;margin-top:.15rem}
   .total-price{font-size:1.2rem}
   .total-btns{width:auto;flex-direction:row;max-width:none;margin:0;flex-shrink:0}
   .total-btns a,.total-btns button{flex:0 0 auto;justify-content:center;padding:.5rem .75rem;font-size:.72rem;white-space:nowrap}
@@ -981,7 +978,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
         <span class="total-label">Your Setup</span>
         <span class="total-price" id="totalPrice">799 <span class="cur">AED</span></span>
       </div>
-      <button type="button" class="total-summary-toggle" id="totalSummaryToggle" aria-expanded="false" aria-controls="totalExpand">Build your setup</button>
+      <a href="#configure" class="total-summary-toggle" id="totalSummaryToggle">Build your setup</a>
       <div class="total-expand" id="totalExpand">
         <span class="total-items" id="totalItems">799 AED &mdash; base lock</span>
         <span class="total-trust">Free Dubai delivery &middot; 2-year warranty &middot; 5-min install</span>
@@ -1563,14 +1560,6 @@ TOGGLE_IDS.filter(id=>id!=='wifi').forEach(id=>addonsEl.appendChild(buildToggleC
 
 document.getElementById('qtyMinus').addEventListener('click',()=>{if(qty>1){qty--;document.getElementById('qtyVal').textContent=qty;updateTotal();}});
 document.getElementById('qtyPlus').addEventListener('click',()=>{qty++;document.getElementById('qtyVal').textContent=qty;updateTotal();});
-
-const summaryToggle=document.getElementById('totalSummaryToggle');
-const totalExpand=document.getElementById('totalExpand');
-summaryToggle.addEventListener('click',()=>{
-  const open=totalExpand.classList.toggle('open');
-  summaryToggle.setAttribute('aria-expanded',open?'true':'false');
-  summaryToggle.textContent=open?'Hide setup details':'Show setup details';
-});
 
 function selectedParts(){
   const parts=[];
