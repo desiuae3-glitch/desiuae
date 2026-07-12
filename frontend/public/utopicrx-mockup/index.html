@@ -298,26 +298,23 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .keypad-popular{display:inline-block;vertical-align:middle;margin-left:.4rem;background:var(--red);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .45rem;border-radius:100px;line-height:1;pointer-events:none}
 
 /* TOTAL BAR */
-.total-bar{position:sticky;bottom:0;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-top:1px solid var(--brd);padding:.55rem 1.5rem;z-index:100;box-shadow:0 -4px 18px rgba(0,0,0,.35)}
-.total-inner{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:nowrap}
-.total-left{display:flex;flex-direction:row;align-items:center;gap:.75rem 1.1rem;min-width:0;flex:1;flex-wrap:wrap}
-.total-head{display:flex;align-items:baseline;gap:.65rem;flex-wrap:nowrap}
-.total-label{font-size:.72rem;color:var(--tx2);font-weight:600;white-space:nowrap}
-.total-price{font-size:1.35rem;font-weight:800;color:var(--red);display:inline-block;transform-origin:left center;line-height:1}
-.total-price .cur{font-size:.78rem;color:var(--tx3);font-weight:500}
+.total-bar{position:sticky;bottom:0;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-top:1px solid var(--brd);padding:.4rem 1.5rem;z-index:100;box-shadow:0 -4px 18px rgba(0,0,0,.35)}
+.total-inner{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:.85rem;flex-wrap:nowrap}
+.total-left{display:flex;flex-direction:row;align-items:center;gap:.65rem 1rem;min-width:0;flex:1;flex-wrap:nowrap}
+.total-head{display:flex;align-items:baseline;gap:.55rem;flex-wrap:nowrap}
+.total-label{font-size:.68rem;color:var(--tx2);font-weight:600;white-space:nowrap}
+.total-price{font-size:1.2rem;font-weight:800;color:var(--red);display:inline-block;transform-origin:left center;line-height:1}
+.total-price .cur{font-size:.72rem;color:var(--tx3);font-weight:500}
 .total-price.flash{animation:priceFlash .2s ease}
 @keyframes priceFlash{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
-.total-items{font-size:.7rem;color:rgba(255,255,255,.65);line-height:1.3;max-width:42ch;display:block}
-.total-trust{font-size:.62rem;color:var(--tx3);line-height:1.3;display:none}
-.total-summary-toggle{display:inline-block;appearance:none;background:transparent;border:none;color:rgba(255,255,255,.72);font-size:.68rem;font-weight:600;padding:0;cursor:pointer;text-align:left;white-space:nowrap;text-decoration:none;transition:color .2s}
+.total-items{display:none!important}
+.total-summary-toggle{display:inline-block;appearance:none;background:transparent;border:none;color:rgba(255,255,255,.72);font-size:.66rem;font-weight:600;padding:0;cursor:pointer;text-align:left;white-space:nowrap;text-decoration:none;transition:color .2s}
 .total-summary-toggle:hover{color:#fff}
-.total-summary-toggle::after{content:' →';font-size:.65rem}
-.total-expand{display:block;width:100%;flex-basis:100%}
-.total-expand .total-trust{display:block;margin-top:.15rem}
+.total-summary-toggle::after{content:' →';font-size:.62rem}
 .total-btns{display:flex;gap:.5rem;flex-shrink:0}
-.btn-r{background:var(--red);color:#fff;padding:.55rem 1.2rem;border-radius:var(--rs);font-weight:700;font-size:.78rem;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-r{background:var(--red);color:#fff;padding:.45rem 1.1rem;border-radius:var(--rs);font-weight:700;font-size:.76rem;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem}
 .btn-r:hover{background:var(--red-d);transform:translateY(-1px)}
-.btn-wa{background:#25D366;color:#fff;padding:.55rem 1rem;border-radius:var(--rs);font-weight:700;font-size:.78rem;border:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s}
+.btn-wa{background:#25D366;color:#fff;padding:.45rem .9rem;border-radius:var(--rs);font-weight:700;font-size:.76rem;border:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s}
 .btn-wa:hover{background:#1EB254}
 
 /* ===== FEATURES &mdash; BENTO HERO GRID ===== */
@@ -499,19 +496,16 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .vc:first-child{grid-row:auto;grid-column:1/3}
   .ft{grid-template-columns:1fr 1fr}
   .total-bar{
-    padding:.45rem max(1rem,env(safe-area-inset-left),env(safe-area-inset-right)) calc(.45rem + env(safe-area-inset-bottom,0px));
+    padding:.35rem max(1rem,env(safe-area-inset-left),env(safe-area-inset-right)) calc(.35rem + env(safe-area-inset-bottom,0px));
     left:0;right:0;width:100%;box-sizing:border-box;
   }
-  .total-inner{flex-direction:row;align-items:center;gap:.65rem;width:100%;max-width:100%;flex-wrap:nowrap}
-  .total-left{flex-direction:row;align-items:center;justify-content:flex-start;width:auto;max-width:none;margin:0;gap:.5rem;text-align:left;flex:1;min-width:0;flex-wrap:wrap}
-  .total-head{justify-content:flex-start;align-items:baseline;gap:.45rem;width:auto}
+  .total-inner{flex-direction:row;align-items:center;gap:.55rem;width:100%;max-width:100%;flex-wrap:nowrap}
+  .total-left{flex-direction:row;align-items:center;justify-content:flex-start;width:auto;max-width:none;margin:0;gap:.45rem;text-align:left;flex:1;min-width:0;flex-wrap:nowrap}
+  .total-head{justify-content:flex-start;align-items:baseline;gap:.4rem;width:auto}
   .total-summary-toggle{display:inline-block}
-  .total-expand{display:block;flex-basis:100%}
-  .total-items{width:100%;text-align:left;display:block;font-size:.68rem}
-  .total-trust{display:none}
-  .total-price{font-size:1.2rem}
+  .total-price{font-size:1.1rem}
   .total-btns{width:auto;flex-direction:row;max-width:none;margin:0;flex-shrink:0}
-  .total-btns a,.total-btns button{flex:0 0 auto;justify-content:center;padding:.5rem .75rem;font-size:.72rem;white-space:nowrap}
+  .total-btns a,.total-btns button{flex:0 0 auto;justify-content:center;padding:.42rem .7rem;font-size:.7rem;white-space:nowrap}
   .waf{display:none!important}
   .config{padding:3rem max(1rem,env(safe-area-inset-left),env(safe-area-inset-right)) 0}
   .config .inner{width:100%;max-width:100%;box-sizing:border-box;padding:0}
@@ -979,10 +973,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
         <span class="total-price" id="totalPrice">799 <span class="cur">AED</span></span>
       </div>
       <a href="#configure" class="total-summary-toggle" id="totalSummaryToggle">Build your setup</a>
-      <div class="total-expand" id="totalExpand">
-        <span class="total-items" id="totalItems">799 AED &mdash; base lock</span>
-        <span class="total-trust">Free Dubai delivery &middot; 2-year warranty &middot; 5-min install</span>
-      </div>
+      <span class="total-items" id="totalItems" hidden>799 AED &mdash; base lock</span>
     </div>
     <div class="total-btns">
       <a id="waBtn" href="#" target="_blank" rel="noopener" class="btn-wa" aria-label="Order now on WhatsApp">
