@@ -67,14 +67,12 @@ const ORG_GRAPH = `{
 const FOOTER_GUIDES = `
       <a href="/blog">All Blog Posts</a>
       <a href="/smart-lock-installation-dubai">Smart Lock Installation Dubai</a>
-      <a href="/sira-approved-smart-lock">SIRA-Approved Smart Lock</a>
       <a href="/smart-lock-rented-apartment">Smart Lock for Renters</a>
       <a href="/airbnb-smart-lock-dubai">Airbnb &amp; Holiday Homes</a>
       <a href="/smart-lock-sharjah">Smart Lock Sharjah</a>
       <a href="/smart-lock-abu-dhabi">Smart Lock Abu Dhabi</a>
       <a href="/blog/smart-lock-buyers-guide-dubai-2026">Smart Lock Buyer&rsquo;s Guide</a>
       <a href="/compare/desi-vs-yale">DESi vs Yale</a>
-      <a href="/compare/desi-vs-solity">DESi vs Solity</a>
       <a href="/compare/desi-vs-philips">DESi vs Philips</a>
       <a href="/compare/desi-vs-nuki">DESi vs Nuki</a>`;
 
@@ -285,7 +283,6 @@ write(
       <details class="faq-item"><summary>How soon can you install?</summary><div class="ans">Most Dubai &amp; Sharjah bookings land within 2&ndash;5 business days. WhatsApp us your area and preferred window.</div></details>
       <details class="faq-item"><summary>Do I need to be home?</summary><div class="ans">Yes &mdash; we need access to the door and your phone for app pairing. Typical visit: 20&ndash;40 minutes including training.</div></details>
       <details class="faq-item"><summary>Can renters use this?</summary><div class="ans">Yes. The install is fully reversible. See <a href="/smart-lock-rented-apartment">smart lock for rented apartments</a> and our <a href="/blog/smart-lock-rented-apartment-dubai">RERA / deposit guide</a>.</div></details>
-      <details class="faq-item"><summary>Is this SIRA related?</summary><div class="ans">Building access control rules differ from apartment door locks. Read <a href="/sira-approved-smart-lock">SIRA-approved smart lock guidance</a> for villa/community vs unit doors.</div></details>
     </div>
   </section>
 
@@ -298,7 +295,6 @@ write(
     </div>
   </div>
   <div class="related-links">
-    <a href="/sira-approved-smart-lock">SIRA guidance</a>
     <a href="/smart-lock-rented-apartment">For renters</a>
     <a href="/airbnb-smart-lock-dubai">Airbnb hosts</a>
     <a href="/compare/desi-vs-yale">vs Yale</a>
@@ -308,63 +304,6 @@ write(
   })
 );
 
-// ─── 2. SIRA approved ───
-write(
-  "sira-approved-smart-lock.html",
-  shell({
-    canonical: "https://utopicrx.com/sira-approved-smart-lock",
-    title: "SIRA Approved Smart Lock Dubai | What It Means for Apartments | Utopic R",
-    description:
-      "What SIRA-approved smart lock means in Dubai for villas vs apartment doors. Euro-cylinder retrofit guidance for tenants and owners. Utopic R 799 AED.",
-    keywords: "sira approved smart lock, sira approved smart lock dubai, smart lock dubai sira",
-    breadcrumbs: [
-      { name: "Home", item: "https://utopicrx.com/" },
-      { name: "SIRA Approved Smart Lock", item: "https://utopicrx.com/sira-approved-smart-lock" },
-    ],
-    schemaExtra: {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: "SIRA Approved Smart Lock Dubai — What Buyers Need to Know",
-      datePublished: "2026-07-12",
-      dateModified: "2026-07-12",
-      author: { "@type": "Organization", name: "Utopic R UAE" },
-      publisher: { "@id": "https://utopicrx.com/#organization" },
-      mainEntityOfPage: "https://utopicrx.com/sira-approved-smart-lock",
-    },
-    waText: "Hi, I have a question about SIRA and smart locks for my Dubai property.",
-    body: `
-<div class="content-wrap wide">
-  <header class="content-hero landing">
-    <p class="eyebrow">Dubai compliance guidance</p>
-    <h1>SIRA-approved smart lock Dubai &mdash; what it actually means for your door.</h1>
-    <p class="lead">Searchers looking for a <strong>SIRA approved smart lock</strong> usually mix two different things: community / villa security systems regulated for CCTV and access control, versus a private apartment door lock that never touches the building&rsquo;s fire escape or common gate. This page clarifies both so you buy the right product.</p>
-  </header>
-  <section class="content-sec">
-    <p class="tag">Clear answer</p>
-    <h2>Apartment door locks vs SIRA-licensed systems</h2>
-    <p>SIRA (Security Industry Regulatory Agency) licenses security companies and certain surveillance / perimeter access products used in Dubai. A retrofit <strong>smart door lock</strong> on your personal euro-cylinder apartment door is typically a consumer product &mdash; not a building fire-door modification and not a community gate controller. Always confirm with your building management if your tower has house rules about exterior hardware.</p>
-    <p>The Utopic R changes only the interior thumb-turn / cylinder interface. The exterior faceplate stays stock. That is why renters and Airbnb hosts across Dubai use it without triggering permanent-alteration clauses.</p>
-  </section>
-  <section class="content-sec">
-    <p class="tag">When SIRA matters more</p>
-    <h2>Villas, compounds, and commercial sites</h2>
-    <p>If you are specifying locks for a gated community, staffed lobby, or commercial facility that falls under licensed security contracting, work with a SIRA-licensed integrator for the <em>system</em>. You can still use DESi Utopic R on individual unit doors inside that project. WhatsApp us with your use-case and we will tell you honestly whether a consumer retrofit is enough.</p>
-  </section>
-  <section class="content-sec">
-    <p class="tag">Next step</p>
-    <h2>Choose the right smart lock path</h2>
-    <p>Most Dubai Marina / JLT / Downtown apartments need a renter-safe retrofit, not a full SIRA project. Start with <a href="/smart-lock-rented-apartment">smart lock for rented apartments</a>, book <a href="/smart-lock-installation-dubai">installation in Dubai</a>, or compare brands on <a href="/compare/desi-vs-yale">DESi vs Yale</a>.</p>
-  </section>
-  <div class="cta-box">
-    <h2>Talk to a Dubai smart lock specialist</h2>
-    <div class="cta-row">
-      <a class="btn-red" href="/products/utopic-r">View Utopic R</a>
-      <a class="btn-ghost" href="https://wa.me/971526187729?text=Hi%2C%20I%20have%20a%20question%20about%20SIRA%20and%20smart%20locks.">WhatsApp compliance question</a>
-    </div>
-  </div>
-</div>`,
-  })
-);
 
 function geoPage({ slug, city, title, description, freeInstall }) {
   write(
@@ -408,7 +347,6 @@ function geoPage({ slug, city, title, description, freeInstall }) {
       <a href="/smart-lock-installation-dubai">Installation</a>
       <a href="/smart-lock-rented-apartment">Renters</a>
       <a href="/airbnb-smart-lock-dubai">Airbnb</a>
-      <a href="/sira-approved-smart-lock">SIRA guidance</a>
       <a href="/compare/desi-vs-yale">vs Yale</a>
     </div>
   </section>
@@ -500,7 +438,6 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
   <div class="related-links">
     <a href="/compare/desi-vs-nuki">vs Nuki</a>
     <a href="/compare/desi-vs-yale">vs Yale</a>
-    <a href="/compare/desi-vs-solity">vs Solity</a>
     <a href="/compare/desi-vs-philips">vs Philips</a>
     <a href="/smart-lock-installation-dubai">Installation</a>
     <a href="/blog/smart-lock-buyers-guide-dubai-2026">Buyer&rsquo;s guide</a>
@@ -530,24 +467,6 @@ comparePage({
     "Choose Yale if you own the property and want a full exterior redesign. Choose Utopic R if you need a <strong>Yale alternative Dubai</strong> renters can install today without a carpenter — especially with free professional setup.",
 });
 
-comparePage({
-  slug: "desi-vs-solity",
-  brand: "Solity",
-  title: "DESi Utopic R vs Solity Smart Lock UAE | Which to Buy?",
-  description:
-    "Solity vs DESi for UAE apartments. Mortise vs euro-cylinder retrofit, price, install time, and renter suitability compared.",
-  intro:
-    "Solity digital locks are popular in the UAE for push-pull and fingerprint mortise designs. They are strong owner upgrades — but a different category from a no-drill euro-cylinder smart lock. Compare carefully before you commit.",
-  rows: [
-    ["Door work", "Mortise / handle replacement; professional install typical", "Retrofit on existing euro cylinder; no frame drilling", true],
-    ["Price band", "Often 1,200&ndash;3,000+ AED installed", "799 AED + free Dubai/Sharjah install", true],
-    ["Move-out", "Usually stays with the door", "Take the lock to your next home", true],
-    ["Access options", "Fingerprint / PIN / card strong", "App first; optional fingerprint & face modules", false],
-    ["UAE support", "Multiple dealers", "Authorized DESi channel; WhatsApp support", true],
-  ],
-  verdict:
-    "Pick Solity when you want a full digital handle and own the door. Pick Utopic R when you searched <strong>Solity alternative UAE</strong> but need renter-safe, reversible hardware with same-week install.",
-});
 
 comparePage({
   slug: "desi-vs-philips",
