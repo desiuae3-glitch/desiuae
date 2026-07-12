@@ -1503,7 +1503,7 @@ addonsEl.appendChild(buildKeypadCard());
 TOGGLE_IDS.filter(id=>id!=='wifi').forEach(id=>addonsEl.appendChild(buildToggleCard(ADDONS[id])));
 
 document.getElementById('qtyMinus').addEventListener('click',()=>{if(qty>1){qty--;document.getElementById('qtyVal').textContent=qty;updateTotal();}});
-document.getElementById('qtyPlus').addEventListener('click',()=>{qty++;document.getElementById('qtyVal').textContent=qty;updateTotal();}});
+document.getElementById('qtyPlus').addEventListener('click',()=>{qty++;document.getElementById('qtyVal').textContent=qty;updateTotal();});
 
 const summaryToggle=document.getElementById('totalSummaryToggle');
 const totalExpand=document.getElementById('totalExpand');
