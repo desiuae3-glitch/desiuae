@@ -151,7 +151,6 @@
     { "source": "/compare/utopic-r-vs-nuki", "destination": "/utopicrx-mockup/compare/utopic-r-vs-nuki.html" },
     { "source": "/compare/utopic-r-vs-yale", "destination": "/utopicrx-mockup/compare/utopic-r-vs-yale.html" },
     { "source": "/compare/utopic-r-vs-philips", "destination": "/utopicrx-mockup/compare/utopic-r-vs-philips.html" },
-    { "source": "/compare/utopic-r-vs-smart-centrum", "destination": "/utopicrx-mockup/compare/utopic-r-vs-smart-centrum.html" },
     { "source": "/theme.css", "destination": "/utopicrx-mockup/theme.css" },
     { "source": "/content.css", "destination": "/utopicrx-mockup/content.css" },
     { "source": "/nav.js", "destination": "/utopicrx-mockup/nav.js" },

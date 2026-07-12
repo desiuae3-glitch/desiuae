@@ -74,8 +74,7 @@ const FOOTER_GUIDES = `
       <a href="/blog/smart-lock-buyers-guide-dubai-2026">Smart Lock Buyer&rsquo;s Guide</a>
       <a href="/compare/utopic-r-vs-yale">Utopic R vs Yale</a>
       <a href="/compare/utopic-r-vs-philips">Utopic R vs Philips</a>
-      <a href="/compare/utopic-r-vs-nuki">Utopic R vs Nuki</a>
-      <a href="/compare/utopic-r-vs-smart-centrum">Utopic R vs Smart Centrum</a>`;
+      <a href="/compare/utopic-r-vs-nuki">Utopic R vs Nuki</a>`;
 
 function shell({ canonical, title, description, keywords, schemaExtra, body, waText, breadcrumbs }) {
   const crumbJson = breadcrumbs
@@ -301,7 +300,6 @@ write(
     <a href="/smart-lock-rented-apartment">For renters</a>
     <a href="/airbnb-smart-lock-dubai">Airbnb hosts</a>
     <a href="/compare/utopic-r-vs-yale">vs Yale</a>
-    <a href="/compare/utopic-r-vs-smart-centrum">vs Smart Centrum</a>
     <a href="/faq">FAQ</a>
   </div>
 </div>`,
@@ -352,7 +350,6 @@ function geoPage({ slug, city, title, description, freeInstall }) {
       <a href="/smart-lock-rented-apartment">Renters</a>
       <a href="/airbnb-smart-lock-dubai">Airbnb</a>
       <a href="/compare/utopic-r-vs-yale">vs Yale</a>
-      <a href="/compare/utopic-r-vs-smart-centrum">vs Smart Centrum</a>
     </div>
   </section>
   <div class="cta-box">
@@ -448,7 +445,6 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
     <a href="/compare/utopic-r-vs-nuki">vs Nuki</a>
     <a href="/compare/utopic-r-vs-yale">vs Yale</a>
     <a href="/compare/utopic-r-vs-philips">vs Philips</a>
-    <a href="/compare/utopic-r-vs-smart-centrum">vs Smart Centrum</a>
     <a href="/smart-lock-installation-dubai">Installation</a>
     <a href="/blog/smart-lock-buyers-guide-dubai-2026">Buyer&rsquo;s guide</a>
   </div>
@@ -497,27 +493,6 @@ comparePage({
   ],
   verdict:
     "Philips is a fine owner purchase from big-box retail if you accept paid install. For <strong>Philips vs DESi smart lock UAE</strong> searches driven by rentals and Airbnb, Utopic R usually wins on free Dubai/Sharjah install, speed, removability, and local service.",
-});
-
-comparePage({
-  slug: "utopic-r-vs-smart-centrum",
-  brand: "Smart Centrum",
-  title: "Utopic R vs Smart Centrum UAE | Smart Lock Comparison",
-  description:
-    "Smart Centrum vs Utopic R in UAE. Multi-brand full locks (Yale, Lenovo, Aqara) vs DESi euro-cylinder retrofit — price, free install, renter fit compared.",
-  intro:
-    "<a href=\"https://smartcentrum.ae\" rel=\"nofollow noopener\" target=\"_blank\">Smart Centrum</a> is a Dubai multi-brand smart-lock shop stocking Yale, Lenovo, Aqara, Milre, Moorgen, and own-brand full digital locks (often 850&ndash;1,900+&nbsp;AED). Those units usually replace the whole handle set. <strong>Utopic R</strong> is a single euro-cylinder retrofit at 799&nbsp;AED with <strong>free professional installation in Dubai &amp; Sharjah</strong> &mdash; something Smart Centrum product pages do not advertise as included free with purchase.",
-  rows: [
-    ["Business model", "Multi-brand retailer (Yale, Lenovo, Aqara, Milre…)", "Authorized DESi distributor — one retrofit system", true],
-    ["Typical price", "850&ndash;1,900+ AED for entry / mid full locks", "799 AED Utopic R (+ optional modules)", true],
-    ["Free installation", "Not offered as free with purchase on site", "Yes &mdash; free in Dubai &amp; Sharjah", true],
-    ["Door work", "Full-body / push-pull locks; locksmith common", "Euro-cylinder retrofit; under 5 minutes; no exterior change", true],
-    ["Renter friendly", "Often permanent hardware swap", "Fully removable; deposit-safe", true],
-    ["COD & local warranty", "Online shop; contact for support", "COD + free UAE delivery + 2-year UAE warranty", true],
-    ["Best for", "Owners wanting fingerprint full locks & brand choice", "Renters, Airbnb, fast no-drill upgrades", true],
-  ],
-  verdict:
-    "Choose Smart Centrum if you want a premium full-handle digital lock (Lenovo, Yale, Moorgen) and accept locksmith / non-free install. Choose Utopic R if you need a <strong>Smart Centrum alternative</strong> for rented apartments: lower entry price, reversible fit, and free Dubai &amp; Sharjah installation included.",
 });
 
 console.log("Done generating SEO rank pages.");
