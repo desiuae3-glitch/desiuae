@@ -256,7 +256,7 @@ write(
   <section class="content-sec">
     <p class="tag">What you get</p>
     <h2>Full smart door lock installation &mdash; not just a drop-off</h2>
-    <p>Competitors sell locks and leave you with a YouTube video. Our <strong>smart door lock installation</strong> service includes door compatibility check, cylinder fit, mechanical calibration, DESi Smart app pairing, user profiles, and a live walkthrough. If you bought the WiFi Bridge, we connect remote access and Alexa / Google Home before we leave.</p>
+    <p>Most UAE competitors (Yale, Philips EasyKey, Nuki importers, and marketplace sellers) charge for locksmith labour or leave you with a DIY video &mdash; <strong>free professional installation is not included</strong>. Our <strong>smart door lock installation</strong> service includes door compatibility check, cylinder fit, mechanical calibration, DESi Smart app pairing, user profiles, and a live walkthrough. If you bought the WiFi Bridge, we connect remote access and Alexa / Google Home before we leave.</p>
     <div class="landing-features">
       <div class="landing-feat"><h3>Compatibility check</h3><p>Photo review on WhatsApp before we arrive. If your euro-cylinder gap is under 2&nbsp;mm, we tell you before you pay.</p></div>
       <div class="landing-feat"><h3>Under 5 minutes on the door</h3><p>Single-screw or adhesive mount. No carpenter. No frame drilling. Exterior looks unchanged.</p></div>
@@ -274,6 +274,7 @@ write(
     <p class="tag">Pricing</p>
     <h2>Smart lock installation Dubai cost</h2>
     <p>Installation is <strong>AED 0</strong> when you buy the Utopic R (799&nbsp;AED incl. VAT) for Dubai or Sharjah addresses. Standalone install of a third-party lock is not offered &mdash; we specialize in DESi euro-cylinder retrofit so the job is fast and reversible. Optional add-ons (fingerprint, face reader, WiFi bridge) are installed in the same visit at no extra labour charge.</p>
+    <p><strong>Competitor reality check:</strong> Yale, Philips, Nuki, and most Dubai smart-lock shops do <strong>not</strong> include free installation. Expect a separate locksmith fee (often 150&ndash;400+&nbsp;AED) or DIY. With Utopic R in Dubai &amp; Sharjah, labour is included &mdash; you pay for the lock, not the visit.</p>
   </section>
 
   <section class="content-sec">
@@ -282,6 +283,7 @@ write(
     <div class="faq-list">
       <details class="faq-item"><summary>How soon can you install?</summary><div class="ans">Most Dubai &amp; Sharjah bookings land within 2&ndash;5 business days. WhatsApp us your area and preferred window.</div></details>
       <details class="faq-item"><summary>Do I need to be home?</summary><div class="ans">Yes &mdash; we need access to the door and your phone for app pairing. Typical visit: 20&ndash;40 minutes including training.</div></details>
+      <details class="faq-item"><summary>Do Yale, Philips, or Nuki offer free install in Dubai?</summary><div class="ans">Generally no. Retail and imported brands usually charge locksmith fees or expect DIY. Free professional install in Dubai &amp; Sharjah is included with every Utopic R purchase.</div></details>
       <details class="faq-item"><summary>Can renters use this?</summary><div class="ans">Yes. The install is fully reversible. See <a href="/smart-lock-rented-apartment">smart lock for rented apartments</a> and our <a href="/blog/smart-lock-rented-apartment-dubai">RERA / deposit guide</a>.</div></details>
     </div>
   </section>
@@ -330,7 +332,7 @@ function geoPage({ slug, city, title, description, freeInstall }) {
   <header class="content-hero landing">
     <p class="eyebrow">${city}, UAE</p>
     <h1>Smart lock ${city} &mdash; DESi Utopic R with local stock and ${freeInstall ? "free" : "optional"} install.</h1>
-    <p class="lead">Buy a <strong>smart door lock ${city}</strong> residents can trust: euro-cylinder retrofit, app control, optional fingerprint or face access, shipped from UAE stock with COD. ${freeInstall ? `Professional installation is <strong>free in ${city}</strong>.` : `DIY in under 5 minutes, or ask us about paid install in ${city}.`}</p>
+    <p class="lead">Buy a <strong>smart door lock ${city}</strong> residents can trust: euro-cylinder retrofit, app control, optional fingerprint or face access, shipped from UAE stock with COD. ${freeInstall ? `Professional installation is <strong>free in ${city}</strong> &mdash; unlike Yale, Philips, Nuki, and most marketplace sellers who charge locksmith fees or leave you with DIY.` : `DIY in under 5 minutes, or ask us about paid install in ${city}. Most competitors still charge separately for install anywhere in the UAE.`}</p>
     <div class="cta-row" style="margin-top:1.5rem">
       <a class="btn-red" href="/products/utopic-r">Shop Utopic R</a>
       <a class="btn-ghost" href="https://wa.me/971526187729?text=${encodeURIComponent(`Hi, I need a smart lock in ${city}.`)}" target="_blank" rel="noopener">WhatsApp ${city}</a>
@@ -424,12 +426,16 @@ function comparePage({ slug, brand, title, description, rows, intro, verdict }) 
     </table>
   </section>
   <section class="content-sec">
+    <h2>Free installation: Utopic R vs ${brand}</h2>
+    <p>${brand} and most other UAE smart-lock sellers do <strong>not</strong> include free professional installation. You pay the lock price, then a locksmith or DIY. Utopic R includes <strong>free install in Dubai &amp; Sharjah</strong> with every purchase &mdash; see our <a href="/smart-lock-installation-dubai">smart lock installation Dubai</a> page.</p>
+  </section>
+  <section class="content-sec">
     <h2>Verdict for UAE buyers</h2>
     <p>${verdict}</p>
   </section>
   <div class="cta-box">
     <h2>See the lock built for UAE euro-cylinder doors</h2>
-    <p>799&nbsp;AED &middot; free Dubai &amp; Sharjah install &middot; 2-year local warranty</p>
+    <p>799&nbsp;AED &middot; free Dubai &amp; Sharjah install (competitors typically charge) &middot; 2-year local warranty</p>
     <div class="cta-row">
       <a class="btn-red" href="/products/utopic-r">View Utopic R</a>
       <a class="btn-ghost" href="https://wa.me/971526187729?text=${encodeURIComponent(`Hi, I'm comparing ${brand} vs Utopic R.`)}">WhatsApp</a>
@@ -453,18 +459,19 @@ comparePage({
   brand: "Yale",
   title: "Utopic R vs Yale Smart Lock UAE | Dubai Comparison",
   description:
-    "Yale vs Utopic R for UAE doors. Price in AED, install type, renter fit, and local warranty compared for Dubai buyers.",
+    "Yale vs Utopic R for UAE doors. Price in AED, free install vs paid locksmith, renter fit, and local warranty compared for Dubai buyers.",
   intro:
-    "Yale is one of the most searched <strong>smart lock Dubai</strong> brands. Full Yale mortise units look premium but usually need a locksmith and permanent door work. The DESi Utopic R is a euro-cylinder retrofit aimed at renters and fast installs. Here is an honest UAE comparison.",
+    "Yale is one of the most searched <strong>smart lock Dubai</strong> brands. Full Yale mortise units look premium but usually need a paid locksmith and permanent door work &mdash; <strong>Yale does not include free installation</strong>. The DESi Utopic R is a euro-cylinder retrofit aimed at renters and fast installs, with free professional setup in Dubai &amp; Sharjah.",
   rows: [
     ["Typical UAE price", "1,500&ndash;4,000+ AED depending on model", "799 AED lock (+ optional modules)", true],
-    ["Install type", "Often full mortise / handle set; locksmith common", "Euro-cylinder retrofit; under 5 minutes; free Dubai & Sharjah install", true],
+    ["Free installation", "No &mdash; locksmith / retailer fee usual", "Yes &mdash; free in Dubai &amp; Sharjah with purchase", true],
+    ["Install type", "Often full mortise / handle set; locksmith common", "Euro-cylinder retrofit; under 5 minutes", true],
     ["Renter friendly", "Usually permanent hardware change", "Fully removable; deposit-safe", true],
     ["Local stock & warranty", "Widely available via retailers", "Authorized distributor; 2-year UAE warranty; COD", true],
     ["Best for", "Owners wanting a full handle redesign", "Renters, Airbnb, fast retrofit without drilling", true],
   ],
   verdict:
-    "Choose Yale if you own the property and want a full exterior redesign. Choose Utopic R if you need a <strong>Yale alternative Dubai</strong> renters can install today without a carpenter — especially with free professional setup.",
+    "Choose Yale if you own the property and want a full exterior redesign (and budget for paid install). Choose Utopic R if you need a <strong>Yale alternative Dubai</strong> renters can install today without a carpenter — especially with free professional setup competitors do not match.",
 });
 
 
@@ -473,18 +480,19 @@ comparePage({
   brand: "Philips",
   title: "Utopic R vs Philips Smart Lock UAE | 2026 Guide",
   description:
-    "Philips EasyKey vs Utopic R in UAE. Price, install method, Airbnb fit, and local warranty compared for Dubai buyers.",
+    "Philips EasyKey vs Utopic R in UAE. Price, no free install vs free Dubai setup, Airbnb fit, and local warranty compared.",
   intro:
-    "Philips EasyKey models appear across noon, Amazon.ae, and electronics retailers. Many are full-body digital locks. Utopic R targets the euro-cylinder retrofit niche — faster for tenants, cheaper total cost of ownership for short leases.",
+    "Philips EasyKey models appear across noon, Amazon.ae, and electronics retailers. Many are full-body digital locks sold without free installation &mdash; you arrange and pay a locksmith yourself. Utopic R targets the euro-cylinder retrofit niche with <strong>free install in Dubai &amp; Sharjah</strong>.",
   rows: [
     ["Form factor", "Full digital lock / handle sets common", "Interior retrofit on euro cylinder", true],
+    ["Free installation", "No &mdash; DIY or paid locksmith", "Yes &mdash; free in Dubai &amp; Sharjah", true],
     ["Install time", "Locksmith session typical", "Under 5 minutes DIY or free pro install", true],
     ["UAE delivery", "Retail & marketplace", "Direct + COD + free UAE shipping", true],
     ["Modular upgrades", "Model-locked feature sets", "Add fingerprint, face, WiFi bridge later", true],
     ["Best use", "Owned homes wanting a branded full lock", "Renters, holiday homes, quick upgrades", true],
   ],
   verdict:
-    "Philips is a fine owner purchase from big-box retail. For <strong>Philips vs DESi smart lock UAE</strong> searches driven by rentals and Airbnb, Utopic R usually wins on install speed, removability, and local service.",
+    "Philips is a fine owner purchase from big-box retail if you accept paid install. For <strong>Philips vs DESi smart lock UAE</strong> searches driven by rentals and Airbnb, Utopic R usually wins on free Dubai/Sharjah install, speed, removability, and local service.",
 });
 
 console.log("Done generating SEO rank pages.");
