@@ -238,7 +238,7 @@ writeFileSync(
 ## Guides
 - [Smart Lock for Rented Apartments Dubai](https://utopicrx.com/blog/smart-lock-rented-apartment-dubai)
 - [Buyer's Guide 2026](https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026)
-- [DESi vs Nuki UAE](https://utopicrx.com/compare/desi-vs-nuki)
+- [Utopic R vs Nuki UAE](https://utopicrx.com/compare/utopic-r-vs-nuki)
 - [Airbnb & Holiday Homes Dubai](https://utopicrx.com/airbnb-smart-lock-dubai)
 
 ## Contact

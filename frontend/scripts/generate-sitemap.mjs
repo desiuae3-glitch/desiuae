@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const LASTMOD = "2026-06-30";
+const LASTMOD = "2026-07-12";
 
 const URLS = [
   "https://utopicrx.com/",
@@ -13,16 +13,20 @@ const URLS = [
   "https://utopicrx.com/products/smart-home-interface.html",
   "https://utopicrx.com/products/remote-controller.html",
   "https://utopicrx.com/products/door-sensor.html",
-  "https://utopicrx.com/products/auto-lock-module.html",
   "https://utopicrx.com/blog",
   "https://utopicrx.com/blog/smart-lock-rented-apartment-dubai",
   "https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026",
   "https://utopicrx.com/smart-lock-rented-apartment",
   "https://utopicrx.com/airbnb-smart-lock-dubai",
+  "https://utopicrx.com/smart-lock-installation-dubai",
+  "https://utopicrx.com/smart-lock-sharjah",
+  "https://utopicrx.com/smart-lock-abu-dhabi",
   "https://utopicrx.com/retrofit-lock-uae",
   "https://utopicrx.com/retrofit-lock-dubai",
   "https://utopicrx.com/smartlock",
-  "https://utopicrx.com/compare/desi-vs-nuki",
+  "https://utopicrx.com/compare/utopic-r-vs-nuki",
+  "https://utopicrx.com/compare/utopic-r-vs-yale",
+  "https://utopicrx.com/compare/utopic-r-vs-philips",
   "https://utopicrx.com/faq",
   "https://utopicrx.com/returns-warranty",
   "https://utopicrx.com/product-manuals",

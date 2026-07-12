@@ -15,7 +15,7 @@ const URL_MAP = {
     "https://utopicrx.com/blog/smart-lock-rented-apartment-dubai",
   "utopicrx-mockup/blog/smart-lock-buyers-guide-dubai-2026.html":
     "https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026",
-  "utopicrx-mockup/compare/desi-vs-nuki.html": "https://utopicrx.com/compare/desi-vs-nuki",
+  "utopicrx-mockup/compare/utopic-r-vs-nuki.html": "https://utopicrx.com/compare/utopic-r-vs-nuki",
   "utopicrx-mockup/products/index.html": "https://utopicrx.com/products",
   "utopicrx-mockup/products/utopic-rx.html": "https://utopicrx.com/products/utopic-rx.html",
   "utopicrx-mockup/products/wifi-bridge.html": "https://utopicrx.com/products/wifi-bridge.html",
