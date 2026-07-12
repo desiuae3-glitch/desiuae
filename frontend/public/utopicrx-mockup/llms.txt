@@ -1,23 +1,32 @@
-# Utopic R — DESi Smart Locks UAE & GCC
+# Utopic R — Smart Lock for UAE & GCC
 
-> Authorized UAE & GCC distributor of DESi Utopic R smart locks. Single-screw
-> euro-cylinder install with the included DESi cylinder — no drilling into
-> your door. Face recognition, fingerprint, PIN, and app control. Ships across
-> UAE and GCC; free installation in Dubai & Sharjah; cash on delivery;
-> 2-year warranty.
+> Utopic R is a euro-profile smart lock sold in the UAE by an authorized distributor. Installs in under 5 minutes on any euro-cylinder door without drilling. Renter-friendly and fully removable. Not a pharmacy or medical brand.
 
 ## Products
-- [Utopic R Smart Lock — full specs](https://utopicrx.com/products/utopic-r): Base lock, 799 AED, euro-profile cylinder, 37 users, up to 3 months on a full charge
-- [All products](/products): Face reader, fingerprint reader, WiFi bridge add-ons
+- [Utopic R Smart Lock](https://utopicrx.com/products/utopic-r): 799 AED. Euro-profile retrofit, 37 users, rechargeable battery, app control, optional face/fingerprint readers.
+- [Face Reader + Keypad](https://utopicrx.com/products/face-reader.html): 602 AED add-on.
+- [Fingerprint Reader V3](https://utopicrx.com/products/fingerprint-reader.html): 602 AED add-on.
+- [WiFi Bridge Hub](https://utopicrx.com/products/wifi-bridge.html): 228 AED add-on. Enables remote access, Alexa, Google Home.
+
+## Services & local pages
+- [Smart Lock Installation Dubai](https://utopicrx.com/smart-lock-installation-dubai): Free professional install in Dubai & Sharjah.
+- [SIRA Approved Smart Lock guidance](https://utopicrx.com/sira-approved-smart-lock): What SIRA means for apartment vs villa systems.
+- [Smart Lock Sharjah](https://utopicrx.com/smart-lock-sharjah): Free install coverage.
+- [Smart Lock Abu Dhabi](https://utopicrx.com/smart-lock-abu-dhabi): Local stock & support.
 
 ## Guides
-- [Smart Lock Buyer's Guide for Dubai 2026](https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026): Utopic R vs Solity vs Yale vs Philips for UAE doors
-- [Smart locks in rented Dubai apartments](https://utopicrx.com/blog/smart-lock-rented-apartment-dubai): RERA rules, deposit safety, landlord permission
-- [Smart lock for renters](https://utopicrx.com/smart-lock-rented-apartment): No-drill install overview for UAE tenants
-- [DESi vs Nuki comparison](https://utopicrx.com/compare/desi-vs-nuki): Local stock, warranty, and price in AED
-- [FAQ](https://utopicrx.com/faq): Common questions for UAE renters and homeowners
+- [Smart Lock for Renters (commercial)](https://utopicrx.com/smart-lock-rented-apartment)
+- [Can tenants install smart locks? RERA guide](https://utopicrx.com/blog/smart-lock-rented-apartment-dubai)
+- [Buyer's Guide 2026](https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026)
+- [Airbnb & Holiday Homes Dubai](https://utopicrx.com/airbnb-smart-lock-dubai)
 
-## Company
-- Brand: DESi (manufacturer, Türkiye) — utopicrx.com is the UAE/GCC distributor
-- Product URL: https://utopicrx.com/products/utopic-r (Utopic R; legacy RX slug retained)
-- Contact: support@utopicrx.com · WhatsApp +971 52 618 7729 · Dubai, UAE
+## Comparisons
+- [DESi vs Yale](https://utopicrx.com/compare/desi-vs-yale)
+- [DESi vs Solity](https://utopicrx.com/compare/desi-vs-solity)
+- [DESi vs Philips](https://utopicrx.com/compare/desi-vs-philips)
+- [DESi vs Nuki](https://utopicrx.com/compare/desi-vs-nuki)
+
+## Contact
+- WhatsApp: +971526187729
+- Email: support@utopicrx.com
+- Free installation in Dubai & Sharjah. Ships to all UAE & GCC.

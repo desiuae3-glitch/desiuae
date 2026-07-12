@@ -1,6 +1,6 @@
 # Utopic R — Smart Lock for UAE & GCC
 
-> Utopic R is a euro-profile smart lock sold in the UAE by an authorized distributor. Installs in under 5 minutes on any euro-cylinder door without drilling. Renter-friendly and fully removable.
+> Utopic R is a euro-profile smart lock sold in the UAE by an authorized distributor. Installs in under 5 minutes on any euro-cylinder door without drilling. Renter-friendly and fully removable. Not a pharmacy or medical brand.
 
 ## Products
 - [Utopic R Smart Lock](https://utopicrx.com/products/utopic-r): 799 AED. Euro-profile retrofit, 37 users, rechargeable battery, app control, optional face/fingerprint readers.
@@ -8,11 +8,23 @@
 - [Fingerprint Reader V3](https://utopicrx.com/products/fingerprint-reader.html): 602 AED add-on.
 - [WiFi Bridge Hub](https://utopicrx.com/products/wifi-bridge.html): 228 AED add-on. Enables remote access, Alexa, Google Home.
 
+## Services & local pages
+- [Smart Lock Installation Dubai](https://utopicrx.com/smart-lock-installation-dubai): Free professional install in Dubai & Sharjah.
+- [SIRA Approved Smart Lock guidance](https://utopicrx.com/sira-approved-smart-lock): What SIRA means for apartment vs villa systems.
+- [Smart Lock Sharjah](https://utopicrx.com/smart-lock-sharjah): Free install coverage.
+- [Smart Lock Abu Dhabi](https://utopicrx.com/smart-lock-abu-dhabi): Local stock & support.
+
 ## Guides
-- [Smart Lock for Rented Apartments Dubai](https://utopicrx.com/blog/smart-lock-rented-apartment-dubai)
+- [Smart Lock for Renters (commercial)](https://utopicrx.com/smart-lock-rented-apartment)
+- [Can tenants install smart locks? RERA guide](https://utopicrx.com/blog/smart-lock-rented-apartment-dubai)
 - [Buyer's Guide 2026](https://utopicrx.com/blog/smart-lock-buyers-guide-dubai-2026)
-- [DESi vs Nuki UAE](https://utopicrx.com/compare/desi-vs-nuki)
 - [Airbnb & Holiday Homes Dubai](https://utopicrx.com/airbnb-smart-lock-dubai)
+
+## Comparisons
+- [DESi vs Yale](https://utopicrx.com/compare/desi-vs-yale)
+- [DESi vs Solity](https://utopicrx.com/compare/desi-vs-solity)
+- [DESi vs Philips](https://utopicrx.com/compare/desi-vs-philips)
+- [DESi vs Nuki](https://utopicrx.com/compare/desi-vs-nuki)
 
 ## Contact
 - WhatsApp: +971526187729
