@@ -27,6 +27,7 @@ const URLS = [
   "https://utopicrx.com/compare/utopic-r-vs-nuki",
   "https://utopicrx.com/compare/utopic-r-vs-yale",
   "https://utopicrx.com/compare/utopic-r-vs-philips",
+  "https://utopicrx.com/compare/utopic-r-vs-smart-centrum",
   "https://utopicrx.com/faq",
   "https://utopicrx.com/returns-warranty",
   "https://utopicrx.com/product-manuals",

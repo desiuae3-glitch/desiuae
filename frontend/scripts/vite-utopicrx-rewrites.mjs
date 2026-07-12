@@ -16,6 +16,7 @@ const EXACT = {
   "/compare/utopic-r-vs-nuki": "/utopicrx-mockup/compare/utopic-r-vs-nuki.html",
   "/compare/utopic-r-vs-yale": "/utopicrx-mockup/compare/utopic-r-vs-yale.html",
   "/compare/utopic-r-vs-philips": "/utopicrx-mockup/compare/utopic-r-vs-philips.html",
+  "/compare/utopic-r-vs-smart-centrum": "/utopicrx-mockup/compare/utopic-r-vs-smart-centrum.html",
   "/404": "/utopicrx-mockup/404.html",
   "/returns-warranty": "/utopicrx-mockup/returns-warranty.html",
   "/returns-warranty.html": "/utopicrx-mockup/returns-warranty.html",

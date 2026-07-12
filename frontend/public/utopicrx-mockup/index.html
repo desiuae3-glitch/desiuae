@@ -62,36 +62,35 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 /* ====== 3D HERO &mdash; black & white ====== */
 .xhero{position:relative;min-height:calc(100vh - 126px);background:var(--black);overflow:hidden;display:flex;align-items:center;color:#fff}
 #scene{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;opacity:.45}
-.xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto auto;gap:1.5rem 2rem;align-items:start;pointer-events:none}
+.xhero-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:2rem 2.5rem;width:100%;display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto;gap:1.5rem 2rem;align-items:start;pointer-events:none}
 .xhero-copy{grid-column:1;grid-row:1}
-.xhero-ctas{grid-column:1;grid-row:2;margin-top:0}
-.xhero-stage{grid-column:2;grid-row:1 / span 3;align-self:center}
-.xhero-trust{grid-column:1;grid-row:3;margin-top:0}
+.xhero-stage{grid-column:2;grid-row:1 / span 2;align-self:center}
+.xhero-trust{grid-column:1;grid-row:2;margin-top:0}
 .xhero-copy>*{pointer-events:auto}
-.xhero-ctas{pointer-events:auto}
 .xhero-eyebrow{font-family:var(--m);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#ff6b6b;margin-bottom:1rem;opacity:0;animation:fadeUp .8s .3s forwards}
 .xhero-h1{font-size:clamp(2.3rem,5vw,4.4rem);font-weight:900;line-height:1;letter-spacing:-.03em;text-transform:uppercase;color:#fff;opacity:0;animation:fadeUp .8s .45s forwards}
 .xhero-h1 em{font-style:normal;color:var(--red)}
 .xhero-h1 .outline{-webkit-text-stroke:0;color:var(--red)}
 .xhero-lead{font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--tx2);max-width:58ch;margin-top:1.2rem;line-height:1.7;opacity:0;animation:fadeUp .8s .6s forwards}
-.xhero-tag{font-size:clamp(.9rem,1.4vw,1.05rem);color:#fff;font-weight:600;max-width:58ch;margin-top:.85rem;line-height:1.5;opacity:0;animation:fadeUp .8s .65s forwards}
-.xhero-voice{margin-top:1rem;display:flex;flex-direction:column;gap:.55rem;max-width:58ch;opacity:0;animation:fadeUp .8s .68s forwards}
+.xhero-tag{font-size:clamp(.78rem,1.15vw,.92rem);color:#fff;font-weight:500;max-width:58ch;margin-top:.85rem;line-height:1.5;letter-spacing:.02em;opacity:0;animation:fadeUp .8s .65s forwards}
+.xhero-ctas{display:flex;gap:.8rem;margin-top:1.35rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .7s forwards;pointer-events:auto}
+.xhero-voice{margin-top:1.15rem;display:flex;flex-direction:column;gap:.55rem;max-width:58ch;opacity:0;animation:fadeUp .8s .78s forwards}
 .xhero-voice-t{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3)}
 .xhero-voice-logos{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
 .xhero-voice-item{display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.06);border:1px solid var(--brd);border-radius:100px;padding:.35rem .75rem .35rem .45rem}
 .xhero-voice-item img{width:26px;height:26px;display:block;flex-shrink:0}
 .xhero-voice-item span{font-size:.68rem;font-weight:600;color:var(--tx2);letter-spacing:.02em}
-.xhero-foot{font-size:.68rem;color:var(--tx3);margin-top:.55rem;line-height:1.45;max-width:58ch;opacity:0;animation:fadeUp .8s .7s forwards}
-.xhero-ctas{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .75s forwards}
+.xhero-foot{font-size:.68rem;color:var(--tx3);margin-top:.75rem;line-height:1.45;max-width:58ch;opacity:0;animation:fadeUp .8s .85s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.xbtn{padding:.9rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,background .2s,border-color .2s;cursor:pointer}
+.xbtn{padding:.9rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;transition:transform .2s,background .2s,border-color .2s;cursor:pointer;text-decoration:none}
 .xbtn:hover{transform:translateY(-2px)}
 .xbtn-red{background:var(--red);color:#fff}.xbtn-red:hover{background:var(--red-d)}
+.xbtn-hero{min-height:52px;padding:.95rem 1.65rem;border-radius:10px;font-size:.95rem;font-weight:700}
 .xbtn-wa{background:#25D366;color:#fff}.xbtn-wa:hover{background:#1EB254}
-.xbtn-glass{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--brd2)}
-.xbtn-glass:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1)}
+.xbtn-glass{background:transparent;color:#fff;border:1.5px solid var(--brd2);min-height:52px;padding:.95rem 1.45rem;border-radius:10px;font-size:.92rem;font-weight:600}
+.xbtn-glass:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08);transform:translateY(-2px)}
 .xbtn .btnic{width:18px;height:18px;fill:currentColor;flex-shrink:0}
-.xhero-trust{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.8rem;max-width:620px;opacity:0;animation:fadeUp .8s .9s forwards}
+.xhero-trust{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.8rem;max-width:620px;opacity:0;animation:fadeUp .8s .9s forwards;pointer-events:auto}
 .xht{display:flex;align-items:center;gap:.35rem;font-size:.66rem;font-weight:600;color:var(--tx2);background:rgba(255,255,255,.06);border:1px solid var(--brd);border-radius:100px;padding:.3rem .75rem}
 .xht.hl{background:var(--red);color:#fff;border-color:var(--red);font-weight:700}
 .xhero-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:min(52vh,520px);opacity:0;transition:opacity 1.2s ease .4s;pointer-events:none}
@@ -229,6 +228,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .addon-img{width:80px;height:60px;background:var(--black2);border-radius:var(--rs);display:grid;place-items:center;overflow:hidden}
 .addon-img img{max-width:70%;max-height:70%;object-fit:contain}
 .addon-info h4{font-size:.82rem;font-weight:700;margin-bottom:.2rem;color:#fff}
+.addon-info h4 .addon-opt{color:var(--red);font-weight:800;font-size:.72rem;letter-spacing:.04em;margin-left:.35rem;white-space:nowrap}
 .addon-info p{font-size:.68rem;color:var(--tx2);line-height:1.45}
 .addon-note{font-size:.62rem;color:var(--tx3);font-style:italic;line-height:1.45;margin-top:.35rem}
 .addon-right{text-align:right;min-width:108px}
@@ -401,16 +401,17 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
 /* RESPONSIVE */
 @media(max-width:1024px){
   .xhero{align-items:flex-start!important;min-height:auto!important;padding:1rem 0 2rem!important}
-  .xhero-wrap{display:flex!important;flex-direction:column!important;grid-template-columns:1fr!important;grid-template-rows:auto!important;text-align:center;justify-items:center;padding:1rem 1rem 0!important;box-sizing:border-box;width:100%;max-width:100%;gap:0!important}
-  .xhero-copy{order:1!important;grid-column:auto!important;grid-row:auto!important;width:100%;display:flex;flex-direction:column;align-items:center}
+  .xhero-wrap{display:flex!important;flex-direction:column!important;grid-template-columns:1fr!important;grid-template-rows:auto!important;text-align:left;justify-items:stretch;padding:1rem 1rem 0!important;box-sizing:border-box;width:100%;max-width:100%;gap:0!important}
+  .xhero-copy{order:1!important;grid-column:auto!important;grid-row:auto!important;width:100%;display:flex;flex-direction:column;align-items:stretch}
   .xhero-stage{order:2!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center;min-height:auto!important;align-self:auto!important}
-  .xhero-ctas{order:3!important;grid-column:auto!important;grid-row:auto!important;margin:1.25rem 0 0!important;width:100%;justify-content:center}
-  .xhero-trust{order:4!important;grid-column:auto!important;grid-row:auto!important;margin-top:1rem!important}
-  .xhero-h1,.xhero-lead,.xhero-tag,.xhero-voice,.xhero-foot{text-align:center}
-  .xhero-lead,.xhero-tag,.xhero-voice,.xhero-foot{margin-left:auto;margin-right:auto}
-  .xhero-voice{align-items:center}
-  .xhero-voice-logos{justify-content:center}
-  .xhero-ctas,.xhero-trust{justify-content:center;margin-left:auto;margin-right:auto}
+  .xhero-trust{order:3!important;grid-column:auto!important;grid-row:auto!important;margin-top:1rem!important}
+  .xhero-h1{text-align:left}
+  .xhero-lead,.xhero-tag,.xhero-voice,.xhero-foot,.xhero-ctas{text-align:left;margin-left:0;margin-right:0;width:100%;max-width:100%}
+  .xhero-voice{align-items:flex-start}
+  .xhero-voice-logos{justify-content:flex-start}
+  .xhero-ctas{flex-direction:column;width:100%;justify-content:stretch;margin-top:1.1rem}
+  .xhero-ctas .xbtn{width:100%;box-sizing:border-box}
+  .xhero-trust{justify-content:flex-start;margin-left:0;margin-right:0}
   .xhero-h1,.xhero-lead,.xhero-tag,.xhero-voice,.xhero-foot,.xhero-ctas,.xhero-trust{opacity:1!important;animation:none!important;transform:none!important}
   #scene{opacity:.12!important}
   .xhero-showcase{width:min(90vw,520px);margin:0 auto}
@@ -702,9 +703,13 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   <canvas id="scene"></canvas>
   <div class="xhero-wrap">
     <div class="xhero-copy">
-      <h1 class="xhero-h1">Make Your Door <em>Smart</em> in <span class="outline">Under 5 Minutes*</span></h1>
-      <p class="xhero-lead">Made for Dubai renters &mdash; swap in the included euro cylinder with a single screw. No drilling into your door, so your deposit stays yours.</p>
-      <p class="xhero-tag">Enjoy All Features of the High-End Smart Lock.</p>
+      <h1 class="xhero-h1">No Drilling.<br><em>No Deposit Risk.</em><br>Smart in 5 Minutes.</h1>
+      <p class="xhero-lead">Made for Dubai renters &mdash; swap in the included cylinder with a single screw and swap it back when you move out.</p>
+      <p class="xhero-tag">Fingerprint &middot; App &middot; PIN &middot; Your existing key still works</p>
+      <div class="xhero-ctas">
+        <a href="#compatibility" class="xbtn xbtn-red xbtn-hero">Check if your door is compatible &rarr;</a>
+        <a href="#how-it-works" class="xbtn xbtn-glass">See how it works</a>
+      </div>
       <div class="xhero-voice" aria-label="Works with Alexa, Siri, and Google Assistant">
         <span class="xhero-voice-t">Works with Alexa, Siri &amp; Google</span>
         <div class="xhero-voice-logos">
@@ -722,7 +727,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
           </div>
         </div>
       </div>
-      <p class="xhero-foot">* Typical DIY install on a standard euro-profile cylinder door.</p>
+      <p class="xhero-foot">Fits most Dubai apartment doors &mdash; 30-second compatibility check.</p>
     </div>
     <div class="xhero-stage" id="heroStage">
       <div class="xhero-showcase" id="heroLock">
@@ -733,9 +738,6 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
           </video>
         </div>
       </div>
-    </div>
-    <div class="xhero-ctas">
-      <a href="https://wa.me/971526187729?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Utopic%20R%20Smart%20Lock." class="xbtn xbtn-wa" target="_blank" rel="noopener">Order Now on WhatsApp &rarr;</a>
     </div>
     <div class="xhero-trust">
       <div class="xht"><span aria-hidden="true">&#10003;</span> No Damage</div>
@@ -779,6 +781,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <a href="/blog/smart-lock-buyers-guide-dubai-2026">Buyer&rsquo;s guide 2026</a>
       <a href="/compare/utopic-r-vs-yale">Utopic R vs Yale</a>
       <a href="/compare/utopic-r-vs-philips">Utopic R vs Philips</a>
+      <a href="/compare/utopic-r-vs-smart-centrum">Utopic R vs Smart Centrum</a>
       <a href="/airbnb-smart-lock-dubai">Airbnb &amp; holiday homes</a>
       <a href="/faq">Full FAQ</a>
     </div>
@@ -1266,6 +1269,7 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <a href="/compare/utopic-r-vs-yale">Utopic R vs Yale</a>
       <a href="/compare/utopic-r-vs-philips">Utopic R vs Philips</a>
       <a href="/compare/utopic-r-vs-nuki">Utopic R vs Nuki</a>
+      <a href="/compare/utopic-r-vs-smart-centrum">Utopic R vs Smart Centrum</a>
     </div>
     <div class="fcc">
       <h4>Contact</h4>
@@ -1398,7 +1402,7 @@ ADDONS.forEach(a=>{
   el.className='addon rv';el.setAttribute('role','listitem');el.dataset.id=a.id;
   const learn=a.page?`<a href="${a.page}" style="font-size:.62rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;display:inline-block;margin-top:.3rem" onclick="event.stopPropagation()">Learn more ?</a>`:'';
   const note=a.note?`<p class="addon-note">${a.note}</p>`:'';
-  el.innerHTML=`<div class="addon-img"><img src="${a.img}" alt="${a.name}" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name}</h4><p>${a.desc}</p>${note}${learn}</div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">-</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle ${a.name}" aria-pressed="false"></button></div></div>`;
+  el.innerHTML=`<div class="addon-img"><img src="${a.img}" alt="${a.name} (optional)" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name} <span class="addon-opt">Optional*</span></h4><p>${a.desc}</p>${note}${learn}</div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">-</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle optional ${a.name}" aria-pressed="false"></button></div></div>`;
   el.addEventListener('click',()=>setAddonQty(a.id,addonQty[a.id]?0:1));
   el.querySelector('.aqty-minus').addEventListener('click',e=>{e.stopPropagation();setAddonQty(a.id,(addonQty[a.id]||1)-1);});
   el.querySelector('.aqty-plus').addEventListener('click',e=>{e.stopPropagation();setAddonQty(a.id,(addonQty[a.id]||0)+1);});
