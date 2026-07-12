@@ -1406,7 +1406,8 @@ const ADDONS={
   smart:{id:'smart',name:'Smart Home Interface V3BL',short:'smart home interface',price:118,page:'products/smart-home-interface.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg',desc:'Dry-contact relay output for KNX, BMS, and custom smart home integration.'},
   remote:{id:'remote',name:'Wireless Remote Controller V2BL',short:'remote controller',price:81,page:'products/remote-controller.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg',desc:'Pocket remote &mdash; 50m range, rolling code AES encryption. Lock/unlock without your phone.'}
 };
-const TOGGLE_IDS=['wifi','sensor','smart','remote'];
+const TOGGLE_IDS=['wifi','sensor','smart'];
+const KEYPAD_IDS=['fp','face','remote'];
 const addonsEl=document.getElementById('addons');
 const addonQty={};
 let keypadChoice='none';
@@ -1467,17 +1468,22 @@ function buildToggleCard(a){
   return el;
 }
 
+function keypadDesc(id){
+  return ADDONS[id].desc.replace(/&mdash;/g,'—').replace(/&times;/g,'×');
+}
+
 function buildKeypadCard(){
   const card=document.createElement('div');
   card.className='keypad-card rv';
   card.setAttribute('role','radiogroup');
-  card.setAttribute('aria-label','Choose your keypad');
+  card.setAttribute('aria-label','Choose your keypad or remote');
   const options=[
     {id:'none',title:'None (app + key only)',desc:'Control from the DESi Smart app; traditional key included.',price:0,img:null},
-    {id:'fp',title:ADDONS.fp.name,desc:ADDONS.fp.desc.replace(/&mdash;/g,'—').replace(/&times;/g,'×'),price:ADDONS.fp.price,img:ADDONS.fp.img,page:ADDONS.fp.page},
-    {id:'face',title:ADDONS.face.name,desc:ADDONS.face.desc.replace(/—/g,'—'),price:ADDONS.face.price,img:ADDONS.face.img,page:ADDONS.face.page}
+    {id:'fp',title:ADDONS.fp.name,desc:keypadDesc('fp'),price:ADDONS.fp.price,img:ADDONS.fp.img,page:ADDONS.fp.page},
+    {id:'face',title:ADDONS.face.name,desc:keypadDesc('face'),price:ADDONS.face.price,img:ADDONS.face.img,page:ADDONS.face.page},
+    {id:'remote',title:ADDONS.remote.name,desc:keypadDesc('remote'),price:ADDONS.remote.price,img:ADDONS.remote.img,page:ADDONS.remote.page}
   ];
-  card.innerHTML=`<div class="keypad-card-title">Choose your keypad</div>`;
+  card.innerHTML=`<div class="keypad-card-title">Choose your keypad or remote</div>`;
   options.forEach(opt=>{
     const row=document.createElement('div');
     row.className='keypad-row'+(opt.id==='none'?' sel':'');
@@ -1517,8 +1523,7 @@ function selectedParts(){
   const parts=[];
   if(qty>1)parts.push(`${qty}× base lock`);
   else parts.push('base lock');
-  if(keypadChoice==='fp')parts.push(ADDONS.fp.short);
-  if(keypadChoice==='face')parts.push(ADDONS.face.short);
+  if(KEYPAD_IDS.includes(keypadChoice))parts.push(ADDONS[keypadChoice].short);
   TOGGLE_IDS.forEach(id=>{
     const q=addonQty[id];
     if(q>0)parts.push(q>1?`${ADDONS[id].short} ×${q}`:ADDONS[id].short);
@@ -1531,12 +1536,10 @@ function updateTotal(){
   const waLines=[];
   const lockTotal=BASE*qty;
   waLines.push(`• Utopic R Lock × ${qty} (${lockTotal} AED)`);
-  if(keypadChoice==='fp'){
-    addonTotal+=ADDONS.fp.price;
-    waLines.push(`• ${ADDONS.fp.name} (602 AED)`);
-  }else if(keypadChoice==='face'){
-    addonTotal+=ADDONS.face.price;
-    waLines.push(`• ${ADDONS.face.name} (602 AED)`);
+  if(KEYPAD_IDS.includes(keypadChoice)){
+    const k=ADDONS[keypadChoice];
+    addonTotal+=k.price;
+    waLines.push(`• ${k.name} (${k.price} AED)`);
   }else{
     waLines.push(`• Keypad: None (app + key only)`);
   }
