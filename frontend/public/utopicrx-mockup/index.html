@@ -957,10 +957,6 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
           <div class="ql"><span class="qn">02</span>Is the keyhole shape a rounded triangle (euro profile)?</div>
           <div class="opts" data-q="2"><button type="button" class="opt">Yes</button><button type="button" class="opt">No / not sure</button></div>
         </div>
-        <div class="q">
-          <div class="ql"><span class="qn">03</span>Can you turn the key from inside without a second key?</div>
-          <div class="opts" data-q="3"><button type="button" class="opt">Yes</button><button type="button" class="opt">No / not sure</button></div>
-        </div>
         <div class="verdict" id="verdict"></div>
       </div>
     </div>
@@ -1700,8 +1696,8 @@ document.querySelectorAll('.fb-hero').forEach(el=>{el.style.opacity='0';el.style
         g.querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));
         btn.classList.add('sel');
         answers[g.dataset.q]=btn.textContent.trim()==='Yes';
-        if(Object.keys(answers).length<3)return;
-        const ok=answers['1']&&answers['2']&&answers['3'];
+        if(Object.keys(answers).length<2)return;
+        const ok=answers['1']&&answers['2'];
         verdict.className='verdict '+(ok?'ok':'maybe');
         verdict.innerHTML=ok
           ?'<b>Looks compatible.</b> Your door matches the euro-profile setup Utopic R is built for. <a href="#configure">Build yours from 799 AED →</a>'
