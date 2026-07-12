@@ -198,11 +198,12 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .config-base{background:var(--black3);border-radius:var(--r);overflow:hidden;border:1px solid var(--brd);position:sticky;top:140px}
 .config-base-img{padding:0;background:var(--black2)}
 .config-gallery{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem 1.25rem 1rem}
-.config-gallery-main{flex:1;display:grid;place-items:center;min-height:220px;padding:.75rem;background:#f4f3ef;border-radius:calc(var(--r) - 4px)}
-.config-gallery-main img{max-width:100%;max-height:240px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(0,0,0,.18));transition:transform .4s}
+.config-gallery-card{background:#f5f5f5;border-radius:1rem;padding:.85rem;display:flex;flex-direction:column;gap:.65rem}
+.config-gallery-main{flex:1;display:grid;place-items:center;min-height:220px;padding:.5rem;background:#f5f5f5;border-radius:.75rem}
+.config-gallery-main img{max-width:100%;max-height:240px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 12px 32px rgba(0,0,0,.12));transition:transform .4s}
 .config-base:hover .config-gallery-main img{transform:scale(1.03)}
 .config-gallery-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem}
-.config-gallery-thumb{appearance:none;border:2px solid var(--brd);border-radius:8px;background:#f4f3ef;padding:.35rem;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.config-gallery-thumb{appearance:none;border:2px solid rgba(0,0,0,.08);border-radius:8px;background:#fff;padding:.35rem;cursor:pointer;transition:border-color .2s,box-shadow .2s}
 .config-gallery-thumb:hover,.config-gallery-thumb.active{border-color:var(--red);box-shadow:0 0 0 1px rgba(227,30,36,.25)}
 .config-gallery-thumb img{width:100%;height:48px;object-fit:contain;display:block}
 .config-base-body{padding:1.6rem;background:var(--black3);border-top:1px solid var(--brd)}
@@ -219,20 +220,23 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .price-note{font-size:.68rem;color:var(--tx3);background:var(--black2);padding:.2rem .5rem;border-radius:4px;font-weight:600}
 .cb-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem}
 .cb-tags span{font-size:.62rem;background:var(--black2);color:var(--tx2);padding:.25rem .55rem;border-radius:5px;font-weight:600}
-.inc-badge{background:var(--red)!important;color:#fff!important}
-.cb-link{display:inline-block;margin-top:1rem;font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.06em}
+.inc-badge{background:rgba(255,255,255,.12)!important;color:#fff!important}
+.cb-link{display:inline-block;margin-top:1rem;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.02em}
+.cb-link:hover{color:#fff}
 .addons{display:flex;flex-direction:column;gap:.8rem}
-.addon{display:grid;grid-template-columns:80px 1fr auto;gap:1rem;align-items:center;background:var(--black3);border:1.5px solid var(--brd);border-radius:var(--r);padding:1rem 1.2rem;transition:all .3s;cursor:pointer;user-select:none}
+.addon{position:relative;display:grid;grid-template-columns:80px 1fr auto;gap:1rem;align-items:center;background:var(--black3);border:1.5px solid var(--brd);border-radius:var(--r);padding:1rem 1.2rem;transition:all .3s;cursor:pointer;user-select:none}
 .addon:hover{border-color:var(--brd2);box-shadow:var(--s2)}
 .addon.sel{border-color:var(--red);background:rgba(227,30,36,.08)}
+.addon-popular{position:absolute;top:.65rem;right:.75rem;z-index:2;background:var(--red);color:#fff;font-size:.55rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .55rem;border-radius:100px;line-height:1;pointer-events:none}
 .addon-img{width:80px;height:60px;background:var(--black2);border-radius:var(--rs);display:grid;place-items:center;overflow:hidden}
 .addon-img img{max-width:70%;max-height:70%;object-fit:contain}
 .addon-info h4{font-size:.82rem;font-weight:700;margin-bottom:.2rem;color:#fff}
-.addon-info h4 .addon-opt{color:var(--red);font-weight:800;font-size:.72rem;letter-spacing:.04em;margin-left:.35rem;white-space:nowrap}
 .addon-info p{font-size:.68rem;color:var(--tx2);line-height:1.45}
 .addon-note{font-size:.62rem;color:var(--tx3);font-style:italic;line-height:1.45;margin-top:.35rem}
+.addon-learn{font-size:13px;font-weight:500;color:rgba(227,30,36,.75);display:inline-block;margin-top:.3rem;text-decoration:none}
+.addon-learn:hover{color:var(--red)}
 .addon-right{text-align:right;min-width:108px}
-.ap{font-size:.96rem;font-weight:800;margin-bottom:.35rem;color:#fff}
+.ap{font-size:.96rem;font-weight:800;margin-bottom:.35rem;color:var(--red)}
 .ap .cur{font-size:.7rem;color:var(--tx3);font-weight:500}
 .addon-actions{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem}
 .addon-qty{display:flex;align-items:center;gap:.3rem}
@@ -244,16 +248,40 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{fon
 .atog::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.4)}
 .addon.sel .atog{background:var(--red)}
 .addon.sel .atog::after{transform:translateX(20px)}
+.keypad-card{background:var(--black3);border:1.5px solid var(--brd);border-radius:var(--r);padding:1rem 1.1rem 1.05rem;display:flex;flex-direction:column;gap:.65rem}
+.keypad-card-title{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.keypad-row{display:grid;grid-template-columns:56px 1fr auto auto;gap:.75rem;align-items:center;padding:.7rem .65rem;border:1px solid var(--brd);border-radius:var(--rs);cursor:pointer;transition:border-color .2s,background .2s;background:rgba(255,255,255,.02)}
+.keypad-row:hover{border-color:var(--brd2)}
+.keypad-row.sel{border-color:var(--red);background:rgba(227,30,36,.08)}
+.keypad-row img{width:56px;height:42px;object-fit:contain;background:var(--black2);border-radius:8px;padding:.2rem;box-sizing:border-box}
+.keypad-row-none{display:grid;place-items:center;width:56px;height:42px;background:var(--black2);border-radius:8px;font-size:.58rem;font-weight:700;color:var(--tx3);letter-spacing:.04em;text-transform:uppercase}
+.keypad-info{min-width:0}
+.keypad-info strong{display:block;font-size:.78rem;font-weight:700;color:#fff;margin-bottom:.15rem}
+.keypad-info span{display:block;font-size:.65rem;color:var(--tx2);line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.keypad-price{font-size:.82rem;font-weight:800;color:var(--red);white-space:nowrap}
+.keypad-price .cur{font-size:.62rem;color:var(--tx3);font-weight:500}
+.keypad-radio{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.28);display:grid;place-items:center;flex-shrink:0}
+.keypad-row.sel .keypad-radio{border-color:var(--red)}
+.keypad-row.sel .keypad-radio::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--red)}
+.keypad-learn{font-size:13px;font-weight:500;color:rgba(227,30,36,.75);margin-left:.35rem;text-decoration:none}
+.keypad-learn:hover{color:var(--red)}
 
 /* TOTAL BAR */
 .total-bar{position:sticky;bottom:0;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-top:1px solid var(--brd);padding:1.1rem 2rem;z-index:100;box-shadow:0 -6px 24px rgba(0,0,0,.4)}
 .total-inner{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.total-left{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.total-left{display:flex;flex-direction:column;gap:.35rem;min-width:0;flex:1}
 .total-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
 .total-label{font-size:.8rem;color:var(--tx2);font-weight:600}
-.total-price{font-size:1.9rem;font-weight:800;color:var(--red)}
+.total-price{font-size:1.9rem;font-weight:800;color:var(--red);display:inline-block;transform-origin:left center}
 .total-price .cur{font-size:1rem;color:var(--tx3);font-weight:500}
-.total-items{font-size:.7rem;color:var(--tx3)}
+.total-price.flash{animation:priceFlash .2s ease}
+@keyframes priceFlash{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
+.total-items{font-size:.78rem;color:rgba(255,255,255,.72);line-height:1.4;max-width:52ch}
+.total-trust{font-size:.68rem;color:var(--tx3);line-height:1.35;display:block}
+.total-summary-toggle{display:none;appearance:none;background:transparent;border:none;color:rgba(255,255,255,.55);font-size:.72rem;font-weight:600;padding:0;cursor:pointer;text-align:left}
+.total-summary-toggle::after{content:' ▾';font-size:.65rem}
+.total-summary-toggle[aria-expanded="true"]::after{content:' ▴'}
+.total-expand{display:block}
 .total-btns{display:flex;gap:.6rem}
 .btn-r{background:var(--red);color:#fff;padding:.8rem 1.8rem;border-radius:var(--rs);font-weight:700;font-size:.84rem;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:.45rem}
 .btn-r:hover{background:var(--red-d);transform:translateY(-1px)}
@@ -445,8 +473,14 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   }
   .total-inner{flex-direction:column;align-items:center;gap:.65rem;width:100%;max-width:100%}
   .total-left{flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:420px;margin:0 auto;gap:.2rem;text-align:center}
-  .total-head{justify-content:center;align-items:baseline;gap:.45rem .55rem;width:100%}
-  .total-items{width:auto;text-align:center;display:block}
+  .total-left{width:100%;align-items:stretch;gap:.25rem}
+  .total-head{justify-content:space-between;align-items:baseline;gap:.45rem;width:100%}
+  .total-summary-toggle{display:inline-block}
+  .total-expand{display:none}
+  .total-expand.open{display:block}
+  .total-items{width:100%;text-align:left;display:block;font-size:.72rem}
+  .total-trust{display:none}
+  .total-expand.open .total-trust{display:block;margin-top:.25rem}
   .total-price{font-size:1.55rem}
   .total-btns{width:100%;flex-direction:row;max-width:420px;margin:0 auto}
   .total-btns a,.total-btns button{flex:1;justify-content:center;padding:.7rem .5rem;font-size:.78rem}
@@ -454,8 +488,8 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .config{padding:3rem max(1rem,env(safe-area-inset-left),env(safe-area-inset-right)) 0}
   .config .inner{width:100%;max-width:100%;box-sizing:border-box;padding:0}
   .config-layout{display:flex;flex-direction:column;gap:1.5rem;width:100%;align-items:stretch}
-  .addons{order:1;width:100%;max-width:100%}
-  .config-base{order:2;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box}
+  .config-base{order:1;width:100%;max-width:100%;margin:0 auto;box-sizing:border-box}
+  .addons{order:2;width:100%;max-width:100%}
   .config-base-img{padding:0}
   .config-gallery{padding:1rem .85rem .85rem}
   .config-gallery-main{min-height:180px}
@@ -467,6 +501,9 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   .addon-right{grid-column:1/-1;display:flex;flex-direction:row;justify-content:space-between;align-items:center;width:100%;min-width:0;text-align:left;margin-top:.35rem;padding-top:.5rem;border-top:1px solid var(--brd)}
   .addon-actions{flex-direction:row;align-items:center;gap:.5rem}
   .ap{margin-bottom:0}
+  .keypad-row{grid-template-columns:48px minmax(0,1fr) auto auto;gap:.55rem;padding:.6rem .5rem}
+  .keypad-row img,.keypad-row-none{width:48px;height:36px}
+  .keypad-info span{max-width:100%}
 }
 @media(max-width:640px){
   .xhero-showcase{width:92vw;margin:0 auto}
@@ -885,15 +922,17 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
       <div class="config-base rv">
         <div class="config-base-img">
           <div class="config-gallery" id="baseGallery">
-            <div class="config-gallery-main">
-              <img id="baseGalleryMain" src="../utopicrx/desi-assets/products/utopic-r-main.png" alt="Utopic R smart lock">
-            </div>
-            <div class="config-gallery-thumbs">
-              <button type="button" class="config-gallery-thumb active" data-src="../utopicrx/desi-assets/products/utopic-r-main.png" data-alt="Utopic R smart lock"><img src="../utopicrx/desi-assets/products/utopic-r-main-thumb.png" alt="Utopic R front view"></button>
-              <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-studio.png" data-alt="Utopic R smart lock studio view"><img src="../utopicrx/desi-assets/products/utopic-r-studio.png" alt="Studio view"></button>
-              <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-angle.png" data-alt="Utopic R angle view"><img src="../utopicrx/desi-assets/products/utopic-r-angle-thumb.png" alt="Angle view"></button>
-              <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-side.png" data-alt="Utopic R side profile"><img src="../utopicrx/desi-assets/products/utopic-r-side.png" alt="Side profile"></button>
-              <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-door.png" data-alt="Utopic R installed on door with handle"><img src="../utopicrx/desi-assets/products/utopic-r-door.png" alt="Installed on door"></button>
+            <div class="config-gallery-card">
+              <div class="config-gallery-main">
+                <img id="baseGalleryMain" src="../utopicrx/desi-assets/products/utopic-r-angle.png" alt="Utopic R angle view">
+              </div>
+              <div class="config-gallery-thumbs">
+                <button type="button" class="config-gallery-thumb active" data-src="../utopicrx/desi-assets/products/utopic-r-angle.png" data-alt="Utopic R angle view"><img src="../utopicrx/desi-assets/products/utopic-r-angle-thumb.png" alt="Angle view"></button>
+                <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-studio.png" data-alt="Utopic R smart lock studio view"><img src="../utopicrx/desi-assets/products/utopic-r-studio.png" alt="Studio view"></button>
+                <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-side.png" data-alt="Utopic R side profile"><img src="../utopicrx/desi-assets/products/utopic-r-side.png" alt="Side profile"></button>
+                <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-door.png" data-alt="Utopic R installed on door with handle"><img src="../utopicrx/desi-assets/products/utopic-r-door.png" alt="Installed on door"></button>
+                <button type="button" class="config-gallery-thumb" data-src="../utopicrx/desi-assets/products/utopic-r-main.png" data-alt="Utopic R smart lock with app"><img src="../utopicrx/desi-assets/products/utopic-r-main-thumb.png" alt="App composite view"></button>
+              </div>
             </div>
           </div>
         </div>
@@ -929,10 +968,14 @@ footer{background:var(--black);color:#fff;padding:4.5rem 2rem 1.5rem;border-top:
   <div class="total-inner">
     <div class="total-left">
       <div class="total-head">
-        <span class="total-label">Your Setup:</span>
+        <span class="total-label">Your Setup</span>
         <span class="total-price" id="totalPrice">799 <span class="cur">AED</span></span>
       </div>
-      <span class="total-items" id="totalItems">Base lock only</span>
+      <button type="button" class="total-summary-toggle" id="totalSummaryToggle" aria-expanded="false" aria-controls="totalExpand">Show setup details</button>
+      <div class="total-expand" id="totalExpand">
+        <span class="total-items" id="totalItems">799 AED &mdash; base lock</span>
+        <span class="total-trust">Free Dubai delivery &middot; 2-year warranty &middot; 5-min install</span>
+      </div>
     </div>
     <div class="total-btns">
       <a id="waBtn" href="#" target="_blank" rel="noopener" class="btn-wa" aria-label="Order via WhatsApp">
@@ -1355,22 +1398,27 @@ if(document.readyState==='complete')queueScene();else window.addEventListener('l
 <script>
 const WA='971526187729';
 const BASE=799;
-const ADDONS=[
-  {id:'face',name:'Face Recognition + Touch Keypad',price:602,page:'products/face-reader.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-face-reader-and-wireless-touch-keypad-accessories-283-81-O.webp',desc:'AI face reader &mdash; walk up, door opens. Includes PIN keypad. Wireless. 4&times; AA.'},
-  {id:'fp',name:'Fingerprint Reader + Touch Keypad V3',price:602,page:'products/fingerprint-reader.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-fingerprint-reader-and-wireless-touch-keypad-v3-accessories-344-74-O.webp',desc:'Sub-second fingerprint + PIN keypad. Wireless. Black finish.'},
-  {id:'wifi',name:'WiFi Bridge Hub',price:228,page:'products/wifi-bridge.html',img:'../utopicrx/desi-assets/products/desi-utopic-series-compatible-wifi-bridge-hub-accessories-338-45-O.webp',desc:'Remote access from anywhere. Enables Alexa, Google Home, Home Assistant, Siri.'},
-  {id:'sensor',name:'Door Sensor + Auto Lock V3BL',price:81,page:'products/door-sensor.html',img:'../utopicrx/desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg',desc:'Detects door close &mdash; triggers auto-lock. Wireless adhesive mount.',note:'Not mandatory &mdash; the base lock has a built-in timer auto-lock. Add this if you need instant lock when the door closes; otherwise use the standard timer included with the base model.'},
-  {id:'smart',name:'Smart Home Interface V3BL',price:118,page:'products/smart-home-interface.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg',desc:'Dry-contact relay output for KNX, BMS, and custom smart home integration.'},
-  {id:'remote',name:'Wireless Remote Controller V2BL',price:81,page:'products/remote-controller.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg',desc:'Pocket remote &mdash; 50m range, rolling code AES encryption. Lock/unlock without your phone.'}
-];
-const READER_EXCLUSIVE=['face','fp'];
+const ADDONS={
+  wifi:{id:'wifi',name:'WiFi Bridge Hub',short:'WiFi bridge',price:228,page:'products/wifi-bridge.html',img:'../utopicrx/desi-assets/products/desi-utopic-series-compatible-wifi-bridge-hub-accessories-338-45-O.webp',desc:'Remote access from anywhere. Enables Alexa, Google Home, Home Assistant, Siri.',popular:true},
+  fp:{id:'fp',name:'Fingerprint + PIN Keypad',short:'fingerprint keypad',price:602,page:'products/fingerprint-reader.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-fingerprint-reader-and-wireless-touch-keypad-v3-accessories-344-74-O.webp',desc:'Sub-second fingerprint + PIN keypad. Wireless. Black finish.'},
+  face:{id:'face',name:'Face Recognition + PIN Keypad',short:'face recognition keypad',price:602,page:'products/face-reader.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-compatible-face-reader-and-wireless-touch-keypad-accessories-283-81-O.webp',desc:'AI face reader — walk up, door opens. Includes PIN keypad. Wireless. 4× AA.'},
+  sensor:{id:'sensor',name:'Door Sensor + Auto Lock V3BL',short:'door sensor',price:81,page:'products/door-sensor.html',img:'../utopicrx/desi-assets/products/desi-utopic-door-sensor-auto-lock-module-accessories-384-92-O.jpg',desc:'Detects door close &mdash; triggers auto-lock. Wireless adhesive mount.',note:'Not mandatory &mdash; the base lock has a built-in timer auto-lock. Add this if you need instant lock when the door closes; otherwise use the standard timer included with the base model.'},
+  smart:{id:'smart',name:'Smart Home Interface V3BL',short:'smart home interface',price:118,page:'products/smart-home-interface.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-smart-home-automation-interface-v3-accessories-385-85-O.jpg',desc:'Dry-contact relay output for KNX, BMS, and custom smart home integration.'},
+  remote:{id:'remote',name:'Wireless Remote Controller V2BL',short:'remote controller',price:81,page:'products/remote-controller.html',img:'../utopicrx/desi-assets/products/desi-utopic-rx-rxe-wireless-remote-controller-v2bl-accessories-383-93-O.jpg',desc:'Pocket remote &mdash; 50m range, rolling code AES encryption. Lock/unlock without your phone.'}
+};
+const TOGGLE_IDS=['wifi','sensor','smart','remote'];
 const addonsEl=document.getElementById('addons');
 const addonQty={};
-function formatAp(a,q){return q>1?`+${a.price*q} <span class="cur">AED</span>`:`+${a.price} <span class="cur">AED</span>`;}
+let keypadChoice='none';
+let qty=1;
+let lastTotal=-1;
+
+function formatAp(price,q){return q>1?`+${price*q} <span class="cur">AED</span>`:`+${price} <span class="cur">AED</span>`;}
+
 function setAddonQty(id,q){
+  const a=ADDONS[id];
   const el=document.querySelector(`.addon[data-id="${id}"]`);
-  const a=ADDONS.find(x=>x.id===id);
-  if(!el||!a)return;
+  if(!a||!el)return;
   const qtyEl=el.querySelector('.addon-qty');
   const ap=el.querySelector('.ap');
   const btn=el.querySelector('.atog');
@@ -1378,50 +1426,140 @@ function setAddonQty(id,q){
     delete addonQty[id];
     el.classList.remove('sel');
     btn.setAttribute('aria-pressed','false');
-    qtyEl.hidden=true;
-    ap.innerHTML=`+${a.price} <span class="cur">AED</span>`;
+    if(qtyEl)qtyEl.hidden=true;
+    if(ap)ap.innerHTML=`+${a.price} <span class="cur">AED</span>`;
   }else{
-    if(READER_EXCLUSIVE.includes(id)){
-      READER_EXCLUSIVE.forEach(other=>{
-        if(other!==id&&addonQty[other])setAddonQty(other,0);
-      });
-    }
     addonQty[id]=q;
     el.classList.add('sel');
     btn.setAttribute('aria-pressed','true');
-    qtyEl.hidden=false;
-    el.querySelector('.aqty-val').textContent=q;
-    ap.innerHTML=formatAp(a,q);
+    if(qtyEl){
+      qtyEl.hidden=false;
+      el.querySelector('.aqty-val').textContent=q;
+    }
+    if(ap)ap.innerHTML=formatAp(a.price,q);
   }
   updateTotal();
 }
-ADDONS.forEach(a=>{
+
+function setKeypad(choice){
+  keypadChoice=choice;
+  document.querySelectorAll('.keypad-row').forEach(row=>{
+    const on=row.dataset.keypad===choice;
+    row.classList.toggle('sel',on);
+    row.setAttribute('aria-checked',on?'true':'false');
+  });
+  updateTotal();
+}
+
+function buildToggleCard(a){
   const el=document.createElement('div');
-  el.className='addon rv';el.setAttribute('role','listitem');el.dataset.id=a.id;
-  const learn=a.page?`<a href="${a.page}" style="font-size:.62rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;display:inline-block;margin-top:.3rem" onclick="event.stopPropagation()">Learn more ?</a>`:'';
+  el.className='addon rv';
+  el.setAttribute('role','listitem');
+  el.dataset.id=a.id;
+  const badge=a.popular?'<span class="addon-popular">Most popular</span>':'';
+  const learn=a.page?`<a class="addon-learn" href="${a.page}" onclick="event.stopPropagation()">Learn more ›</a>`:'';
   const note=a.note?`<p class="addon-note">${a.note}</p>`:'';
-  el.innerHTML=`<div class="addon-img"><img src="${a.img}" alt="${a.name} (optional)" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name} <span class="addon-opt">Optional*</span></h4><p>${a.desc}</p>${note}${learn}</div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">-</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle optional ${a.name}" aria-pressed="false"></button></div></div>`;
+  el.innerHTML=`${badge}<div class="addon-img"><img src="${a.img}" alt="${a.name}" loading="lazy" width="80" height="60"></div><div class="addon-info"><h4>${a.name}</h4><p>${a.desc}</p>${note}${learn}</div><div class="addon-right"><div class="ap">+${a.price} <span class="cur">AED</span></div><div class="addon-actions"><div class="addon-qty" hidden><button type="button" class="aqty-btn aqty-minus" aria-label="Decrease ${a.name}">-</button><span class="aqty-val">1</span><button type="button" class="aqty-btn aqty-plus" aria-label="Increase ${a.name}">+</button></div><button class="atog" type="button" aria-label="Toggle ${a.name}" aria-pressed="false"></button></div></div>`;
   el.addEventListener('click',()=>setAddonQty(a.id,addonQty[a.id]?0:1));
   el.querySelector('.aqty-minus').addEventListener('click',e=>{e.stopPropagation();setAddonQty(a.id,(addonQty[a.id]||1)-1);});
   el.querySelector('.aqty-plus').addEventListener('click',e=>{e.stopPropagation();setAddonQty(a.id,(addonQty[a.id]||0)+1);});
   el.querySelector('.atog').addEventListener('click',e=>{e.stopPropagation();setAddonQty(a.id,addonQty[a.id]?0:1);});
-  addonsEl.appendChild(el);
-});
-let qty=1;
-document.getElementById('qtyMinus').addEventListener('click',()=>{if(qty>1){qty--;document.getElementById('qtyVal').textContent=qty;updateTotal();}});
-document.getElementById('qtyPlus').addEventListener('click',()=>{qty++;document.getElementById('qtyVal').textContent=qty;updateTotal();});
-function updateTotal(){
-  let addonTotal=0;let addonUnits=0;const addonLines=[];
-  Object.entries(addonQty).forEach(([id,q])=>{
-    const a=ADDONS.find(x=>x.id===id);
-    if(a&&q>0){const line=a.price*q;addonTotal+=line;addonUnits+=q;addonLines.push(`  + ${a.name} \u00d7 ${q} (${line} AED)`);}
+  return el;
+}
+
+function buildKeypadCard(){
+  const card=document.createElement('div');
+  card.className='keypad-card rv';
+  card.setAttribute('role','radiogroup');
+  card.setAttribute('aria-label','Choose your keypad');
+  const options=[
+    {id:'none',title:'None (app + key only)',desc:'Control from the DESi Smart app; traditional key included.',price:0,img:null},
+    {id:'fp',title:ADDONS.fp.name,desc:ADDONS.fp.desc.replace(/&mdash;/g,'—').replace(/&times;/g,'×'),price:ADDONS.fp.price,img:ADDONS.fp.img,page:ADDONS.fp.page},
+    {id:'face',title:ADDONS.face.name,desc:ADDONS.face.desc.replace(/—/g,'—'),price:ADDONS.face.price,img:ADDONS.face.img,page:ADDONS.face.page}
+  ];
+  card.innerHTML=`<div class="keypad-card-title">Choose your keypad</div>`;
+  options.forEach(opt=>{
+    const row=document.createElement('div');
+    row.className='keypad-row'+(opt.id==='none'?' sel':'');
+    row.dataset.keypad=opt.id;
+    row.setAttribute('role','radio');
+    row.setAttribute('aria-checked',opt.id==='none'?'true':'false');
+    row.tabIndex=0;
+    const thumb=opt.img
+      ?`<img src="${opt.img}" alt="" loading="lazy" width="56" height="42">`
+      :`<div class="keypad-row-none" aria-hidden="true">None</div>`;
+    const learn=opt.page?` <a class="keypad-learn" href="${opt.page}" onclick="event.stopPropagation()">Learn more ›</a>`:'';
+    const priceHtml=opt.price===0?`+0 <span class="cur">AED</span>`:`+${opt.price} <span class="cur">AED</span>`;
+    row.innerHTML=`${thumb}<div class="keypad-info"><strong>${opt.title}${learn}</strong><span>${opt.desc}</span></div><div class="keypad-price">${priceHtml}</div><div class="keypad-radio" aria-hidden="true"></div>`;
+    row.addEventListener('click',e=>{if(e.target.closest('a'))return;setKeypad(opt.id);});
+    row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setKeypad(opt.id);}});
+    card.appendChild(row);
   });
+  return card;
+}
+
+addonsEl.appendChild(buildToggleCard(ADDONS.wifi));
+addonsEl.appendChild(buildKeypadCard());
+TOGGLE_IDS.filter(id=>id!=='wifi').forEach(id=>addonsEl.appendChild(buildToggleCard(ADDONS[id])));
+
+document.getElementById('qtyMinus').addEventListener('click',()=>{if(qty>1){qty--;document.getElementById('qtyVal').textContent=qty;updateTotal();}});
+document.getElementById('qtyPlus').addEventListener('click',()=>{qty++;document.getElementById('qtyVal').textContent=qty;updateTotal();}});
+
+const summaryToggle=document.getElementById('totalSummaryToggle');
+const totalExpand=document.getElementById('totalExpand');
+summaryToggle.addEventListener('click',()=>{
+  const open=totalExpand.classList.toggle('open');
+  summaryToggle.setAttribute('aria-expanded',open?'true':'false');
+  summaryToggle.textContent=open?'Hide setup details':'Show setup details';
+});
+
+function selectedParts(){
+  const parts=[];
+  if(qty>1)parts.push(`${qty}× base lock`);
+  else parts.push('base lock');
+  if(keypadChoice==='fp')parts.push(ADDONS.fp.short);
+  if(keypadChoice==='face')parts.push(ADDONS.face.short);
+  TOGGLE_IDS.forEach(id=>{
+    const q=addonQty[id];
+    if(q>0)parts.push(q>1?`${ADDONS[id].short} ×${q}`:ADDONS[id].short);
+  });
+  return parts;
+}
+
+function updateTotal(){
+  let addonTotal=0;
+  const waLines=[];
   const lockTotal=BASE*qty;
+  waLines.push(`• Utopic R Lock × ${qty} (${lockTotal} AED)`);
+  if(keypadChoice==='fp'){
+    addonTotal+=ADDONS.fp.price;
+    waLines.push(`• ${ADDONS.fp.name} (602 AED)`);
+  }else if(keypadChoice==='face'){
+    addonTotal+=ADDONS.face.price;
+    waLines.push(`• ${ADDONS.face.name} (602 AED)`);
+  }else{
+    waLines.push(`• Keypad: None (app + key only)`);
+  }
+  TOGGLE_IDS.forEach(id=>{
+    const q=addonQty[id];
+    if(q>0){
+      const line=ADDONS[id].price*q;
+      addonTotal+=line;
+      waLines.push(`• ${ADDONS[id].name} × ${q} (${line} AED)`);
+    }
+  });
   const total=lockTotal+addonTotal;
-  document.getElementById('totalPrice').innerHTML=`${total} <span class="cur">AED</span>`;
-  document.getElementById('totalItems').textContent=addonUnits===0?`${qty}\u00d7 base lock`:`${qty}\u00d7 lock + ${addonUnits} accessory item${addonUnits>1?'s':''}`;
-  const lockLine=`\u2022 Utopic R Lock \u00d7 ${qty} (${lockTotal} AED)`;
-  const msg=encodeURIComponent(`Hi, I'd like to order:\n\n${lockLine}${addonLines.length?'\n'+addonLines.join('\n'):''}\n\nTotal: ${total} AED`);
+  const priceEl=document.getElementById('totalPrice');
+  priceEl.innerHTML=`${total.toLocaleString('en-US')} <span class="cur">AED</span>`;
+  if(lastTotal!==-1&&lastTotal!==total){
+    priceEl.classList.remove('flash');
+    void priceEl.offsetWidth;
+    priceEl.classList.add('flash');
+  }
+  lastTotal=total;
+  const parts=selectedParts();
+  document.getElementById('totalItems').textContent=`${total.toLocaleString('en-US')} AED — ${parts.join(' + ')}`;
+  const msg=encodeURIComponent(`Hi, I'd like to order this setup:\n\n${waLines.join('\n')}\n\nTotal: ${total} AED`);
   document.getElementById('waBtn').href=`https://wa.me/${WA}?text=${msg}`;
 }
 updateTotal();
